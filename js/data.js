@@ -28,6 +28,19 @@ function flagEmoji(alpha2) {
   return [...alpha2.toUpperCase()].map(c => String.fromCodePoint(127397 + c.charCodeAt(0))).join('');
 }
 
+// Drapeaux réels (images) via flagcdn.com — plus fiable que l'emoji, qui ne
+// s'affiche pas en couleur sur toutes les plateformes (Windows notamment).
+// Codes spéciaux (Pays de Galles) : pas de code ISO standard, on retombe sur
+// l'emoji. Sans code du tout (ex. Bougainville) : pas d'image, juste rien.
+function flagImg(alpha2, alt) {
+  if (!alpha2) return '';
+  if (alpha2.startsWith('GB-')) {
+    return `<span class="flag-emoji" title="${alt || ''}">${flagEmoji(alpha2)}</span>`;
+  }
+  const code = alpha2.toLowerCase();
+  return `<img class="flag-img" src="https://flagcdn.com/24x18/${code}.png" srcset="https://flagcdn.com/48x36/${code}.png 2x" width="24" height="18" alt="${alt || alpha2}" loading="lazy">`;
+}
+
 async function loadAllData() {
   const entries = await Promise.all(
     Object.entries(DATA_FILES).map(async ([key, path]) => {
@@ -49,7 +62,8 @@ async function loadAllData() {
     return entry ? entry.equipe : null;
   };
 
-  db.flagForCountry = (nomPays) => flagEmoji(db.paysIso[nomPays]);
+  db.flagForCountry = (nomPays) => flagImg(db.paysIso[nomPays], nomPays);
+  db.flagForCode = (code, nomPays) => flagImg(code, nomPays);
 
   return db;
 }
