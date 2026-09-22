@@ -109,8 +109,8 @@
   },
   {
     "id": "course-montagne-1-saison-0",
-    "nom": "Course Montagne 1",
-    "categorie": "monument",
+    "nom": "Course montagne 1",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
@@ -118,7 +118,7 @@
   },
   {
     "id": "classique-montagne-2-saison-0",
-    "nom": "Classique Montagne 2",
+    "nom": "Course montagne 2",
     "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
