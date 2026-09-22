@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "gent-wevelgem-saison-0",
+    "nom": "Gent Wevelgem",
+    "categorie": "classique-wt",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "pave"
+  }
+]
