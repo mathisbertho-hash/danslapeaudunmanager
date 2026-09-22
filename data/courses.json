@@ -16,5 +16,14 @@
     "pays": null,
     "nbEtapes": null,
     "profil": "pave"
+  },
+  {
+    "id": "classique-de-quebec-saison-0",
+    "nom": "Classique de Québec",
+    "categorie": "classique-wt",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "accidente"
   }
 ]
