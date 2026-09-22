@@ -106,5 +106,14 @@
     "pays": null,
     "nbEtapes": null,
     "profil": "pave"
+  },
+  {
+    "id": "course-montagne-1-saison-0",
+    "nom": "Course Montagne 1",
+    "categorie": "monument",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": null
   }
 ]
