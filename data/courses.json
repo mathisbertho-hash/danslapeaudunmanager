@@ -43,5 +43,14 @@
     "pays": null,
     "nbEtapes": null,
     "profil": "accidente"
+  },
+  {
+    "id": "chrono-des-nations-saison-0",
+    "nom": "Chrono des Nations",
+    "categorie": "classique-conti",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "clm"
   }
 ]
