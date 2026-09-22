@@ -262,6 +262,17 @@ label { display: block; font-family: 'Oswald', sans-serif; font-size: 0.72rem; l
   padding: 1rem 0;
 }
 
+.flag-img {
+  vertical-align: -3px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+}
+.flag-emoji {
+  font-size: 1.05em;
+  vertical-align: -2px;
+}
+.cat-course-test { color: #ff8fb1; border-color: #ff8fb1; background: rgba(255,143,177,0.1); }
+
 footer.site {
   max-width: 960px;
   margin: 0 auto;
