@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Équipes — Le Gruppetto</title>
+<title>Équipes — Dans la peau d'un manager</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="equipes.html">
@@ -27,11 +27,12 @@
 
   const equipes = db.equipes.slice().sort((a, b) => a.nom.localeCompare(b.nom));
   document.getElementById('liste').innerHTML = `<table class="results">
-    <thead><tr><th>Équipe</th><th>Manager</th><th class="num">Effectif</th></tr></thead>
+    <thead><tr><th>Équipe</th><th>Manager</th><th>Nationalité</th><th class="num">Effectif</th></tr></thead>
     <tbody>${equipes.map(e => `
       <tr>
         <td><a href="equipe.html?id=${e.id}">${e.nom}</a></td>
         <td>${e.manager_forum || '—'}</td>
+        <td>${e.nationalite || '<span class="badge">?</span>'}</td>
         <td class="num">${effectifCount[e.id] || 0}</td>
       </tr>`).join('')}
     </tbody></table>`;

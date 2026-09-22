@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fiche coureur — Le Gruppetto</title>
+<title>Fiche coureur — Dans la peau d'un manager</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="coureurs.html">
@@ -41,16 +41,19 @@
   }
   apparitions.sort((a, b) => (a.place || 999) - (b.place || 999));
 
-  const victoires = apparitions.filter(a => a.place === 1 && a.statut === 'classe');
-  const podiums = apparitions.filter(a => a.place <= 3 && a.statut === 'classe');
+  const preSaisonIds = new Set(db.saisons.filter(s => s.preSaison).map(s => s.id));
+  const officielles = apparitions.filter(a => !preSaisonIds.has(a.saison));
+  const victoires = officielles.filter(a => a.place === 1 && a.statut === 'classe');
+  const podiums = officielles.filter(a => a.place <= 3 && a.statut === 'classe');
 
   el.innerHTML = `
     <h1>${coureur.nom}</h1>
-    <p class="lede">${equipe ? `<a href="equipe.html?id=${equipe.id}">${equipe.nom}</a>` : 'Équipe inconnue pour cette saison'} — ${saison.label}</p>
+    <p class="lede">${equipe ? `<a href="equipe.html?id=${equipe.id}">${equipe.nom}</a>` : 'Équipe inconnue pour cette saison'} — ${saison.label}${coureur.nationalite ? ` · ${coureur.nationalite}` : ''}${coureur.age ? ` · ${coureur.age} ans` : ''}</p>
 
     <div class="panel">
-      <h2 style="margin-bottom:0.4rem;">Palmarès</h2>
-      <p>${victoires.length} victoire${victoires.length > 1 ? 's' : ''} · ${podiums.length} podium${podiums.length > 1 ? 's' : ''} · ${apparitions.length} résultat${apparitions.length > 1 ? 's' : ''} enregistré${apparitions.length > 1 ? 's' : ''}</p>
+      <h2 style="margin-bottom:0.4rem;">Palmarès officiel</h2>
+      <p>${victoires.length} victoire${victoires.length > 1 ? 's' : ''} · ${podiums.length} podium${podiums.length > 1 ? 's' : ''} · ${officielles.length} résultat${officielles.length > 1 ? 's' : ''} officiel${officielles.length > 1 ? 's' : ''}</p>
+      <p class="lede" style="margin:0.3rem 0 0;">Hors pré-saison, qui ne compte pas dans le palmarès officiel.</p>
     </div>
 
     <div class="table-wrap">
@@ -58,11 +61,11 @@
       <table class="results">
         <thead><tr><th class="num">Place</th><th>Course</th><th>Type</th><th>Statut</th></tr></thead>
         <tbody>${apparitions.map(a => `
-          <tr class="${a.place <= 3 ? 'top3' : ''}">
+          <tr class="${a.place <= 3 && !preSaisonIds.has(a.saison) ? 'top3' : ''}">
             <td class="place num">${a.statut === 'classe' ? a.place : '—'}</td>
             <td>${a.course ? `<a href="course.html?id=${a.course.id}">${a.course.nom}</a>` : '?'}</td>
             <td>${a.type}</td>
-            <td>${a.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : ''}</td>
+            <td>${preSaisonIds.has(a.saison) ? '<span class="badge">pré-saison</span>' : ''} ${a.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : ''}</td>
           </tr>`).join('')}
         </tbody>
       </table>`}

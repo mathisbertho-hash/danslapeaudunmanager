@@ -1,4 +1,4 @@
-# Site de résultats — Le Gruppetto
+# Site de résultats — Dans la peau d'un manager
 
 ## Mise en ligne (10 minutes, gratuit, aucune carte bancaire)
 
@@ -24,6 +24,36 @@ Ouvre `admin.html`, cherche la ligne `const ADMIN_PASSWORD = 'tre-berg-1';` tout
 ## Sauvegarde / export
 
 Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureurs, effectifs, courses, résultats, barème. Comme il vit dans un dépôt Git, chaque écriture depuis l'admin crée un commit — tu as donc un historique complet et réversible (onglet "Commits" du dépôt sur GitHub). Pour une sauvegarde à part, télécharge simplement le dossier `data/` depuis GitHub ("Download ZIP" sur le dépôt) quand tu veux.
+
+## Depuis la v1
+
+- **Bug corrigé** : les effectifs par équipe étaient vides à cause d'un référentiel qui stockait le *nom* de l'équipe au lieu de son identifiant technique. C'est réparé — les 574 coureurs sont maintenant bien rattachés à leur équipe sur les fiches équipe.
+- **Nom du site** changé en « Dans la peau d'un manager », sans référence à une équipe en particulier.
+- **Saison 0 (pré-saison)** ajoutée aux référentiels (`data/saisons.json`, `preSaison: true`). Tu peux importer ses résultats depuis l'admin comme n'importe quelle saison : ils s'affichent sur les fiches coureur (badge « pré-saison ») mais sont exclus des classements officiels et du palmarès (victoires/podiums), comme demandé. Comme ces coureurs jouaient sous des équipes PCM aléatoires, ne crée pas d'effectif daté pour la saison 0 — le classement par équipes ignorera simplement ces lignes (déjà géré).
+- **Identifiants PCM et nationalité des coureurs** ajoutés à `data/coureurs.json` (champs `pcm_id`, `nationalite_code`, `nationalite`) à partir de `Pays_pour_créations_de_noms.xlsx`. Recoupement à **574/574 coureurs (100%)** grâce à un rapprochement par lettres qui ignore la façon dont le fichier découpe prénom/nom (utile pour les noms composés comme « Van Rensburg »). Affiché sur les fiches coureur et dans la liste des coureurs.
+- **Nationalité des équipes** : champ `nationalite` ajouté à `data/equipes.json`, affiché sur les fiches et la liste des équipes — mais **vide pour l'instant, je n'ai pas cette donnée**. Le tableau des managers que tu m'as donné avait bien une colonne « Nationalité » mais elle était vide pour toutes les lignes. Renvoie-la moi remplie et je l'intègre.
+- **Âge des coureurs** : champ `age` ajouté, toujours vide — le fichier Excel ne contient pas l'âge, il te faut m'envoyer un autre fichier pour ça.
+
+## Fichiers modifiés depuis ta dernière mise à jour du repo
+
+À remplacer dans ton dépôt GitHub (les autres fichiers n'ont pas changé) :
+
+- `index.html`
+- `coureurs.html`
+- `coureur.html`
+- `equipes.html`
+- `equipe.html`
+- `classements.html`
+- `courses.html`
+- `course.html`
+- `admin.html`
+- `README.md`
+- `js/nav.js`
+- `data/effectifs.json`
+- `data/saisons.json`
+- `data/coureurs.json`
+- `data/equipes.json`
+- `data/pays.json` *(nouveau fichier)*
 
 ## Où en est cette v1
 

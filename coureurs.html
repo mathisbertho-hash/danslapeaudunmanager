@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Coureurs — Le Gruppetto</title>
+<title>Coureurs — Dans la peau d'un manager</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="coureurs.html">
@@ -51,11 +51,12 @@
       return;
     }
     el.innerHTML = `<table class="results">
-      <thead><tr><th>Coureur</th><th>Équipe</th></tr></thead>
+      <thead><tr><th>Coureur</th><th>Équipe</th><th>Nationalité</th></tr></thead>
       <tbody>${filtered.map(r => `
         <tr>
           <td><a href="coureur.html?id=${encodeURIComponent(r.id)}">${r.nom}</a></td>
           <td>${r.equipeId ? `<a href="equipe.html?id=${encodeURIComponent(r.equipeId)}">${db.equipesById[r.equipeId].nom}</a>` : '<span class="badge warn">équipe inconnue</span>'}</td>
+          <td>${r.nationalite || '<span class="badge warn">?</span>'}</td>
         </tr>`).join('')}
       </tbody></table>`;
   }

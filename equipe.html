@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fiche équipe — Le Gruppetto</title>
+<title>Fiche équipe — Dans la peau d'un manager</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="equipes.html">
@@ -30,6 +30,7 @@
 
   const resultatsEquipe = [];
   for (const res of db.resultats) {
+    if (res.saison !== saison.id) continue; // palmarès officiel de la saison affichée uniquement
     const course = db.coursesById[res.courseId];
     for (const ligne of res.classement) {
       const eqId = db.equipeDuCoureur(ligne.coureurId, saison.id);
@@ -42,7 +43,7 @@
 
   el.innerHTML = `
     <h1>${equipe.nom}</h1>
-    <p class="lede">Manager : ${equipe.manager_forum || '—'}${equipe.lien_maillot ? ` · <a href="${equipe.lien_maillot}" target="_blank" rel="noopener">Maillot</a>` : ''}</p>
+    <p class="lede">Manager : ${equipe.manager_forum || '—'}${equipe.nationalite ? ` · ${equipe.nationalite}` : ''}${equipe.lien_maillot ? ` · <a href="${equipe.lien_maillot}" target="_blank" rel="noopener">Maillot</a>` : ''}</p>
 
     <div class="panel">
       <h2 style="margin-bottom:0.4rem;">Palmarès</h2>
