@@ -25,6 +25,46 @@ Ouvre `admin.html`, cherche la ligne `const ADMIN_PASSWORD = 'tre-berg-1';` tout
 
 Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureurs, effectifs, courses, résultats, barème. Comme il vit dans un dépôt Git, chaque écriture depuis l'admin crée un commit — tu as donc un historique complet et réversible (onglet "Commits" du dépôt sur GitHub). Pour une sauvegarde à part, télécharge simplement le dossier `data/` depuis GitHub ("Download ZIP" sur le dépôt) quand tu veux.
 
+## Depuis la dernière version (3) — gros passage
+
+### Data
+
+- **Pas de vrais doublons** dans les référentiels (équipes, coureurs, effectifs) — vérifié, propre.
+- **5 courses de la saison 0 mal étiquetées, corrigées sans perte de données.** Ce que tu prenais pour des doublons ne l'était pas : ce sont 10 courses différentes (coureurs 0% en commun entre chaque paire) qui ont récupéré le même nom/identifiant à l'import — sans doute le champ « nom de la course » pas remis à jour entre deux imports. J'ai séparé chaque paire en deux fiches distinctes : celle qui portait déjà le bon nom (Gent Wevelgem, Classique de Québec, GP Hageland, GP Matteotti, Chrono des Nations) reste inchangée ; l'autre a été isolée sous un nom provisoire « ⚠️ À renommer — podium : … ». **Il m'en faut le vrai nom** pour chacune (visible sur `courses.html`, filtre saison 0) :
+  - `gent-wevelgem-saison-0-a-renommer-3lf7t` — podium Modeste / Onyshchenko / Górski
+  - `classique-de-quebec-saison-0-a-renommer-32xsu` — podium Van Rensburg / Baptiste / Chaouchi
+  - `gp-hageland-saison-0-a-renommer-bxhdd` — podium Lin / Van Rossem / Novosel
+  - `gp-matteotti-saison-0-a-renommer-pf0ib` — podium Narine / Åkerlund / Harun
+  - `chrono-des-nations-saison-0-a-renommer-sr2pg` — podium Ngauamo / Zhao / Ramli
+- **Garde-fou ajouté dans l'admin** pour que ça ne se reproduise pas : impossible de créer une « nouvelle course » si son nom+saison existe déjà (il faut la sélectionner dans le menu existant) ; et si tu rattaches un résultat scratch/général/annexe à une course qui en a déjà un pour cette saison, l'admin demande confirmation avant d'enregistrer. Le bouton « Valider » se désactive aussi pendant l'enregistrement (évite les doubles clics).
+- **Lecture des temps corrigée** : gérait mal les écarts en secondes seules (`+ 8`, `+ 45"`) et les temps absolus sans heure (CLM de moins d'une heure, ex. `45'12`). Testé et validé sur ces cas, sans régression sur le format complet (`5h48'44`).
+
+### Équipes / managers — besoin de ta confirmation
+
+Tu signales que CCC et Vinted sont en réalité **la même équipe** (renommée en cours de jeu), ce qui expliquerait un mauvais comptage. Je n'ai **pas fusionné automatiquement** — fusionner à tort ferait perdre la distinction entre deux vraies équipes si je me trompe. Dis-moi :
+1. Est-ce uniquement CCC/Vinted, ou d'autres équipes de la liste des 26 sont dans le même cas (renommées en cours de route) ?
+2. Pour chaque cas, quel est le nom à garder (le plus récent, j'imagine) ?
+Dès que j'ai ta réponse, je fusionne proprement : un seul id d'équipe, tous les effectifs et résultats redirigés dessus, l'ancien nom gardé en historique sur la fiche.
+
+### UX
+
+- **Thème sombre** complet (fond quasi-noir, panneaux, tableaux, boutons), dans l'esprit de tes captures. Premier passage — dis-moi ce qui ne va pas encore.
+- **Drapeaux** 🇫🇷 ajoutés à côté de la nationalité des coureurs (liste + fiche), à partir du fichier des 1000. Pas encore sur les équipes (le champ nationalité équipe est toujours vide, voir plus haut) ni sur les pays de course (le champ `pays` des courses n'est jamais rempli pour l'instant — dis-moi si tu veux qu'on l'ajoute à la création de course dans l'admin).
+- **Pastilles de couleur par catégorie de course** (Monument, Grand Tour, WT, Conti, championnat national) sur la liste des courses et la fiche course.
+- **Nouvelle page `resultat.html`** : classement complet d'un résultat (tous les coureurs classés, pas juste le vainqueur), avec équipe et nationalité de chacun. Accessible depuis chaque ligne « classement complet → » sur la fiche course.
+- Maillots : pas encore fait, comme prévu « dans un temps 2 ».
+
+## Depuis la dernière version (2)
+
+- **Créer un coureur pas encore sous contrat, depuis l'import** : pour la saison 0 notamment, un coureur peut apparaître dans un résultat sans être dans `data/coureurs.json` (pas encore recruté). Sur une ligne non reconnue, l'admin propose maintenant, en plus du menu « associer à un coureur déjà créé », un champ texte avec autocomplétion sur les 1000 noms du fichier PCM (`data/pool_noms.json`, un simple référentiel de lookup, **pas** une liste de coureurs du jeu) et un bouton « + Créer ». La nationalité et l'ID PCM se remplissent automatiquement si le nom correspond à une entrée du fichier ; sinon le coureur est créé quand même, nationalité à compléter à la main plus tard. Ce coureur n'a pas d'équipe tant que tu ne lui crées pas d'entrée dans `data/effectifs.json` (à faire le jour où il signe).
+
+## Depuis la dernière version
+
+- **Profil de course** : nouveau champ `profil` sur les courses (plat / accidenté / montagne / CLM / pavés / mixte), renseignable à la création dans l'admin, affiché sur la fiche course.
+- **Étapes reliées entre elles** : les résultats de type « étape » ont maintenant un numéro (`etapeNumero`). L'admin te le demande, te signale les étapes déjà enregistrées pour la course sélectionnée (pour repérer les doublons), et la fiche course affiche désormais un tableau « Étapes » trié par numéro, séparé du tableau des vainqueurs scratch/général.
+- **Classements annexes** (points/montagne/jeune, version finale) ajoutés au menu déroulant de l'admin — ils étaient calculés par `points.js` mais impossibles à saisir jusqu'ici.
+- Rappel sur le rattachement à une course : l'admin ne devine jamais silencieusement — il propose un nom détecté dans le texte collé, mais te demande toujours de confirmer ou choisir la bonne course existante avant d'enregistrer.
+
 ## Depuis la v1
 
 - **Bug corrigé** : les effectifs par équipe étaient vides à cause d'un référentiel qui stockait le *nom* de l'équipe au lieu de son identifiant technique. C'est réparé — les 574 coureurs sont maintenant bien rattachés à leur équipe sur les fiches équipe.

@@ -48,7 +48,7 @@
 
   el.innerHTML = `
     <h1>${coureur.nom}</h1>
-    <p class="lede">${equipe ? `<a href="equipe.html?id=${equipe.id}">${equipe.nom}</a>` : 'Équipe inconnue pour cette saison'} — ${saison.label}${coureur.nationalite ? ` · ${coureur.nationalite}` : ''}${coureur.age ? ` · ${coureur.age} ans` : ''}</p>
+    <p class="lede">${equipe ? `<a href="equipe.html?id=${equipe.id}">${equipe.nom}</a>` : 'Équipe inconnue pour cette saison'} — ${saison.label}${coureur.nationalite ? ` · ${db.flagForCountry(coureur.nationalite)} ${coureur.nationalite}` : ''}${coureur.age ? ` · ${coureur.age} ans` : ''}</p>
 
     <div class="panel">
       <h2 style="margin-bottom:0.4rem;">Palmarès officiel</h2>

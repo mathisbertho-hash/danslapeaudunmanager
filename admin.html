@@ -390,7 +390,34 @@ async function validerImport() {
     if (doublon && !confirm(`Une étape ${etapeNumero} existe déjà pour cette course. L'ajouter quand même (doublon) ?`)) {
       return;
     }
+  } else if (courseExistanteId) {
+    // Une course « rattachée » ne devrait avoir qu'un seul résultat scratch/général/annexe
+    // par saison et par type. On avertit avant d'en ajouter un second, plutôt que de
+    // laisser deux résultats coexister silencieusement sous la même course (c'est
+    // exactement ce qui a créé les doublons précédents).
+    const doublon = DB.resultats.some(r => r.courseId === courseExistanteId && r.saison === saisonId && r.type === type);
+    if (doublon) {
+      const nomCourseCible = DB.coursesById[courseExistanteId]?.nom || courseExistanteId;
+      if (!confirm(`Un résultat de type « ${type} » existe déjà pour « ${nomCourseCible} » cette saison. Es-tu sûr que c'est bien la même course que celle que tu importes (et pas une autre course qui porte un nom similaire) ? Continuer quand même ?`)) {
+        return;
+      }
+    }
   }
+
+  // Empêche de créer une « nouvelle course » dont l'identifiant existe déjà
+  // (même nom + même saison) — c'est ce qui a produit des courses en double.
+  if (!courseId) {
+    const nomSaisi = document.getElementById('apNouveauNom').value.trim();
+    const idPotentiel = slugify(nomSaisi) + '-' + saisonId;
+    if (DB.coursesById[idPotentiel]) {
+      log(`Une course « ${DB.coursesById[idPotentiel].nom} » existe déjà pour cette saison — sélectionne-la dans « Rattacher à une course existante » au lieu d'en créer une nouvelle.`, 'err');
+      return;
+    }
+  }
+
+  const btnValider = document.getElementById('btnValiderImport');
+  btnValider.disabled = true;
+  btnValider.textContent = 'Enregistrement…';
 
   try {
     if (pendingNewRiders.length > 0) {
@@ -435,6 +462,9 @@ async function validerImport() {
     dernierApercu = null;
   } catch (e) {
     log(`Échec de l'enregistrement : ${e.message}`, 'err');
+  } finally {
+    btnValider.disabled = false;
+    btnValider.textContent = 'Valider et enregistrer';
   }
 }
 

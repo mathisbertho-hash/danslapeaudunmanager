@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Classement complet — Dans la peau d'un manager</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="courses.html">
+<main>
+  <div id="contenu"><p class="empty">Chargement…</p></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const id = new URLSearchParams(location.search).get('id');
+  const resultat = db.resultats.find(r => r.id === id);
+  const el = document.getElementById('contenu');
+  if (!resultat) { el.innerHTML = '<p class="empty">Résultat introuvable.</p>'; return; }
+
+  const course = db.coursesById[resultat.courseId];
+  const saisonLabel = db.saisons.find(s => s.id === resultat.saison)?.label || resultat.saison;
+  const typeLabels = {
+    scratch: 'Classement', general: 'Général final', etape: `Étape ${resultat.etapeNumero ?? ''}`,
+    points: 'Classement annexe — points', montagne: 'Classement annexe — montagne', jeune: 'Classement annexe — jeune',
+  };
+
+  const classement = resultat.classement.slice().sort((a, b) => {
+    if (a.statut === 'classe' && b.statut !== 'classe') return -1;
+    if (a.statut !== 'classe' && b.statut === 'classe') return 1;
+    return (a.place || 999) - (b.place || 999);
+  });
+
+  el.innerHTML = `
+    <h1>${course ? course.nom : '?'}</h1>
+    <p class="lede"><a href="course.html?id=${resultat.courseId}">← retour à la fiche course</a> · ${typeLabels[resultat.type] || resultat.type} · ${saisonLabel}</p>
+
+    <div class="table-wrap">
+      <table class="results">
+        <thead><tr><th class="num">Pl.</th><th>Coureur</th><th>Équipe</th><th>Nationalité</th><th>Temps</th></tr></thead>
+        <tbody>${classement.map(l => {
+          const c = db.coureursById[l.coureurId];
+          const equipeId = db.equipeDuCoureur(l.coureurId, resultat.saison);
+          const equipe = equipeId ? db.equipesById[equipeId] : null;
+          return `<tr class="${l.place <= 3 && l.statut === 'classe' ? 'top3' : ''}">
+            <td class="place num">${l.statut === 'classe' ? l.place : '—'}</td>
+            <td>${c ? `<a href="coureur.html?id=${c.id}">${c.nom}</a>` : (l.coureurId || '?')}</td>
+            <td>${equipe ? `<a href="equipe.html?id=${equipe.id}">${equipe.nom}</a>` : '<span class="badge warn">inconnue</span>'}</td>
+            <td>${c?.nationalite ? `${db.flagForCountry(c.nationalite)} ${c.nationalite}` : ''}</td>
+            <td>${l.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : (l.temps || '—')}</td>
+          </tr>`;
+        }).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+})();
+</script>
+</body>
+</html>

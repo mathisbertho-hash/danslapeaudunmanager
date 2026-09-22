@@ -56,7 +56,7 @@
         <tr>
           <td><a href="coureur.html?id=${encodeURIComponent(r.id)}">${r.nom}</a></td>
           <td>${r.equipeId ? `<a href="equipe.html?id=${encodeURIComponent(r.equipeId)}">${db.equipesById[r.equipeId].nom}</a>` : '<span class="badge warn">équipe inconnue</span>'}</td>
-          <td>${r.nationalite || '<span class="badge warn">?</span>'}</td>
+          <td>${r.nationalite ? `${db.flagForCountry(r.nationalite)} ${r.nationalite}` : '<span class="badge warn">?</span>'}</td>
         </tr>`).join('')}
       </tbody></table>`;
   }

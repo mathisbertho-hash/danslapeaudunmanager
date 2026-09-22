@@ -36,18 +36,18 @@
 
   el.innerHTML = `
     <h1>${course.nom}</h1>
-    <p class="lede">${db.categoriesById[course.categorie]?.nom || course.categorie}${course.pays ? ` · ${course.pays}` : ''}${course.profil ? ` · ${profilLabels[course.profil] || course.profil}` : ''}${course.nbEtapes ? ` · ${course.nbEtapes} étapes` : ''}</p>
+    <p class="lede"><span class="badge cat-${course.categorie}">${db.categoriesById[course.categorie]?.nom || course.categorie}</span>${course.pays ? ` · ${course.pays}` : ''}${course.profil ? ` · ${profilLabels[course.profil] || course.profil}` : ''}${course.nbEtapes ? ` · ${course.nbEtapes} étapes` : ''}</p>
 
     ${etapes.length > 0 ? `
     <h2 style="margin: 1rem 0 0.6rem;">Étapes</h2>
     <div class="table-wrap">
       <table class="results">
-        <thead><tr><th>Saison</th><th class="num">Étape</th><th>Vainqueur</th></tr></thead>
+        <thead><tr><th>Saison</th><th class="num">Étape</th><th>Vainqueur</th><th></th></tr></thead>
         <tbody>${etapes.map(r => {
           const vainqueur = r.classement.find(l => l.place === 1 && l.statut === 'classe');
           const c = vainqueur ? db.coureursById[vainqueur.coureurId] : null;
           const saisonLabel = db.saisons.find(s => s.id === r.saison)?.label || r.saison;
-          return `<tr><td>${saisonLabel}</td><td class="num">${r.etapeNumero ?? '—'}</td><td>${c ? `<a href="coureur.html?id=${c.id}">${c.nom}</a>` : '—'}</td></tr>`;
+          return `<tr><td>${saisonLabel}</td><td class="num">${r.etapeNumero ?? '—'}</td><td>${c ? `<a href="coureur.html?id=${c.id}">${c.nom}</a>` : '—'}</td><td><a href="resultat.html?id=${r.id}">classement complet →</a></td></tr>`;
         }).join('')}
         </tbody></table>
     </div>` : ''}
@@ -56,12 +56,12 @@
     <div class="table-wrap">
       ${resultatsPrincipaux.length === 0 ? '<p class="empty">Aucun résultat enregistré pour cette course.</p>' : `
       <table class="results">
-        <thead><tr><th>Saison</th><th>Vainqueur</th></tr></thead>
+        <thead><tr><th>Saison</th><th>Vainqueur</th><th></th></tr></thead>
         <tbody>${resultatsPrincipaux.map(r => {
           const vainqueur = r.classement.find(l => l.place === 1 && l.statut === 'classe');
           const c = vainqueur ? db.coureursById[vainqueur.coureurId] : null;
           const saisonLabel = db.saisons.find(s => s.id === r.saison)?.label || r.saison;
-          return `<tr><td>${saisonLabel}</td><td>${c ? `<a href="coureur.html?id=${c.id}">${c.nom}</a>` : '—'}</td></tr>`;
+          return `<tr><td>${saisonLabel}</td><td>${c ? `<a href="coureur.html?id=${c.id}">${c.nom}</a>` : '—'}</td><td><a href="resultat.html?id=${r.id}">classement complet →</a></td></tr>`;
         }).join('')}
         </tbody></table>`}
     </div>

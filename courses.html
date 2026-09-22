@@ -36,7 +36,7 @@
       <tbody>${filtered.map(c => `
         <tr>
           <td><a href="course.html?id=${c.id}">${c.nom}</a></td>
-          <td>${db.categoriesById[c.categorie]?.nom || c.categorie}</td>
+          <td><span class="badge cat-${c.categorie}">${db.categoriesById[c.categorie]?.nom || c.categorie}</span></td>
           <td>${c.pays || '—'}</td>
         </tr>`).join('')}
       </tbody></table>`;
