@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coureurs — Le Gruppetto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="coureurs.html">
+<main>
+  <h1>Coureurs</h1>
+  <p class="lede">574 coureurs recensés pour la saison en cours. Cherche un nom ou filtre par équipe.</p>
+
+  <div class="filters">
+    <input type="text" id="q" placeholder="Chercher un coureur…">
+    <select id="fEquipe"><option value="">Toutes les équipes</option></select>
+  </div>
+
+  <div class="table-wrap"><div id="liste"><p class="empty">Chargement…</p></div></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const saison = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
+
+  const fEquipe = document.getElementById('fEquipe');
+  fEquipe.innerHTML += db.equipes
+    .slice().sort((a, b) => a.nom.localeCompare(b.nom))
+    .map(e => `<option value="${e.id}">${e.nom}</option>`).join('');
+
+  const rows = db.coureurs.map(c => ({
+    ...c,
+    equipeId: db.equipeDuCoureur(c.id, saison.id),
+  })).sort((a, b) => a.nom.localeCompare(b.nom));
+
+  const q = document.getElementById('q');
+  const el = document.getElementById('liste');
+
+  function render() {
+    const term = q.value.trim().toLowerCase();
+    const eqFilter = fEquipe.value;
+    const filtered = rows.filter(r =>
+      (!term || r.nom.toLowerCase().includes(term)) &&
+      (!eqFilter || r.equipeId === eqFilter)
+    );
+    if (filtered.length === 0) {
+      el.innerHTML = '<p class="empty">Aucun coureur ne correspond.</p>';
+      return;
+    }
+    el.innerHTML = `<table class="results">
+      <thead><tr><th>Coureur</th><th>Équipe</th></tr></thead>
+      <tbody>${filtered.map(r => `
+        <tr>
+          <td><a href="coureur.html?id=${encodeURIComponent(r.id)}">${r.nom}</a></td>
+          <td>${r.equipeId ? `<a href="equipe.html?id=${encodeURIComponent(r.equipeId)}">${db.equipesById[r.equipeId].nom}</a>` : '<span class="badge warn">équipe inconnue</span>'}</td>
+        </tr>`).join('')}
+      </tbody></table>`;
+  }
+  q.addEventListener('input', render);
+  fEquipe.addEventListener('change', render);
+  render();
+})();
+</script>
+</body>
+</html>

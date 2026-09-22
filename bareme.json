@@ -1,0 +1,26 @@
+{
+  "_comment": "Barème à remplir : points[categorie][place] = points. Place '1'..'N', laisser vide tant que non fourni par l'organisateur.",
+  "individuel_scratch": {
+    "monument": {},
+    "gt": {},
+    "cpe-wt": {},
+    "classique-wt": {},
+    "cpe-conti": {},
+    "classique-conti": {},
+    "championnat-national": {}
+  },
+  "etape": {
+    "gt": {},
+    "cpe-wt": {},
+    "cpe-conti": {}
+  },
+  "classement_annexe": {
+    "points": {},
+    "montagne": {},
+    "jeune": {}
+  },
+  "maillot_porte": {
+    "actif": false,
+    "points_par_jour": {}
+  }
+}

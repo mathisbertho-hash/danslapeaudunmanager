@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin — Le Gruppetto</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .step { border-left: 3px solid var(--green); padding-left: 0.8rem; margin-bottom: 1.4rem; }
+  .row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .row > * { flex: 1; min-width: 140px; }
+  select.assign { font-size: 0.82rem; padding: 0.25rem; }
+  #log { font-size: 0.85rem; }
+  #log .ok { color: var(--green-dark); }
+  #log .err { color: var(--danger); }
+</style>
+</head>
+<body data-page="admin.html">
+<main>
+  <h1>Admin</h1>
+
+  <!-- ÉTAPE 0 : mot de passe -->
+  <div id="gatePanel" class="panel">
+    <p class="lede" style="margin-bottom:0.6rem;">
+      Cette page est réservée au directeur sportif qui saisit les résultats.
+      <strong>Attention</strong> : ce mot de passe protège l'accès à l'écran, mais
+      les écritures réelles passent par un token GitHub que toi seul possèdes —
+      c'est lui, la vraie protection.
+    </p>
+    <label for="pwd">Mot de passe admin</label>
+    <input type="password" id="pwd" placeholder="•••••••">
+    <p style="margin-top:0.8rem;"><button class="btn" id="btnUnlock">Entrer</button></p>
+    <p id="pwdErr" class="badge warn" style="display:none;margin-top:0.6rem;">Mot de passe incorrect.</p>
+  </div>
+
+  <div id="adminPanel" style="display:none;">
+
+    <div class="step panel">
+      <h2>1. Connexion au dépôt GitHub</h2>
+      <p class="lede" style="margin:0.3rem 0 0.6rem;">
+        À faire une seule fois par navigateur. Le token reste stocké localement,
+        il n'est envoyé qu'à GitHub.
+      </p>
+      <div class="row">
+        <div><label>Utilisateur / organisation GitHub</label><input type="text" id="ghOwner" placeholder="ex : sumatrana"></div>
+        <div><label>Nom du dépôt</label><input type="text" id="ghRepo" placeholder="ex : gruppetto-resultats"></div>
+        <div><label>Branche</label><input type="text" id="ghBranch" value="main"></div>
+      </div>
+      <label>Token GitHub (fine-grained, permission Contents: Read and write, limité à ce dépôt)</label>
+      <input type="password" id="ghToken" placeholder="github_pat_...">
+      <p style="margin-top:0.7rem;">
+        <button class="btn" id="btnSaveConf">Enregistrer</button>
+        <button class="btn secondary" id="btnTestConf">Tester la connexion</button>
+      </p>
+      <p id="ghStatus" style="margin-top:0.5rem;"></p>
+    </div>
+
+    <div class="step panel">
+      <h2>2. Importer un résultat (copier-coller)</h2>
+      <label>Saison</label>
+      <select id="impSaison"></select>
+      <label>Texte copié depuis le forum</label>
+      <textarea id="impTexte" rows="10" placeholder="Colle ici le classement complet…"></textarea>
+      <p style="margin-top:0.7rem;"><button class="btn" id="btnParse">Analyser</button></p>
+
+      <div id="impApercu" style="margin-top:1rem;"></div>
+    </div>
+
+    <div class="step panel">
+      <h2>3. Barème de points</h2>
+      <p class="lede" style="margin:0.3rem 0 0.6rem;">
+        Structure éditable en JSON. Renseigne les points par catégorie de course et
+        par place (clé = place, valeur = points). Ne rien inventer : reprends le
+        barème fourni par l'organisateur.
+      </p>
+      <textarea id="baremeJson" rows="14"></textarea>
+      <p style="margin-top:0.7rem;">
+        <button class="btn" id="btnSaveBareme">Enregistrer le barème</button>
+      </p>
+    </div>
+
+    <div class="step panel">
+      <h2>Journal</h2>
+      <div id="log"><p class="empty">Rien à signaler pour l'instant.</p></div>
+    </div>
+  </div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/parse.js"></script>
+<script src="js/github.js"></script>
+<script src="js/nav.js"></script>
+<script>
+const ADMIN_PWD_KEY = 'gruppetto_admin_ok';
+// Mot de passe défini côté client — à changer avant la mise en ligne.
+const ADMIN_PASSWORD = 'tre-berg-1';
+
+let DB = null;
+
+function log(msg, kind) {
+  const el = document.getElementById('log');
+  if (el.querySelector('.empty')) el.innerHTML = '';
+  const p = document.createElement('p');
+  p.className = kind || '';
+  p.textContent = `${new Date().toLocaleTimeString('fr-FR')} — ${msg}`;
+  el.prepend(p);
+}
+
+document.getElementById('btnUnlock').addEventListener('click', () => {
+  const val = document.getElementById('pwd').value;
+  if (val === ADMIN_PASSWORD) {
+    sessionStorage.setItem(ADMIN_PWD_KEY, '1');
+    unlock();
+  } else {
+    document.getElementById('pwdErr').style.display = 'block';
+  }
+});
+
+async function unlock() {
+  document.getElementById('gatePanel').style.display = 'none';
+  document.getElementById('adminPanel').style.display = 'block';
+  DB = await loadAllData();
+
+  // Config GitHub
+  const conf = ghGetConf();
+  if (conf) {
+    document.getElementById('ghOwner').value = conf.owner || '';
+    document.getElementById('ghRepo').value = conf.repo || '';
+    document.getElementById('ghBranch').value = conf.branch || 'main';
+    document.getElementById('ghToken').value = conf.token || '';
+  }
+
+  // Saisons pour l'import
+  const impSaison = document.getElementById('impSaison');
+  impSaison.innerHTML = DB.saisons.map(s => `<option value="${s.id}">${s.label}${s.statut === 'cloturee' ? ' (clôturée)' : ''}</option>`).join('');
+  const ouverte = DB.saisons.find(s => s.statut === 'ouverte');
+  if (ouverte) impSaison.value = ouverte.id;
+
+  // Barème
+  document.getElementById('baremeJson').value = JSON.stringify(DB.bareme, null, 2);
+}
+
+if (sessionStorage.getItem(ADMIN_PWD_KEY) === '1') unlock();
+
+document.getElementById('btnSaveConf').addEventListener('click', () => {
+  ghSetConf({
+    owner: document.getElementById('ghOwner').value.trim(),
+    repo: document.getElementById('ghRepo').value.trim(),
+    branch: document.getElementById('ghBranch').value.trim() || 'main',
+    token: document.getElementById('ghToken').value.trim(),
+  });
+  log('Configuration GitHub enregistrée dans ce navigateur.', 'ok');
+});
+
+document.getElementById('btnTestConf').addEventListener('click', async () => {
+  const statusEl = document.getElementById('ghStatus');
+  statusEl.textContent = 'Test en cours…';
+  try {
+    const info = await ghTestConnection();
+    statusEl.innerHTML = `<span class="badge ok">Connecté à ${info.full_name}</span>`;
+  } catch (e) {
+    statusEl.innerHTML = `<span class="badge warn">${e.message}</span>`;
+  }
+});
+
+// --- Import texte ---
+let dernierApercu = null;
+
+document.getElementById('btnParse').addEventListener('click', () => {
+  const texte = document.getElementById('impTexte').value;
+  if (!texte.trim()) return;
+  const resultat = parseTexteResultats(texte, DB.coureurs);
+  dernierApercu = resultat;
+  renderApercu(resultat);
+});
+
+function renderApercu(resultat) {
+  const el = document.getElementById('impApercu');
+  const nbAmbigus = resultat.lignes.filter(l => l.ambigu).length;
+
+  const coursesOptions = DB.courses
+    .map(c => `<option value="${c.id}">${c.nom}</option>`)
+    .join('');
+
+  el.innerHTML = `
+    <p><strong>Course détectée :</strong> ${resultat.nomCourse || '<em>non détectée — précise ci-dessous</em>'}</p>
+    <div class="row">
+      <div>
+        <label>Rattacher à une course existante</label>
+        <select id="apCourseExistante"><option value="">— nouvelle course —</option>${coursesOptions}</select>
+      </div>
+      <div>
+        <label>Nom de la nouvelle course (si besoin)</label>
+        <input type="text" id="apNouveauNom" value="${resultat.nomCourse || ''}">
+      </div>
+      <div>
+        <label>Catégorie</label>
+        <select id="apCategorie">${DB.categories.map(c => `<option value="${c.id}">${c.nom}</option>`).join('')}</select>
+      </div>
+      <div>
+        <label>Type de classement</label>
+        <select id="apType">
+          <option value="scratch">Scratch (course en ligne)</option>
+          <option value="general">Général final (course par étapes)</option>
+          <option value="etape">Étape</option>
+        </select>
+      </div>
+    </div>
+
+    ${nbAmbigus > 0 ? `<p class="badge warn" style="margin-top:0.6rem;">${nbAmbigus} ligne(s) avec un nom non reconnu — à associer manuellement ci-dessous avant d'enregistrer.</p>` : `<p class="badge ok" style="margin-top:0.6rem;">Tous les noms ont été reconnus.</p>`}
+
+    <div class="table-wrap" style="margin-top:0.6rem;">
+      <table class="results">
+        <thead><tr><th class="num">Pl.</th><th>Ligne originale</th><th>Coureur</th><th>Temps</th><th>Statut</th></tr></thead>
+        <tbody>
+          ${resultat.lignes.map((l, i) => `
+            <tr>
+              <td class="place num">${l.place}</td>
+              <td style="font-size:0.78rem;color:var(--muted);">${l.raw}</td>
+              <td>${l.ambigu ? `<select class="assign" data-idx="${i}">
+                    <option value="">— choisir —</option>
+                    ${DB.coureurs.map(c => `<option value="${c.id}">${c.nom}</option>`).join('')}
+                  </select>` : `<span class="badge ok">${l.nomBrut}</span>`}</td>
+              <td>${l.temps || (l.statut === 'abandon' ? 'DNF' : '—')}</td>
+              <td>${l.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : 'classé'}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:0.8rem;"><button class="btn" id="btnValiderImport">Valider et enregistrer</button></p>
+  `;
+
+  document.getElementById('btnValiderImport').addEventListener('click', validerImport);
+}
+
+async function validerImport() {
+  if (!dernierApercu) return;
+
+  // Applique les associations manuelles choisies dans les <select class="assign">
+  document.querySelectorAll('select.assign').forEach(sel => {
+    const idx = parseInt(sel.dataset.idx, 10);
+    if (sel.value) {
+      dernierApercu.lignes[idx].coureurId = sel.value;
+      dernierApercu.lignes[idx].ambigu = false;
+    }
+  });
+
+  const restants = dernierApercu.lignes.filter(l => l.ambigu);
+  if (restants.length > 0) {
+    log(`${restants.length} coureur(s) encore non associé(s) — corrige avant d'enregistrer.`, 'err');
+    return;
+  }
+
+  const saisonId = document.getElementById('impSaison').value;
+  const type = document.getElementById('apType').value;
+  const courseExistanteId = document.getElementById('apCourseExistante').value;
+  let courseId = courseExistanteId;
+
+  try {
+    if (!courseId) {
+      const nom = document.getElementById('apNouveauNom').value.trim();
+      if (!nom) { log('Nom de course manquant.', 'err'); return; }
+      const categorie = document.getElementById('apCategorie').value;
+      const id = slugify(nom) + '-' + saisonId;
+      const nouvelleCourse = { id, nom, categorie, saison: saisonId, pays: null, nbEtapes: null };
+      DB.courses.push(nouvelleCourse);
+      DB.coursesById[id] = nouvelleCourse;
+      courseId = id;
+      await ghWriteJsonFile('data/courses.json', DB.courses, `Ajout course : ${nom}`);
+      log(`Course « ${nom} » créée.`, 'ok');
+    }
+
+    const nouveauResultat = {
+      id: uid('res'),
+      courseId,
+      type,
+      saison: saisonId,
+      classement: dernierApercu.lignes.map(l => ({
+        place: l.place,
+        coureurId: l.coureurId,
+        statut: l.statut,
+        temps: l.temps,
+      })),
+    };
+    DB.resultats.push(nouveauResultat);
+    await ghWriteJsonFile('data/resultats.json', DB.resultats, `Import résultat : ${DB.coursesById[courseId].nom}`);
+    log(`Résultat enregistré pour « ${DB.coursesById[courseId].nom} » (${nouveauResultat.classement.length} lignes).`, 'ok');
+
+    document.getElementById('impTexte').value = '';
+    document.getElementById('impApercu').innerHTML = '';
+    dernierApercu = null;
+  } catch (e) {
+    log(`Échec de l'enregistrement : ${e.message}`, 'err');
+  }
+}
+
+// --- Barème ---
+document.getElementById('btnSaveBareme').addEventListener('click', async () => {
+  let parsed;
+  try {
+    parsed = JSON.parse(document.getElementById('baremeJson').value);
+  } catch (e) {
+    log(`JSON du barème invalide : ${e.message}`, 'err');
+    return;
+  }
+  try {
+    await ghWriteJsonFile('data/bareme.json', parsed, 'Mise à jour du barème');
+    DB.bareme = parsed;
+    log('Barème enregistré.', 'ok');
+  } catch (e) {
+    log(`Échec de l'enregistrement du barème : ${e.message}`, 'err');
+  }
+});
+</script>
+</body>
+</html>

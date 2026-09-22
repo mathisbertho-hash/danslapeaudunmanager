@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Classements — Le Gruppetto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="classements.html">
+<main>
+  <h1>Classements</h1>
+  <p class="lede">Filtre par saison et par catégorie de course. Les égalités sont affichées ex æquo.</p>
+
+  <div class="filters">
+    <select id="fSaison"></select>
+    <select id="fCategorie"><option value="">Toutes catégories</option></select>
+    <select id="fType">
+      <option value="individuel-points">Individuel — points</option>
+      <option value="individuel-victoires">Individuel — victoires</option>
+      <option value="equipe-points">Équipes — points</option>
+      <option value="equipe-victoires">Équipes — victoires</option>
+    </select>
+  </div>
+
+  <div class="table-wrap"><div id="tableau"><p class="empty">Chargement…</p></div></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/points.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const fSaison = document.getElementById('fSaison');
+  const fCategorie = document.getElementById('fCategorie');
+  const fType = document.getElementById('fType');
+
+  fSaison.innerHTML = db.saisons
+    .filter(s => !s.preSaison)
+    .map(s => `<option value="${s.id}">${s.label}</option>`).join('');
+  const saisonOuverte = db.saisons.find(s => s.statut === 'ouverte');
+  if (saisonOuverte) fSaison.value = saisonOuverte.id;
+
+  fCategorie.innerHTML += db.categories.map(c => `<option value="${c.id}">${c.nom}</option>`).join('');
+
+  function labelFor(kind) {
+    return {
+      'individuel-points': ['individuelPoints', 'Coureur', 'Points'],
+      'individuel-victoires': ['individuelVictoires', 'Coureur', 'Victoires'],
+      'equipe-points': ['equipePoints', 'Équipe', 'Points'],
+      'equipe-victoires': ['equipeVictoires', 'Équipe', 'Victoires'],
+    }[kind];
+  }
+
+  function render() {
+    const resultats = filtrerResultats(db, db.resultats, {
+      saisonId: fSaison.value || null,
+      categorieId: fCategorie.value || null,
+    });
+    const classements = calculerClassements(db, resultats, fSaison.value);
+    const [key, labelCol, valeurCol] = labelFor(fType.value);
+    const classe = avecRang(classements[key]);
+
+    const el = document.getElementById('tableau');
+    if (classe.length === 0) {
+      el.innerHTML = '<p class="empty">Aucune donnée pour ce filtre.</p>';
+      return;
+    }
+    const isTeam = fType.value.startsWith('equipe');
+    el.innerHTML = `<table class="results">
+      <thead><tr><th class="num">Rg</th><th>${labelCol}</th><th class="num">${valeurCol}</th></tr></thead>
+      <tbody>${classe.map(c => `
+        <tr class="${c.rang <= 3 ? 'top3' : ''}">
+          <td class="place num">${c.rang}</td>
+          <td><a href="${isTeam ? 'equipe' : 'coureur'}.html?id=${encodeURIComponent(c.id)}">${c.label}</a></td>
+          <td class="num">${c.valeur}</td>
+        </tr>`).join('')}
+      </tbody></table>`;
+  }
+
+  [fSaison, fCategorie, fType].forEach(el => el.addEventListener('change', render));
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Courses — Le Gruppetto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="courses.html">
+<main>
+  <h1>Courses</h1>
+  <p class="lede">Le calendrier de la saison et les vainqueurs successifs de chaque épreuve.</p>
+  <div class="filters">
+    <select id="fCategorie"><option value="">Toutes catégories</option></select>
+  </div>
+  <div class="table-wrap"><div id="liste"><p class="empty">Chargement…</p></div></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const fCategorie = document.getElementById('fCategorie');
+  fCategorie.innerHTML += db.categories.map(c => `<option value="${c.id}">${c.nom}</option>`).join('');
+
+  function render() {
+    const filtered = db.courses.filter(c => !fCategorie.value || c.categorie === fCategorie.value);
+    const el = document.getElementById('liste');
+    if (filtered.length === 0) {
+      el.innerHTML = '<p class="empty">Aucune course enregistrée pour l’instant. Ajoute-les depuis l’onglet Admin.</p>';
+      return;
+    }
+    el.innerHTML = `<table class="results">
+      <thead><tr><th>Course</th><th>Catégorie</th><th>Pays</th></tr></thead>
+      <tbody>${filtered.map(c => `
+        <tr>
+          <td><a href="course.html?id=${c.id}">${c.nom}</a></td>
+          <td>${db.categoriesById[c.categorie]?.nom || c.categorie}</td>
+          <td>${c.pays || '—'}</td>
+        </tr>`).join('')}
+      </tbody></table>`;
+  }
+  fCategorie.addEventListener('change', render);
+  render();
+})();
+</script>
+</body>
+</html>

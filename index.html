@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Gruppetto — Résultats &amp; classements</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index.html">
+<main>
+  <h1>Résultats &amp; classements</h1>
+  <p class="lede">
+    Tous les résultats du jeu, centralisés : palmarès des coureurs, des équipes,
+    et classements officiels aux points et aux victoires. Trouve ce que tu
+    cherches en un clic ci-dessous.
+  </p>
+
+  <div class="grid-links">
+    <a href="classements.html">
+      <span class="tag">Classement général</span>
+      <span class="sub">Individuel &amp; par équipes, points &amp; victoires</span>
+    </a>
+    <a href="coureurs.html">
+      <span class="tag">Coureurs</span>
+      <span class="sub">Palmarès, fiche par coureur</span>
+    </a>
+    <a href="equipes.html">
+      <span class="tag">Équipes</span>
+      <span class="sub">Effectifs, résultats par écurie</span>
+    </a>
+    <a href="courses.html">
+      <span class="tag">Courses</span>
+      <span class="sub">Calendrier &amp; vainqueurs successifs</span>
+    </a>
+  </div>
+
+  <div class="panel">
+    <h2 style="margin-bottom:0.5rem;">Top 10 — Classement individuel aux points</h2>
+    <div id="top10" class="table-wrap"><p class="empty">Chargement…</p></div>
+    <p style="margin-top:0.6rem;"><a href="classements.html">Voir le classement complet →</a></p>
+  </div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/points.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  try {
+    const db = await loadAllData();
+    const saisonCourante = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
+    const resultats = filtrerResultats(db, db.resultats, { saisonId: saisonCourante?.id });
+    const { individuelPoints } = calculerClassements(db, resultats, saisonCourante?.id);
+    const classe = avecRang(individuelPoints).slice(0, 10);
+
+    const el = document.getElementById('top10');
+    if (classe.length === 0) {
+      el.innerHTML = '<p class="empty">Aucun résultat saisi pour l’instant. Rends-toi dans l’onglet Admin pour importer les premiers classements.</p>';
+      return;
+    }
+    el.innerHTML = `<table class="results">
+      <thead><tr><th class="num">Rg</th><th>Coureur</th><th class="num">Points</th></tr></thead>
+      <tbody>${classe.map(c => `
+        <tr class="${c.rang <= 3 ? 'top3' : ''}">
+          <td class="place num">${c.rang}</td>
+          <td><a href="coureur.html?id=${encodeURIComponent(c.id)}">${c.label}</a></td>
+          <td class="num">${c.valeur}</td>
+        </tr>`).join('')}
+      </tbody></table>`;
+  } catch (e) {
+    document.getElementById('top10').innerHTML = `<p class="empty">Erreur de chargement : ${e.message}</p>`;
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiche course — Le Gruppetto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="courses.html">
+<main>
+  <div id="contenu"><p class="empty">Chargement…</p></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const id = new URLSearchParams(location.search).get('id');
+  const course = db.coursesById[id];
+  const el = document.getElementById('contenu');
+  if (!course) { el.innerHTML = '<p class="empty">Course introuvable.</p>'; return; }
+
+  const resultatsPrincipaux = db.resultats.filter(r =>
+    r.courseId === course.id && (r.type === 'scratch' || r.type === 'general')
+  );
+
+  el.innerHTML = `
+    <h1>${course.nom}</h1>
+    <p class="lede">${db.categoriesById[course.categorie]?.nom || course.categorie}${course.pays ? ` · ${course.pays}` : ''}${course.nbEtapes ? ` · ${course.nbEtapes} étapes` : ''}</p>
+
+    <h2 style="margin: 1rem 0 0.6rem;">Vainqueurs successifs</h2>
+    <div class="table-wrap">
+      ${resultatsPrincipaux.length === 0 ? '<p class="empty">Aucun résultat enregistré pour cette course.</p>' : `
+      <table class="results">
+        <thead><tr><th>Saison</th><th>Vainqueur</th></tr></thead>
+        <tbody>${resultatsPrincipaux.map(r => {
+          const vainqueur = r.classement.find(l => l.place === 1 && l.statut === 'classe');
+          const c = vainqueur ? db.coureursById[vainqueur.coureurId] : null;
+          const saisonLabel = db.saisons.find(s => s.id === r.saison)?.label || r.saison;
+          return `<tr><td>${saisonLabel}</td><td>${c ? `<a href="coureur.html?id=${c.id}">${c.nom}</a>` : '—'}</td></tr>`;
+        }).join('')}
+        </tbody></table>`}
+    </div>
+  `;
+})();
+</script>
+</body>
+</html>

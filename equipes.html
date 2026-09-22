@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Équipes — Le Gruppetto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="equipes.html">
+<main>
+  <h1>Équipes</h1>
+  <p class="lede">Les 26 écuries du jeu.</p>
+  <div class="table-wrap"><div id="liste"><p class="empty">Chargement…</p></div></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const saison = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
+  const effectifCount = {};
+  db.effectifs.filter(e => e.saison === saison.id).forEach(e => {
+    if (!e.equipe) return;
+    effectifCount[e.equipe] = (effectifCount[e.equipe] || 0) + 1;
+  });
+
+  const equipes = db.equipes.slice().sort((a, b) => a.nom.localeCompare(b.nom));
+  document.getElementById('liste').innerHTML = `<table class="results">
+    <thead><tr><th>Équipe</th><th>Manager</th><th class="num">Effectif</th></tr></thead>
+    <tbody>${equipes.map(e => `
+      <tr>
+        <td><a href="equipe.html?id=${e.id}">${e.nom}</a></td>
+        <td>${e.manager_forum || '—'}</td>
+        <td class="num">${effectifCount[e.id] || 0}</td>
+      </tr>`).join('')}
+    </tbody></table>`;
+})();
+</script>
+</body>
+</html>

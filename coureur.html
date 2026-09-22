@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiche coureur — Le Gruppetto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="coureurs.html">
+<main>
+  <div id="contenu"><p class="empty">Chargement…</p></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const id = new URLSearchParams(location.search).get('id');
+  const coureur = db.coureursById[id];
+  const el = document.getElementById('contenu');
+
+  if (!coureur) {
+    el.innerHTML = '<p class="empty">Coureur introuvable.</p>';
+    return;
+  }
+
+  const saison = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
+  const equipeId = db.equipeDuCoureur(coureur.id, saison.id);
+  const equipe = equipeId ? db.equipesById[equipeId] : null;
+
+  // Toutes les lignes de résultat concernant ce coureur, toutes courses
+  const apparitions = [];
+  for (const res of db.resultats) {
+    const course = db.coursesById[res.courseId];
+    for (const ligne of res.classement) {
+      if (ligne.coureurId === coureur.id) {
+        apparitions.push({ ...ligne, course, type: res.type, saison: res.saison });
+      }
+    }
+  }
+  apparitions.sort((a, b) => (a.place || 999) - (b.place || 999));
+
+  const victoires = apparitions.filter(a => a.place === 1 && a.statut === 'classe');
+  const podiums = apparitions.filter(a => a.place <= 3 && a.statut === 'classe');
+
+  el.innerHTML = `
+    <h1>${coureur.nom}</h1>
+    <p class="lede">${equipe ? `<a href="equipe.html?id=${equipe.id}">${equipe.nom}</a>` : 'Équipe inconnue pour cette saison'} — ${saison.label}</p>
+
+    <div class="panel">
+      <h2 style="margin-bottom:0.4rem;">Palmarès</h2>
+      <p>${victoires.length} victoire${victoires.length > 1 ? 's' : ''} · ${podiums.length} podium${podiums.length > 1 ? 's' : ''} · ${apparitions.length} résultat${apparitions.length > 1 ? 's' : ''} enregistré${apparitions.length > 1 ? 's' : ''}</p>
+    </div>
+
+    <div class="table-wrap">
+      ${apparitions.length === 0 ? '<p class="empty">Aucun résultat enregistré pour ce coureur.</p>' : `
+      <table class="results">
+        <thead><tr><th class="num">Place</th><th>Course</th><th>Type</th><th>Statut</th></tr></thead>
+        <tbody>${apparitions.map(a => `
+          <tr class="${a.place <= 3 ? 'top3' : ''}">
+            <td class="place num">${a.statut === 'classe' ? a.place : '—'}</td>
+            <td>${a.course ? `<a href="course.html?id=${a.course.id}">${a.course.nom}</a>` : '?'}</td>
+            <td>${a.type}</td>
+            <td>${a.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : ''}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`}
+    </div>
+  `;
+})();
+</script>
+</body>
+</html>

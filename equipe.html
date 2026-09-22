@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiche équipe — Le Gruppetto</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="equipes.html">
+<main>
+  <div id="contenu"><p class="empty">Chargement…</p></div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const id = new URLSearchParams(location.search).get('id');
+  const equipe = db.equipesById[id];
+  const el = document.getElementById('contenu');
+  if (!equipe) { el.innerHTML = '<p class="empty">Équipe introuvable.</p>'; return; }
+
+  const saison = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
+  const effectif = db.effectifs
+    .filter(e => e.saison === saison.id && e.equipe === equipe.id)
+    .map(e => db.coureursById[e.coureur_id])
+    .filter(Boolean)
+    .sort((a, b) => a.nom.localeCompare(b.nom));
+
+  const resultatsEquipe = [];
+  for (const res of db.resultats) {
+    const course = db.coursesById[res.courseId];
+    for (const ligne of res.classement) {
+      const eqId = db.equipeDuCoureur(ligne.coureurId, saison.id);
+      if (eqId === equipe.id && ligne.statut === 'classe') {
+        resultatsEquipe.push({ ...ligne, course, coureur: db.coureursById[ligne.coureurId] });
+      }
+    }
+  }
+  const victoires = resultatsEquipe.filter(r => r.place === 1);
+
+  el.innerHTML = `
+    <h1>${equipe.nom}</h1>
+    <p class="lede">Manager : ${equipe.manager_forum || '—'}${equipe.lien_maillot ? ` · <a href="${equipe.lien_maillot}" target="_blank" rel="noopener">Maillot</a>` : ''}</p>
+
+    <div class="panel">
+      <h2 style="margin-bottom:0.4rem;">Palmarès</h2>
+      <p>${victoires.length} victoire${victoires.length > 1 ? 's' : ''} · ${effectif.length} coureurs dans l'effectif ${saison.label}</p>
+    </div>
+
+    <h2 style="margin: 1.2rem 0 0.6rem;">Effectif</h2>
+    <div class="table-wrap">
+      <table class="results">
+        <tbody>${effectif.map(c => `<tr><td><a href="coureur.html?id=${c.id}">${c.nom}</a></td></tr>`).join('') || '<tr><td class="empty">Effectif non renseigné.</td></tr>'}</tbody>
+      </table>
+    </div>
+
+    <h2 style="margin: 1.2rem 0 0.6rem;">Victoires</h2>
+    <div class="table-wrap">
+      ${victoires.length === 0 ? '<p class="empty">Aucune victoire enregistrée.</p>' : `
+      <table class="results">
+        <thead><tr><th>Coureur</th><th>Course</th></tr></thead>
+        <tbody>${victoires.map(v => `
+          <tr><td><a href="coureur.html?id=${v.coureur?.id}">${v.coureur?.nom || '?'}</a></td>
+          <td>${v.course ? `<a href="course.html?id=${v.course.id}">${v.course.nom}</a>` : '?'}</td></tr>`).join('')}
+        </tbody></table>`}
+    </div>
+  `;
+})();
+</script>
+</body>
+</html>
