@@ -1,17 +1,17 @@
 [
   {
     "id": "gent-wevelgem-saison-0",
-    "nom": "Gent Wevelgem",
-    "categorie": "classique-wt",
+    "nom": "Classique semi-pavé 1",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
-    "profil": "pave"
+    "profil": "semi-pave"
   },
   {
     "id": "classique-de-quebec-saison-0",
-    "nom": "Classique de Québec",
-    "categorie": "classique-wt",
+    "nom": "Classique vallonnée 1",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
@@ -19,8 +19,8 @@
   },
   {
     "id": "gp-hageland-saison-0",
-    "nom": "GP Hageland",
-    "categorie": "classique-conti",
+    "nom": "Classique plate 1",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
@@ -28,17 +28,17 @@
   },
   {
     "id": "gp-matteotti-saison-0",
-    "nom": "GP Matteotti",
-    "categorie": "classique-conti",
+    "nom": "Classique moyenne montagne 1",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
-    "profil": "accidente"
+    "profil": "montagne"
   },
   {
     "id": "chrono-des-nations-saison-0",
-    "nom": "Chrono des Nations",
-    "categorie": "classique-conti",
+    "nom": "Classique chrono 1",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
@@ -46,17 +46,17 @@
   },
   {
     "id": "gent-wevelgem-saison-0-a-renommer-3lf7t",
-    "nom": "⚠️ À renommer — podium : 1. MODESTE Shane, 2. ONYSHCHENKO Taras, 3. GÓRSKI Tomasz",
-    "categorie": "classique-wt",
+    "nom": "Classique semi-pavé 2",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
-    "profil": "pave"
+    "profil": "semi-pave"
   },
   {
     "id": "classique-de-quebec-saison-0-a-renommer-32xsu",
-    "nom": "⚠️ À renommer — podium : 1. VAN RENSBURG Dewald, 2. BAPTISTE Shane, 3. CHAOUCHI Nabil",
-    "categorie": "classique-wt",
+    "nom": "Classique vallonnée 2",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
@@ -64,8 +64,8 @@
   },
   {
     "id": "gp-hageland-saison-0-a-renommer-bxhdd",
-    "nom": "⚠️ À renommer — podium : 1. LIN Zilong, 2. VAN ROSSEM Roel, 3. NOVOSEL Josip",
-    "categorie": "classique-conti",
+    "nom": "Classique plate 2",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
@@ -73,17 +73,17 @@
   },
   {
     "id": "gp-matteotti-saison-0-a-renommer-pf0ib",
-    "nom": "⚠️ À renommer — podium : 1. NARINE Anand, 2. ÅKERLUND Oskar, 3. HARUN Amirul",
-    "categorie": "classique-conti",
+    "nom": "Classique moyenne montagne 2",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
-    "profil": "accidente"
+    "profil": "montagne"
   },
   {
     "id": "chrono-des-nations-saison-0-a-renommer-sr2pg",
-    "nom": "⚠️ À renommer — podium : 1. NGAUAMO Semisi, 2. ZHAO Jianhui, 3. RAMLI Muhammad",
-    "categorie": "classique-conti",
+    "nom": "Classique chrono 2",
+    "categorie": "course-test",
     "saison": "saison-0",
     "pays": null,
     "nbEtapes": null,
