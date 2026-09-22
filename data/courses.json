@@ -88,5 +88,14 @@
     "pays": null,
     "nbEtapes": null,
     "profil": "clm"
+  },
+  {
+    "id": "course-pavee-1-saison-0",
+    "nom": "Course pavée 1",
+    "categorie": "course-test",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "pave"
   }
 ]
