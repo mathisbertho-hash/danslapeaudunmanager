@@ -11,9 +11,7 @@ function renderNav(activeHref) {
   const topbar = document.createElement('div');
   topbar.className = 'topbar';
   topbar.innerHTML = `
-    <a href="index.html" class="brand">Le Gruppetto — Résultats
-      <small>Team Tre Berg - PostNord &amp; les autres écuries</small>
-    </a>`;
+    <a href="index.html" class="brand">Dans la peau d'un manager</a>`;
 
   const tabs = document.createElement('nav');
   tabs.className = 'tabs';
@@ -26,7 +24,7 @@ function renderNav(activeHref) {
 
   const footer = document.createElement('footer');
   footer.className = 'site';
-  footer.textContent = 'Données saisies pour le jeu communautaire de management cycliste — Le Gruppetto.';
+  footer.textContent = "Données saisies pour le jeu communautaire de management cycliste — Dans la peau d'un manager.";
   document.body.appendChild(footer);
 }
 
