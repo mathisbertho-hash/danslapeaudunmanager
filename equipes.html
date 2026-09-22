@@ -32,7 +32,7 @@
       <tr>
         <td><a href="equipe.html?id=${e.id}">${e.nom}</a></td>
         <td>${e.manager_forum || '—'}</td>
-        <td>${e.nationalite || '<span class="badge">?</span>'}</td>
+        <td>${e.nationalite ? `${db.flagForCode(e.nationalite_code, e.nationalite)} ${e.nationalite}` : '<span class="badge">?</span>'}</td>
         <td class="num">${effectifCount[e.id] || 0}</td>
       </tr>`).join('')}
     </tbody></table>`;

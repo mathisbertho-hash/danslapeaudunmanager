@@ -25,6 +25,17 @@ Ouvre `admin.html`, cherche la ligne `const ADMIN_PASSWORD = 'tre-berg-1';` tout
 
 Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureurs, effectifs, courses, résultats, barème. Comme il vit dans un dépôt Git, chaque écriture depuis l'admin crée un commit — tu as donc un historique complet et réversible (onglet "Commits" du dépôt sur GitHub). Pour une sauvegarde à part, télécharge simplement le dossier `data/` depuis GitHub ("Download ZIP" sur le dépôt) quand tu veux.
 
+## Depuis la dernière version (4)
+
+- **Fusion d'équipes** : CCC → Vinted (sponsor Vinted, nationalité Lituanie) et Kenya Airways - MTN → Bogenvil Tim (sponsor Bogenvil Tim, nationalité Bougainville). Les effectifs concernés ont été redirigés automatiquement. **26 → 24 équipes.**
+- **Nationalités renseignées** pour les 24 équipes (celles que tu as données).
+- **Vrais drapeaux (images, en couleur)** partout où une nationalité s'affiche — coureurs et équipes. On est passés de l'emoji (pas fiable en couleur sur toutes les plateformes, Windows notamment) à de vraies images via flagcdn.com, un service gratuit. Deux cas particuliers sans code pays standard :
+  - **Pays de Galles** (Eryri) : pas de code ISO propre puisque ce n'est pas un pays indépendant → on retombe sur l'emoji 🏴󠁧󠁢󠁷󠁬󠁳󠁿, qui fonctionne sur la plupart des systèmes récents.
+  - **Bougainville** (Bogenvil Tim) : région autonome sans code pays reconnu, donc **pas de drapeau affiché** pour l'instant. Si tu as une image de leur drapeau, je peux l'intégrer en asset dédié.
+- **Les 10 courses de la saison 0 renommées** selon ta liste et ton ordre, toutes passées dans la nouvelle catégorie **« Course test »** : Classique semi-pavé 1 & 2, vallonnée 1 & 2, plate 1 & 2, moyenne montagne 1 & 2, chrono 1 & 2.
+- **Écarts en secondes toujours manquants sur les imports déjà faits — comment les corriger.** Le nouveau parseur est bon pour tout futur import, mais on n'a jamais gardé le texte brut des imports passés : impossible de régénérer les temps manquants sans le retexte. Bonne nouvelle : **les classements et les points ne sont pas affectés**, seule la colonne « temps » est vide sur 50 lignes (concentrées sur Chrono des Nations, logique pour un CLM plein d'écarts serrés). Pour corriger : va dans l'admin, ré-analyse le texte d'origine de la course concernée, rattache-le à la course existante avec le bon type — l'admin te proposera maintenant de **remplacer** le résultat existant plutôt que d'en créer un second. Courses concernées : Classique chrono 1 (ex-Chrono des Nations, la plus touchée), Classique semi-pavé 2, Classique plate 1, Classique moyenne montagne 1 et 2.
+- Garde-fou anti-doublon amélioré en cohérence avec ce qui précède : au lieu de bloquer/avertir sans solution, l'admin propose maintenant explicitement de **remplacer** un résultat existant (course, saison, type identiques) plutôt que de le dupliquer ou de refuser.
+
 ## Depuis la dernière version (3) — gros passage
 
 ### Data
