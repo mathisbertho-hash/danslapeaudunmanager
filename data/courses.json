@@ -34,5 +34,14 @@
     "pays": null,
     "nbEtapes": null,
     "profil": "plat"
+  },
+  {
+    "id": "gp-matteotti-saison-0",
+    "nom": "GP Matteotti",
+    "categorie": "classique-conti",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "accidente"
   }
 ]
