@@ -97,5 +97,14 @@
     "pays": null,
     "nbEtapes": null,
     "profil": "pave"
+  },
+  {
+    "id": "course-pavee-2-saison-0",
+    "nom": "Course pavée 2",
+    "categorie": "course-test",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "pave"
   }
 ]
