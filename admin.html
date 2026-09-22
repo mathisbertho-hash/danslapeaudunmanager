@@ -16,6 +16,7 @@
 </style>
 </head>
 <body data-page="admin.html">
+<datalist id="poolList"></datalist>
 <main>
   <h1>Admin</h1>
 
@@ -96,6 +97,22 @@ const ADMIN_PWD_KEY = 'gruppetto_admin_ok';
 const ADMIN_PASSWORD = 'tre-berg-1';
 
 let DB = null;
+let pendingNewRiders = [];
+
+function anagramKey(s) {
+  return s
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/[^a-z]/g, '')
+    .split('').sort().join('');
+}
+
+function slugifyUnique(nom) {
+  let base = slugify(nom);
+  let id = base;
+  let n = 2;
+  while (DB.coureursById[id]) { id = `${base}-${n}`; n++; }
+  return id;
+}
 
 function log(msg, kind) {
   const el = document.getElementById('log');
@@ -120,6 +137,19 @@ async function unlock() {
   document.getElementById('gatePanel').style.display = 'none';
   document.getElementById('adminPanel').style.display = 'block';
   DB = await loadAllData();
+
+  // Pool des 1000 noms PCM (référence pour créer un nouveau coureur à la volée,
+  // pour les coureurs qui apparaissent en course mais n'ont pas encore de contrat)
+  const poolRes = await fetch('data/pool_noms.json?_=' + Date.now());
+  DB.pool = await poolRes.json();
+  DB.poolByAnagram = new Map();
+  for (const entry of DB.pool) {
+    const key = anagramKey(entry.nom);
+    if (!DB.poolByAnagram.has(key)) DB.poolByAnagram.set(key, []);
+    DB.poolByAnagram.get(key).push(entry);
+  }
+  const datalist = document.getElementById('poolList');
+  datalist.innerHTML = DB.pool.map(e => `<option value="${e.nom.replace(/"/g, '&quot;')}">`).join('');
 
   // Config GitHub
   const conf = ghGetConf();
@@ -236,10 +266,16 @@ function renderApercu(resultat) {
             <tr>
               <td class="place num">${l.place}</td>
               <td style="font-size:0.78rem;color:var(--muted);">${l.raw}</td>
-              <td>${l.ambigu ? `<select class="assign" data-idx="${i}">
-                    <option value="">— choisir —</option>
-                    ${DB.coureurs.map(c => `<option value="${c.id}">${c.nom}</option>`).join('')}
-                  </select>` : `<span class="badge ok">${l.nomBrut}</span>`}</td>
+              <td>${l.ambigu ? `
+                    <select class="assign" data-idx="${i}">
+                      <option value="">— associer à un coureur déjà créé —</option>
+                      ${DB.coureurs.map(c => `<option value="${c.id}">${c.nom}</option>`).join('')}
+                    </select>
+                    <div class="row" style="margin-top:0.3rem;gap:0.3rem;">
+                      <input type="text" class="newname" data-idx="${i}" list="poolList" placeholder="ou nom du nouveau coureur (pas encore sous contrat)" value="${(l.nomBrut || '').split(' ').length <= 4 ? l.nomBrut : ''}">
+                      <button type="button" class="btn secondary btn-create-rider" data-idx="${i}">+ Créer</button>
+                    </div>
+                  ` : `<span class="badge ok">${l.nomBrut}</span>`}</td>
               <td>${l.temps || (l.statut === 'abandon' ? 'DNF' : '—')}</td>
               <td>${l.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : 'classé'}</td>
             </tr>`).join('')}
@@ -283,6 +319,42 @@ function renderApercu(resultat) {
   apCourseExistante.addEventListener('change', signalerEtapesExistantes);
   toggleEtapeField();
 
+  document.querySelectorAll('.btn-create-rider').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.idx, 10);
+      const input = document.querySelector(`.newname[data-idx="${idx}"]`);
+      const nom = input.value.trim();
+      if (!nom) { log('Tape un nom avant de créer le coureur.', 'err'); return; }
+
+      const key = anagramKey(nom);
+      const candidats = DB.poolByAnagram.get(key) || [];
+      const match = candidats[0]; // si homonymes, on prend le 1er et on le signale
+      if (candidats.length > 1) {
+        log(`Attention : ${candidats.length} coureurs du fichier des 1000 ont ce nom (homonymes) — nationalité prise sur le premier, vérifie sur la fiche.`, 'err');
+      }
+
+      const id = slugifyUnique(nom);
+      const nouveauCoureur = {
+        id,
+        nom: match ? match.nom : nom,
+        pcm_id: match ? match.pcm_id : null,
+        nationalite_code: match ? match.nationalite_code : null,
+        nationalite: match ? match.nationalite : null,
+        age: null,
+      };
+      DB.coureurs.push(nouveauCoureur);
+      DB.coureursById[id] = nouveauCoureur;
+      pendingNewRiders.push(nouveauCoureur);
+
+      dernierApercu.lignes[idx].coureurId = id;
+      dernierApercu.lignes[idx].ambigu = false;
+
+      const cell = btn.closest('td');
+      cell.innerHTML = `<span class="badge ok">${nouveauCoureur.nom}${match ? '' : ' (créé sans correspondance — nationalité à compléter)'}</span>`;
+      log(`Nouveau coureur créé : ${nouveauCoureur.nom}${match ? ` (${nouveauCoureur.nationalite})` : ''}.`, 'ok');
+    });
+  });
+
   document.getElementById('btnValiderImport').addEventListener('click', validerImport);
 }
 
@@ -321,6 +393,12 @@ async function validerImport() {
   }
 
   try {
+    if (pendingNewRiders.length > 0) {
+      await ghWriteJsonFile('data/coureurs.json', DB.coureurs, `Nouveaux coureurs : ${pendingNewRiders.map(r => r.nom).join(', ')}`);
+      log(`${pendingNewRiders.length} nouveau(x) coureur(s) enregistré(s) dans le référentiel.`, 'ok');
+      pendingNewRiders = [];
+    }
+
     if (!courseId) {
       const nom = document.getElementById('apNouveauNom').value.trim();
       if (!nom) { log('Nom de course manquant.', 'err'); return; }
