@@ -25,5 +25,14 @@
     "pays": null,
     "nbEtapes": null,
     "profil": "accidente"
+  },
+  {
+    "id": "gp-hageland-saison-0",
+    "nom": "GP Hageland",
+    "categorie": "classique-conti",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "plat"
   }
 ]
