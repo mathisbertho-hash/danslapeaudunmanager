@@ -3,156 +3,182 @@
     "id": "team-tre-berg-postnord",
     "nom": "Team Tre Berg - PostNord",
     "manager_forum": "Sumatrana",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=45898"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=45898",
+    "nationalite": null
   },
   {
     "id": "ccc",
     "nom": "CCC",
     "manager_forum": "cadel evans",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=77996"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=77996",
+    "nationalite": null
   },
   {
     "id": "gazprom-rusvelo",
     "nom": "Gazprom - RusVelo",
     "manager_forum": "El_Pistolero_64",
-    "lien_maillot": "viewtopic.php?p=2589746#p2589746"
+    "lien_maillot": "viewtopic.php?p=2589746#p2589746",
+    "nationalite": null
   },
   {
     "id": "nemiroff",
     "nom": "Nemiroff",
     "manager_forum": "Furious_lion",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=53938"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=53938",
+    "nationalite": null
   },
   {
     "id": "konami-yokohama",
     "nom": "Konami - Yokohama",
     "manager_forum": "Seth",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=172196"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=172196",
+    "nationalite": null
   },
   {
     "id": "euskaltel-euskadi",
     "nom": "Euskaltel-Euskadi",
     "manager_forum": "Eliteam",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=69230"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=69230",
+    "nationalite": null
   },
   {
     "id": "airbus-team",
     "nom": "Airbus Team",
     "manager_forum": "Rougetnoir31iteam",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=112558"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=112558",
+    "nationalite": null
   },
   {
     "id": "bianchi",
     "nom": "Bianchi",
     "manager_forum": "Yates in Finestre",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=167673"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=167673",
+    "nationalite": null
   },
   {
     "id": "quick-step-pulsar",
     "nom": "Quick-Step Pulsar",
     "manager_forum": "JV1510",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey?id=10866"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey?id=10866",
+    "nationalite": null
   },
   {
     "id": "american-airlines",
     "nom": "American Airlines",
     "manager_forum": "Xandro972",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=62859"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=62859",
+    "nationalite": null
   },
   {
     "id": "l39ion-of-los-angeles",
     "nom": "L39ION of Los Angeles",
     "manager_forum": "Maxteam",
-    "lien_maillot": "https://pcmmod.com/jersey/team.php?id_team_year=914"
+    "lien_maillot": "https://pcmmod.com/jersey/team.php?id_team_year=914",
+    "nationalite": null
   },
   {
     "id": "heilala-tupu-anga-coffee",
     "nom": "Heilala - Tupu'anga Coffee",
     "manager_forum": "Varkana",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=90124"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=90124",
+    "nationalite": null
   },
   {
     "id": "kenya-airways-mtn",
     "nom": "Kenya Airways - MTN",
     "manager_forum": null,
-    "lien_maillot": null
+    "lien_maillot": null,
+    "nationalite": null
   },
   {
     "id": "samruk-kaznya-air-astana",
     "nom": "Samruk Kaznya - Air Astana",
     "manager_forum": "Lelex1008",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=12050"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=12050",
+    "nationalite": null
   },
   {
     "id": "team-kometa-msc",
     "nom": "Team Kometa MSC",
     "manager_forum": "Sébastien",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=129775"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=129775",
+    "nationalite": null
   },
   {
     "id": "eryri",
     "nom": "Eryri",
     "manager_forum": "Lyote",
-    "lien_maillot": null
+    "lien_maillot": null,
+    "nationalite": null
   },
   {
     "id": "rapha-ninteam",
     "nom": "Rapha Ninteam",
     "manager_forum": "ninteo",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=91994"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=91994",
+    "nationalite": null
   },
   {
     "id": "boyaca",
     "nom": "Boyaca",
     "manager_forum": "Damdou",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=166111"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=166111",
+    "nationalite": null
   },
   {
     "id": "galp-energia",
     "nom": "Galp Energia",
     "manager_forum": "Stidpmi",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=17948"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=17948",
+    "nationalite": null
   },
   {
     "id": "vinted",
     "nom": "Vinted",
     "manager_forum": null,
-    "lien_maillot": null
+    "lien_maillot": null,
+    "nationalite": null
   },
   {
     "id": "paris-sg-airways",
     "nom": "Paris SG Airways",
     "manager_forum": "P_Basque",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=75928"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=75928",
+    "nationalite": null
   },
   {
     "id": "paraguay-cycles-club",
     "nom": "Paraguay Cycles Club",
     "manager_forum": "El Pino",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=18901"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=18901",
+    "nationalite": null
   },
   {
     "id": "genii-c-zonzini-srsm",
     "nom": "GENII-C Zonzini SRSM",
     "manager_forum": "Odonata",
-    "lien_maillot": "https://pcmmod.com/jersey/team.php?id_team_year=6766"
+    "lien_maillot": "https://pcmmod.com/jersey/team.php?id_team_year=6766",
+    "nationalite": null
   },
   {
     "id": "bogenvil-tim",
     "nom": "Bogenvil Tim",
     "manager_forum": "Adra",
-    "lien_maillot": null
+    "lien_maillot": null,
+    "nationalite": null
   },
   {
     "id": "attijariwafa-bank",
     "nom": "Attijariwafa Bank",
     "manager_forum": "ivelios",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=12019"
+    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=12019",
+    "nationalite": null
   },
   {
     "id": "holy-cycling-team",
     "nom": "Holy Cycling Team",
     "manager_forum": "Impackt",
-    "lien_maillot": "https://www.pcmmod.com/jersey/jersey.php?id=165154"
+    "lien_maillot": "https://www.pcmmod.com/jersey/jersey.php?id=165154",
+    "nationalite": null
   }
 ]

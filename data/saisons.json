@@ -1,3 +1,4 @@
 [
+  { "id": "saison-0", "annee": 0, "label": "Saison 0 (pré-saison)", "statut": "cloturee", "preSaison": true },
   { "id": "saison-1", "annee": 1, "label": "Saison 1", "statut": "ouverte", "preSaison": false }
 ]
