@@ -115,5 +115,14 @@
     "pays": null,
     "nbEtapes": null,
     "profil": null
+  },
+  {
+    "id": "classique-montagne-2-saison-0",
+    "nom": "Classique Montagne 2",
+    "categorie": "course-test",
+    "saison": "saison-0",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "montagne"
   }
 ]
