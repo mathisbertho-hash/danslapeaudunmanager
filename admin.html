@@ -198,12 +198,31 @@ function renderApercu(resultat) {
         <select id="apCategorie">${DB.categories.map(c => `<option value="${c.id}">${c.nom}</option>`).join('')}</select>
       </div>
       <div>
+        <label>Profil (nouvelle course seulement)</label>
+        <select id="apProfil">
+          <option value="">— non précisé —</option>
+          <option value="plat">Plat</option>
+          <option value="accidente">Accidenté</option>
+          <option value="montagne">Montagne</option>
+          <option value="clm">Contre-la-montre</option>
+          <option value="pave">Pavés</option>
+          <option value="mixte">Mixte (course par étapes variée)</option>
+        </select>
+      </div>
+      <div>
         <label>Type de classement</label>
         <select id="apType">
           <option value="scratch">Scratch (course en ligne)</option>
           <option value="general">Général final (course par étapes)</option>
           <option value="etape">Étape</option>
+          <option value="points">Classement annexe — points (final)</option>
+          <option value="montagne">Classement annexe — montagne (final)</option>
+          <option value="jeune">Classement annexe — jeune (final)</option>
         </select>
+      </div>
+      <div id="apEtapeNumWrap" style="display:none;">
+        <label>Numéro de l'étape</label>
+        <input type="number" id="apEtapeNum" min="1" step="1" placeholder="ex : 4">
       </div>
     </div>
 
@@ -231,6 +250,39 @@ function renderApercu(resultat) {
     <p style="margin-top:0.8rem;"><button class="btn" id="btnValiderImport">Valider et enregistrer</button></p>
   `;
 
+  const apType = document.getElementById('apType');
+  const apEtapeNumWrap = document.getElementById('apEtapeNumWrap');
+  const apCourseExistante = document.getElementById('apCourseExistante');
+
+  function toggleEtapeField() {
+    apEtapeNumWrap.style.display = apType.value === 'etape' ? 'block' : 'none';
+    if (apType.value === 'etape') signalerEtapesExistantes();
+  }
+  function signalerEtapesExistantes() {
+    const courseId = apCourseExistante.value;
+    const saisonId = document.getElementById('impSaison').value;
+    if (!courseId) return;
+    const etapesExistantes = DB.resultats
+      .filter(r => r.courseId === courseId && r.saison === saisonId && r.type === 'etape')
+      .map(r => r.etapeNumero)
+      .filter(n => n != null)
+      .sort((a, b) => a - b);
+    const wrap = document.getElementById('apEtapeNumWrap');
+    let info = wrap.querySelector('.etapes-info');
+    if (!info) {
+      info = document.createElement('p');
+      info.className = 'etapes-info badge';
+      info.style.marginTop = '0.3rem';
+      wrap.appendChild(info);
+    }
+    info.textContent = etapesExistantes.length
+      ? `Étapes déjà enregistrées pour cette course : ${etapesExistantes.join(', ')}`
+      : 'Aucune étape enregistrée pour l’instant sur cette course.';
+  }
+  apType.addEventListener('change', toggleEtapeField);
+  apCourseExistante.addEventListener('change', signalerEtapesExistantes);
+  toggleEtapeField();
+
   document.getElementById('btnValiderImport').addEventListener('click', validerImport);
 }
 
@@ -257,13 +309,25 @@ async function validerImport() {
   const courseExistanteId = document.getElementById('apCourseExistante').value;
   let courseId = courseExistanteId;
 
+  let etapeNumero = null;
+  if (type === 'etape') {
+    const val = document.getElementById('apEtapeNum').value;
+    if (!val) { log('Indique le numéro de l’étape avant d’enregistrer.', 'err'); return; }
+    etapeNumero = parseInt(val, 10);
+    const doublon = DB.resultats.some(r => r.courseId === courseExistanteId && r.saison === saisonId && r.type === 'etape' && r.etapeNumero === etapeNumero);
+    if (doublon && !confirm(`Une étape ${etapeNumero} existe déjà pour cette course. L'ajouter quand même (doublon) ?`)) {
+      return;
+    }
+  }
+
   try {
     if (!courseId) {
       const nom = document.getElementById('apNouveauNom').value.trim();
       if (!nom) { log('Nom de course manquant.', 'err'); return; }
       const categorie = document.getElementById('apCategorie').value;
+      const profil = document.getElementById('apProfil').value || null;
       const id = slugify(nom) + '-' + saisonId;
-      const nouvelleCourse = { id, nom, categorie, saison: saisonId, pays: null, nbEtapes: null };
+      const nouvelleCourse = { id, nom, categorie, saison: saisonId, pays: null, nbEtapes: null, profil };
       DB.courses.push(nouvelleCourse);
       DB.coursesById[id] = nouvelleCourse;
       courseId = id;
@@ -275,6 +339,7 @@ async function validerImport() {
       id: uid('res'),
       courseId,
       type,
+      etapeNumero,
       saison: saisonId,
       classement: dernierApercu.lignes.map(l => ({
         place: l.place,

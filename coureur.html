@@ -35,7 +35,7 @@
     const course = db.coursesById[res.courseId];
     for (const ligne of res.classement) {
       if (ligne.coureurId === coureur.id) {
-        apparitions.push({ ...ligne, course, type: res.type, saison: res.saison });
+        apparitions.push({ ...ligne, course, type: res.type, etapeNumero: res.etapeNumero, saison: res.saison });
       }
     }
   }
@@ -64,7 +64,7 @@
           <tr class="${a.place <= 3 && !preSaisonIds.has(a.saison) ? 'top3' : ''}">
             <td class="place num">${a.statut === 'classe' ? a.place : '—'}</td>
             <td>${a.course ? `<a href="course.html?id=${a.course.id}">${a.course.nom}</a>` : '?'}</td>
-            <td>${a.type}</td>
+            <td>${a.type === 'etape' && a.etapeNumero ? `étape ${a.etapeNumero}` : a.type}</td>
             <td>${preSaisonIds.has(a.saison) ? '<span class="badge">pré-saison</span>' : ''} ${a.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : ''}</td>
           </tr>`).join('')}
         </tbody>
