@@ -31,7 +31,10 @@ function buildRiderIndex(coureurs) {
   return index;
 }
 
-const TIME_RE = /(\d{1,2}h\d{2}['’]\d{2}(?:["”]\d{0,2})?)|(\+\s*\d{1,3}['’]\d{2}(?:["”]\d{0,2})?)|(\+\s*\d{1,2}h\d{2}['’]\d{2})|((?<![a-zA-Z])s\.?\s*t\.?(?![a-zA-Z]))/i;
+// Temps absolu (heures optionnelles : "5h48'44" ou juste "45'12" pour un
+// CLM de moins d'une heure), écarts avec heures/minutes/secondes, écarts en
+// secondes seules ("+ 45"" ou juste "+ 8"), et "même temps".
+const TIME_RE = /(?:\d{1,2}h)?\d{1,2}['’]\d{2}(?:["”]\d{0,2})?|\+\s*\d{1,2}h\d{2}['’]\d{2}|\+\s*\d{1,3}['’]\d{2}(?:["”]\d{0,2})?|\+\s*\d{1,3}["”]|\+\s*\d{1,3}(?![\d'’"”])|(?<![a-zA-Z])s\.?\s*t\.?(?![a-zA-Z])/i;
 
 const MARKER_CHARS = /^[\*\+\~\^\u2020\u2021\u25CF\u25CB\u2022•]\s*/;
 

@@ -11,7 +11,22 @@ const DATA_FILES = {
   courses: 'data/courses.json',
   resultats: 'data/resultats.json',
   bareme: 'data/bareme.json',
+  paysIso: 'data/pays_iso.json',
 };
+
+const SPECIAL_FLAGS = {
+  'GB-WLS': '\u{1F3F4}\u{E0067}\u{E0062}\u{E0077}\u{E006C}\u{E0073}\u{E007F}',
+  'GB-SCT': '\u{1F3F4}\u{E0067}\u{E0062}\u{E0073}\u{E0063}\u{E0074}\u{E007F}',
+  'GB-ENG': '\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}',
+  'GB-NIR': '🇬🇧',
+};
+
+function flagEmoji(alpha2) {
+  if (!alpha2) return '';
+  if (SPECIAL_FLAGS[alpha2]) return SPECIAL_FLAGS[alpha2];
+  if (alpha2.length !== 2) return '';
+  return [...alpha2.toUpperCase()].map(c => String.fromCodePoint(127397 + c.charCodeAt(0))).join('');
+}
 
 async function loadAllData() {
   const entries = await Promise.all(
@@ -33,6 +48,8 @@ async function loadAllData() {
     const entry = db.effectifs.find(e => e.coureur_id === coureurId && e.saison === saisonId);
     return entry ? entry.equipe : null;
   };
+
+  db.flagForCountry = (nomPays) => flagEmoji(db.paysIso[nomPays]);
 
   return db;
 }
