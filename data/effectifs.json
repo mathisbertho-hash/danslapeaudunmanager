@@ -1,4 +1,34 @@
 [
+  { 
+    "coureur_id": "chevalier-quentin", 
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1" 
+  },
+  { 
+    "coureur_id": "delcourt-romain", 
+    "equipe": "euskaltel-euskadi", 
+    "saison": "saison-1" 
+  },
+  { 
+    "coureur_id": "duhamel-aurelien", 
+    "equipe": "euskaltel-euskadi", 
+    "saison": "saison-1" 
+  },
+  { 
+    "coureur_id": "havugimana-eric", 
+    "equipe": "bogenvil-tim", 
+    "saison": "saison-1" 
+  },
+  { 
+    "coureur_id": "kamal-tarek", 
+    "equipe": "bogenvil-tim", 
+    "saison": "saison-1" 
+  },
+  { 
+    "coureur_id": "owona-fabrice", 
+    "equipe": "bogenvil-tim", 
+    "saison": "saison-1" 
+  },
   {
     "coureur_id": "beeharry-rajesh",
     "equipe": "bogenvil-tim",
