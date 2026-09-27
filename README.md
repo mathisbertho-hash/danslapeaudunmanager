@@ -25,57 +25,6 @@ Ouvre `admin.html`, cherche la ligne `const ADMIN_PASSWORD = 'tre-berg-1';` tout
 
 Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureurs, effectifs, courses, résultats, barème. Comme il vit dans un dépôt Git, chaque écriture depuis l'admin crée un commit — tu as donc un historique complet et réversible (onglet "Commits" du dépôt sur GitHub). Pour une sauvegarde à part, télécharge simplement le dossier `data/` depuis GitHub ("Download ZIP" sur le dépôt) quand tu veux.
 
-## Depuis la dernière version (4)
-
-- **Fusion d'équipes** : CCC → Vinted (sponsor Vinted, nationalité Lituanie) et Kenya Airways - MTN → Bogenvil Tim (sponsor Bogenvil Tim, nationalité Bougainville). Les effectifs concernés ont été redirigés automatiquement. **26 → 24 équipes.**
-- **Nationalités renseignées** pour les 24 équipes (celles que tu as données).
-- **Vrais drapeaux (images, en couleur)** partout où une nationalité s'affiche — coureurs et équipes. On est passés de l'emoji (pas fiable en couleur sur toutes les plateformes, Windows notamment) à de vraies images via flagcdn.com, un service gratuit. Deux cas particuliers sans code pays standard :
-  - **Pays de Galles** (Eryri) : pas de code ISO propre puisque ce n'est pas un pays indépendant → on retombe sur l'emoji 🏴󠁧󠁢󠁷󠁬󠁳󠁿, qui fonctionne sur la plupart des systèmes récents.
-  - **Bougainville** (Bogenvil Tim) : région autonome sans code pays reconnu, donc **pas de drapeau affiché** pour l'instant. Si tu as une image de leur drapeau, je peux l'intégrer en asset dédié.
-- **Les 10 courses de la saison 0 renommées** selon ta liste et ton ordre, toutes passées dans la nouvelle catégorie **« Course test »** : Classique semi-pavé 1 & 2, vallonnée 1 & 2, plate 1 & 2, moyenne montagne 1 & 2, chrono 1 & 2.
-- **Écarts en secondes toujours manquants sur les imports déjà faits — comment les corriger.** Le nouveau parseur est bon pour tout futur import, mais on n'a jamais gardé le texte brut des imports passés : impossible de régénérer les temps manquants sans le retexte. Bonne nouvelle : **les classements et les points ne sont pas affectés**, seule la colonne « temps » est vide sur 50 lignes (concentrées sur Chrono des Nations, logique pour un CLM plein d'écarts serrés). Pour corriger : va dans l'admin, ré-analyse le texte d'origine de la course concernée, rattache-le à la course existante avec le bon type — l'admin te proposera maintenant de **remplacer** le résultat existant plutôt que d'en créer un second. Courses concernées : Classique chrono 1 (ex-Chrono des Nations, la plus touchée), Classique semi-pavé 2, Classique plate 1, Classique moyenne montagne 1 et 2.
-- Garde-fou anti-doublon amélioré en cohérence avec ce qui précède : au lieu de bloquer/avertir sans solution, l'admin propose maintenant explicitement de **remplacer** un résultat existant (course, saison, type identiques) plutôt que de le dupliquer ou de refuser.
-
-## Depuis la dernière version (3) — gros passage
-
-### Data
-
-- **Pas de vrais doublons** dans les référentiels (équipes, coureurs, effectifs) — vérifié, propre.
-- **5 courses de la saison 0 mal étiquetées, corrigées sans perte de données.** Ce que tu prenais pour des doublons ne l'était pas : ce sont 10 courses différentes (coureurs 0% en commun entre chaque paire) qui ont récupéré le même nom/identifiant à l'import — sans doute le champ « nom de la course » pas remis à jour entre deux imports. J'ai séparé chaque paire en deux fiches distinctes : celle qui portait déjà le bon nom (Gent Wevelgem, Classique de Québec, GP Hageland, GP Matteotti, Chrono des Nations) reste inchangée ; l'autre a été isolée sous un nom provisoire « ⚠️ À renommer — podium : … ». **Il m'en faut le vrai nom** pour chacune (visible sur `courses.html`, filtre saison 0) :
-  - `gent-wevelgem-saison-0-a-renommer-3lf7t` — podium Modeste / Onyshchenko / Górski
-  - `classique-de-quebec-saison-0-a-renommer-32xsu` — podium Van Rensburg / Baptiste / Chaouchi
-  - `gp-hageland-saison-0-a-renommer-bxhdd` — podium Lin / Van Rossem / Novosel
-  - `gp-matteotti-saison-0-a-renommer-pf0ib` — podium Narine / Åkerlund / Harun
-  - `chrono-des-nations-saison-0-a-renommer-sr2pg` — podium Ngauamo / Zhao / Ramli
-- **Garde-fou ajouté dans l'admin** pour que ça ne se reproduise pas : impossible de créer une « nouvelle course » si son nom+saison existe déjà (il faut la sélectionner dans le menu existant) ; et si tu rattaches un résultat scratch/général/annexe à une course qui en a déjà un pour cette saison, l'admin demande confirmation avant d'enregistrer. Le bouton « Valider » se désactive aussi pendant l'enregistrement (évite les doubles clics).
-- **Lecture des temps corrigée** : gérait mal les écarts en secondes seules (`+ 8`, `+ 45"`) et les temps absolus sans heure (CLM de moins d'une heure, ex. `45'12`). Testé et validé sur ces cas, sans régression sur le format complet (`5h48'44`).
-
-### Équipes / managers — besoin de ta confirmation
-
-Tu signales que CCC et Vinted sont en réalité **la même équipe** (renommée en cours de jeu), ce qui expliquerait un mauvais comptage. Je n'ai **pas fusionné automatiquement** — fusionner à tort ferait perdre la distinction entre deux vraies équipes si je me trompe. Dis-moi :
-1. Est-ce uniquement CCC/Vinted, ou d'autres équipes de la liste des 26 sont dans le même cas (renommées en cours de route) ?
-2. Pour chaque cas, quel est le nom à garder (le plus récent, j'imagine) ?
-Dès que j'ai ta réponse, je fusionne proprement : un seul id d'équipe, tous les effectifs et résultats redirigés dessus, l'ancien nom gardé en historique sur la fiche.
-
-### UX
-
-- **Thème sombre** complet (fond quasi-noir, panneaux, tableaux, boutons), dans l'esprit de tes captures. Premier passage — dis-moi ce qui ne va pas encore.
-- **Drapeaux** 🇫🇷 ajoutés à côté de la nationalité des coureurs (liste + fiche), à partir du fichier des 1000. Pas encore sur les équipes (le champ nationalité équipe est toujours vide, voir plus haut) ni sur les pays de course (le champ `pays` des courses n'est jamais rempli pour l'instant — dis-moi si tu veux qu'on l'ajoute à la création de course dans l'admin).
-- **Pastilles de couleur par catégorie de course** (Monument, Grand Tour, WT, Conti, championnat national) sur la liste des courses et la fiche course.
-- **Nouvelle page `resultat.html`** : classement complet d'un résultat (tous les coureurs classés, pas juste le vainqueur), avec équipe et nationalité de chacun. Accessible depuis chaque ligne « classement complet → » sur la fiche course.
-- Maillots : pas encore fait, comme prévu « dans un temps 2 ».
-
-## Depuis la dernière version (2)
-
-- **Créer un coureur pas encore sous contrat, depuis l'import** : pour la saison 0 notamment, un coureur peut apparaître dans un résultat sans être dans `data/coureurs.json` (pas encore recruté). Sur une ligne non reconnue, l'admin propose maintenant, en plus du menu « associer à un coureur déjà créé », un champ texte avec autocomplétion sur les 1000 noms du fichier PCM (`data/pool_noms.json`, un simple référentiel de lookup, **pas** une liste de coureurs du jeu) et un bouton « + Créer ». La nationalité et l'ID PCM se remplissent automatiquement si le nom correspond à une entrée du fichier ; sinon le coureur est créé quand même, nationalité à compléter à la main plus tard. Ce coureur n'a pas d'équipe tant que tu ne lui crées pas d'entrée dans `data/effectifs.json` (à faire le jour où il signe).
-
-## Depuis la dernière version
-
-- **Profil de course** : nouveau champ `profil` sur les courses (plat / accidenté / montagne / CLM / pavés / mixte), renseignable à la création dans l'admin, affiché sur la fiche course.
-- **Étapes reliées entre elles** : les résultats de type « étape » ont maintenant un numéro (`etapeNumero`). L'admin te le demande, te signale les étapes déjà enregistrées pour la course sélectionnée (pour repérer les doublons), et la fiche course affiche désormais un tableau « Étapes » trié par numéro, séparé du tableau des vainqueurs scratch/général.
-- **Classements annexes** (points/montagne/jeune, version finale) ajoutés au menu déroulant de l'admin — ils étaient calculés par `points.js` mais impossibles à saisir jusqu'ici.
-- Rappel sur le rattachement à une course : l'admin ne devine jamais silencieusement — il propose un nom détecté dans le texte collé, mais te demande toujours de confirmer ou choisir la bonne course existante avant d'enregistrer.
-
 ## Depuis la v1
 
 - **Bug corrigé** : les effectifs par équipe étaient vides à cause d'un référentiel qui stockait le *nom* de l'équipe au lieu de son identifiant technique. C'est réparé — les 574 coureurs sont maintenant bien rattachés à leur équipe sur les fiches équipe.
@@ -84,6 +33,15 @@ Dès que j'ai ta réponse, je fusionne proprement : un seul id d'équipe, tous l
 - **Identifiants PCM et nationalité des coureurs** ajoutés à `data/coureurs.json` (champs `pcm_id`, `nationalite_code`, `nationalite`) à partir de `Pays_pour_créations_de_noms.xlsx`. Recoupement à **574/574 coureurs (100%)** grâce à un rapprochement par lettres qui ignore la façon dont le fichier découpe prénom/nom (utile pour les noms composés comme « Van Rensburg »). Affiché sur les fiches coureur et dans la liste des coureurs.
 - **Nationalité des équipes** : champ `nationalite` ajouté à `data/equipes.json`, affiché sur les fiches et la liste des équipes — mais **vide pour l'instant, je n'ai pas cette donnée**. Le tableau des managers que tu m'as donné avait bien une colonne « Nationalité » mais elle était vide pour toutes les lignes. Renvoie-la moi remplie et je l'intègre.
 - **Âge des coureurs** : champ `age` ajouté, toujours vide — le fichier Excel ne contient pas l'âge, il te faut m'envoyer un autre fichier pour ça.
+
+## Depuis la dernière version — calendrier, catégories, Coupes
+
+- **Calendrier complet de la saison 1** : les 77 courses de l'année (janvier → octobre, dont les 3 Grands Tours, les Monuments, les championnats nationaux et du monde) sont importées dans `data/courses.json` (nom, pays, dates, profil, nombre d'étapes, coupe(s) éventuelle(s)).
+- **Catégories retravaillées** pour correspondre à la vraie colonne « classification » du calendrier : Grand Tour, Legend Tour, World Tour, World Classic, Tour national, Classique nationale, Championnat national, Championnat du monde (+ Course test, réservée à la saison 0). L'ancien schéma (monument / cpe-wt / classique-conti…) a été remplacé — `data/bareme.json` a été réorganisé avec les mêmes clés, et comme le barème était encore entièrement vide, aucune donnée n'a été perdue dans l'opération.
+- **Système de Coupes** ajouté : Coupe du Monde + 4 coupes nationales (Italie, Espagne, France, Belgique), chacune avec son propre barème (`data/bareme.json → coupe`). Chaque course du calendrier porte désormais un champ `coupes` listant les coupes auxquelles elle compte. Nouvelles pages `coupes.html` (liste) et `coupe.html?id=...` (classement individuel/équipes d'une coupe, par saison). Le barème des coupes est vide pour l'instant — colle-le dans l'admin (à ajouter à l'écran barème) ou dis-moi les valeurs et je les intègre directement dans `data/bareme.json`.
+- **Historique par saison** sur la fiche coureur : pour chaque saison officielle où le coureur a couru, son rang (et ses points) au classement général de la saison, et son rang dans chaque coupe où il a marqué des points, avec lien vers la coupe correspondante.
+- **Admin** : la création manuelle d'une course propose maintenant un choix de coupe(s) (cases à cocher) et l'option de profil « Semi-pavé », pour rester cohérent avec les courses importées du calendrier.
+- **Page classement complet d'une course** (`resultat.html?id=...`) et badges de coupe sur `course.html`/`courses.html` (déjà en place depuis le tour précédent, listés ici pour mémoire du lot de fichiers à recopier).
 
 ## Fichiers modifiés depuis ta dernière mise à jour du repo
 
@@ -97,14 +55,26 @@ Dès que j'ai ta réponse, je fusionne proprement : un seul id d'équipe, tous l
 - `classements.html`
 - `courses.html`
 - `course.html`
+- `resultat.html` *(nouveau fichier)*
+- `coupes.html` *(nouveau fichier)*
+- `coupe.html` *(nouveau fichier)*
 - `admin.html`
 - `README.md`
+- `css/style.css`
 - `js/nav.js`
+- `js/data.js`
+- `js/points.js`
+- `js/parse.js`
 - `data/effectifs.json`
 - `data/saisons.json`
 - `data/coureurs.json`
 - `data/equipes.json`
-- `data/pays.json` *(nouveau fichier)*
+- `data/courses.json`
+- `data/categories.json`
+- `data/bareme.json`
+- `data/coupes.json` *(nouveau fichier)*
+- `data/pays.json`
+- `data/pays_iso.json` *(nouveau fichier)*
 
 ## Où en est cette v1
 

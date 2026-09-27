@@ -12,6 +12,7 @@
 </main>
 
 <script src="js/data.js"></script>
+<script src="js/points.js"></script>
 <script src="js/nav.js"></script>
 <script>
 (async function () {
@@ -56,6 +57,11 @@
       <p class="lede" style="margin:0.3rem 0 0;">Hors pré-saison, qui ne compte pas dans le palmarès officiel.</p>
     </div>
 
+    <div class="panel" id="historique">
+      <h2 style="margin-bottom:0.6rem;">Historique par saison</h2>
+      <div id="historiqueContenu"><p class="empty">Calcul…</p></div>
+    </div>
+
     <div class="table-wrap">
       ${apparitions.length === 0 ? '<p class="empty">Aucun résultat enregistré pour ce coureur.</p>' : `
       <table class="results">
@@ -71,6 +77,42 @@
       </table>`}
     </div>
   `;
+
+  // Historique par saison : rang au classement général aux points et à chaque
+  // coupe où le coureur a marqué, saison par saison (hors pré-saison).
+  const saisonsAvecResultat = db.saisons
+    .filter(s => !s.preSaison && apparitions.some(a => a.saison === s.id))
+    .sort((a, b) => a.annee - b.annee);
+
+  const histEl = document.getElementById('historiqueContenu');
+  if (saisonsAvecResultat.length === 0) {
+    histEl.innerHTML = '<p class="empty">Pas encore de résultat en saison officielle.</p>';
+  } else {
+    const lignes = saisonsAvecResultat.map(s => {
+      const resultatsSaison = filtrerResultats(db, db.resultats, { saisonId: s.id });
+      const { individuelPoints } = calculerClassements(db, resultatsSaison, s.id);
+      const rangGeneral = avecRang(individuelPoints).find(r => r.id === coureur.id);
+
+      const rangsCoupes = db.coupes
+        .map(coupe => {
+          const res = calculerClassementCoupe(db, coupe.id, s.id);
+          const rang = avecRang(res.individuel).find(r => r.id === coureur.id);
+          return rang ? { coupe, rang } : null;
+        })
+        .filter(Boolean);
+
+      return `<tr>
+        <td>${s.label}</td>
+        <td>${rangGeneral ? `${rangGeneral.rang}<sup>e</sup> (${rangGeneral.valeur} pts)` : '—'}</td>
+        <td>${rangsCoupes.length ? rangsCoupes.map(rc => `<a href="coupe.html?id=${rc.coupe.id}">${rc.coupe.nom}</a> : ${rc.rang.rang}<sup>e</sup> (${rc.rang.valeur} pts)`).join('<br>') : '—'}</td>
+      </tr>`;
+    }).join('');
+
+    histEl.innerHTML = `<div class="table-wrap"><table class="results">
+      <thead><tr><th>Saison</th><th>Classement général (points)</th><th>Coupes</th></tr></thead>
+      <tbody>${lignes}</tbody>
+    </table></div>`;
+  }
 })();
 </script>
 </body>

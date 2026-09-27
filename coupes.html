@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coupes — Dans la peau d'un manager</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="coupes.html">
+<main>
+  <h1>Coupes</h1>
+  <p class="lede">La Coupe du Monde et les coupes nationales additionnent les points d'un sous-ensemble de courses de la saison, avec leur propre barème.</p>
+
+  <div class="grid-links" id="liste">
+    <p class="empty">Chargement…</p>
+  </div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(async function () {
+  const db = await loadAllData();
+  const saison = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
+  const el = document.getElementById('liste');
+
+  el.innerHTML = db.coupes.map(c => {
+    const nbCourses = db.courses.filter(course => course.saison === saison.id && Array.isArray(course.coupes) && course.coupes.includes(c.id)).length;
+    const drapeau = c.portee === 'national' ? db.flagForCountry(c.pays) : '🌍';
+    return `<a href="coupe.html?id=${c.id}">
+      <span class="tag">${drapeau} ${c.nom}</span>
+      <span class="sub">${nbCourses} course${nbCourses > 1 ? 's' : ''} cette saison</span>
+    </a>`;
+  }).join('') || '<p class="empty">Aucune coupe définie.</p>';
+})();
+</script>
+</body>
+</html>

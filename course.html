@@ -34,9 +34,19 @@
     clm: 'Contre-la-montre', pave: 'Pavés', 'semi-pave': 'Semi-pavé', mixte: 'Mixte',
   };
 
+  const coupes = (course.coupes || []).map(cid => db.coupesById[cid]).filter(Boolean);
+  const periode = course.dateDebut ? (course.dateDebut === course.dateFin ? course.dateDebut : `${course.dateDebut} – ${course.dateFin}`) : null;
+
   el.innerHTML = `
     <h1>${course.nom}</h1>
-    <p class="lede"><span class="badge cat-${course.categorie}">${db.categoriesById[course.categorie]?.nom || course.categorie}</span>${course.pays ? ` · ${course.pays}` : ''}${course.profil ? ` · ${profilLabels[course.profil] || course.profil}` : ''}${course.nbEtapes ? ` · ${course.nbEtapes} étapes` : ''}</p>
+    <p class="lede">
+      <span class="badge cat-${course.categorie}">${db.categoriesById[course.categorie]?.nom || course.categorie}</span>
+      ${course.pays ? ` · ${db.flagForCountry(course.pays)} ${course.pays}` : ''}
+      ${course.profil ? ` · ${profilLabels[course.profil] || course.profil}` : ''}
+      ${course.nbEtapes ? ` · ${course.nbEtapes} étapes` : ''}
+      ${periode ? ` · ${periode}` : ''}
+      ${coupes.map(c => ` · <a href="coupe.html?id=${c.id}"><span class="badge">${c.nom}</span></a>`).join('')}
+    </p>
 
     ${etapes.length > 0 ? `
     <h2 style="margin: 1rem 0 0.6rem;">Étapes</h2>
