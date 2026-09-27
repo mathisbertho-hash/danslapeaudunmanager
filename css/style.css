@@ -249,12 +249,16 @@ label { display: block; font-family: 'Oswald', sans-serif; font-size: 0.72rem; l
 .badge.warn { border-color: var(--danger); color: var(--danger); background: rgba(239,88,117,0.08); }
 .badge.ok { border-color: var(--ok); color: var(--ok); background: rgba(62,207,142,0.08); }
 
-/* Catégorie de course : pastilles colorées */
-.cat-monument { color: #ffd469; border-color: #ffd469; background: rgba(255,212,105,0.1); }
-.cat-gt { color: #ff8a5c; border-color: #ff8a5c; background: rgba(255,138,92,0.1); }
-.cat-cpe-wt, .cat-classique-wt { color: var(--accent-2); border-color: var(--accent-2); background: rgba(79,209,197,0.1); }
-.cat-cpe-conti, .cat-classique-conti { color: var(--blue); border-color: var(--blue); background: rgba(91,141,239,0.1); }
+/* Catégorie de course : pastilles colorées (schéma calendrier réel) */
+.cat-grand-tour { color: #ff8a5c; border-color: #ff8a5c; background: rgba(255,138,92,0.1); }
+.cat-legend-tour { color: #ffd469; border-color: #ffd469; background: rgba(255,212,105,0.1); }
+.cat-world-tour { color: var(--blue); border-color: var(--blue); background: rgba(91,141,239,0.1); }
+.cat-world-classic { color: var(--accent-2); border-color: var(--accent-2); background: rgba(79,209,197,0.1); }
+.cat-national-tour { color: #9fb3d9; border-color: #9fb3d9; background: rgba(159,179,217,0.1); }
+.cat-national-classic { color: #7fd1e0; border-color: #7fd1e0; background: rgba(127,209,224,0.1); }
 .cat-championnat-national { color: #c792ea; border-color: #c792ea; background: rgba(199,146,234,0.1); }
+.cat-championnat-monde { color: #ffffff; border-color: #ffffff; background: rgba(255,255,255,0.12); }
+.cat-course-test { color: #ff8fb1; border-color: #ff8fb1; background: rgba(255,143,177,0.1); }
 
 .empty {
   color: var(--muted);
@@ -271,7 +275,6 @@ label { display: block; font-family: 'Oswald', sans-serif; font-size: 0.72rem; l
   font-size: 1.05em;
   vertical-align: -2px;
 }
-.cat-course-test { color: #ff8fb1; border-color: #ff8fb1; background: rgba(255,143,177,0.1); }
 
 footer.site {
   max-width: 960px;
