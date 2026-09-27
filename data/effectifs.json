@@ -1,34 +1,4 @@
 [
-  { 
-    "coureur_id": "chevalier-quentin", 
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1" 
-  },
-  { 
-    "coureur_id": "delcourt-romain", 
-    "equipe": "euskaltel-euskadi", 
-    "saison": "saison-1" 
-  },
-  { 
-    "coureur_id": "duhamel-aurelien", 
-    "equipe": "euskaltel-euskadi", 
-    "saison": "saison-1" 
-  },
-  { 
-    "coureur_id": "havugimana-eric", 
-    "equipe": "bogenvil-tim", 
-    "saison": "saison-1" 
-  },
-  { 
-    "coureur_id": "kamal-tarek", 
-    "equipe": "bogenvil-tim", 
-    "saison": "saison-1" 
-  },
-  { 
-    "coureur_id": "owona-fabrice", 
-    "equipe": "bogenvil-tim", 
-    "saison": "saison-1" 
-  },
   {
     "coureur_id": "beeharry-rajesh",
     "equipe": "bogenvil-tim",
@@ -791,7 +761,7 @@
   },
   {
     "coureur_id": "wiseler-dan",
-    "equipe": "airbus-team",
+    "equipe": "vinted",
     "saison": "saison-1"
   },
   {
@@ -1841,7 +1811,7 @@
   },
   {
     "coureur_id": "raza-naveed",
-    "equipe": "gazprom-rusvelo",
+    "equipe": "airbus-team",
     "saison": "saison-1"
   },
   {
@@ -2897,6 +2867,36 @@
   {
     "coureur_id": "terenzi-gian-marco",
     "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chevalier-quentin",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "delcourt-romain",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "duhamel-aurelien",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "havugimana-eric",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kamal-tarek",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "owona-fabrice",
+    "equipe": "bogenvil-tim",
     "saison": "saison-1"
   }
 ]

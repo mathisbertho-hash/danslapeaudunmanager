@@ -90,39 +90,1013 @@
     "profil": "clm"
   },
   {
-    "id": "course-pavee-1-saison-0",
-    "nom": "Course pavée 1",
-    "categorie": "course-test",
-    "saison": "saison-0",
-    "pays": null,
+    "id": "gravel-and-tar-saison-1",
+    "nom": "Gravel and Tar",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "New-Zealand",
     "nbEtapes": null,
-    "profil": "pave"
+    "profil": "accidente",
+    "dateDebut": "17/01",
+    "dateFin": "17/01",
+    "coupes": []
   },
   {
-    "id": "course-pavee-2-saison-0",
-    "nom": "Course pavée 2",
-    "categorie": "course-test",
-    "saison": "saison-0",
-    "pays": null,
-    "nbEtapes": null,
-    "profil": "pave"
+    "id": "tropicale-amissa-bongo-saison-1",
+    "nom": "Tropicale Amissa Bongo",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Gabon",
+    "nbEtapes": 7,
+    "profil": "mixte",
+    "dateDebut": "20/01",
+    "dateFin": "26/01",
+    "coupes": []
   },
   {
-    "id": "course-montagne-1-saison-0",
-    "nom": "Course montagne 1",
-    "categorie": "course-test",
-    "saison": "saison-0",
-    "pays": null,
+    "id": "surf-coast-classic-saison-1",
+    "nom": "Surf Coast Classic",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Australia",
     "nbEtapes": null,
-    "profil": null
+    "profil": "plat",
+    "dateDebut": "20/01",
+    "dateFin": "20/01",
+    "coupes": []
   },
   {
-    "id": "classique-montagne-2-saison-0",
-    "nom": "Course montagne 2",
-    "categorie": "course-test",
-    "saison": "saison-0",
+    "id": "tour-des-tonga-saison-1",
+    "nom": "Tour des Tonga",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Tonga",
+    "nbEtapes": 5,
+    "profil": "mixte",
+    "dateDebut": "23/01",
+    "dateFin": "27/01",
+    "coupes": []
+  },
+  {
+    "id": "africa-classic-saison-1",
+    "nom": "Africa Classic",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Ghana",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "27/01",
+    "dateFin": "27/01",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "southwest-pacific-tour-saison-1",
+    "nom": "Southwest Pacific Tour",
+    "categorie": "world-tour",
+    "saison": "saison-1",
+    "pays": "Papua-New-Guinea",
+    "nbEtapes": 11,
+    "profil": "mixte",
+    "dateDebut": "01/02",
+    "dateFin": "11/02",
+    "coupes": []
+  },
+  {
+    "id": "gp-la-marseillaise-saison-1",
+    "nom": "GP La Marseillaise",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "05/02",
+    "dateFin": "05/02",
+    "coupes": [
+      "coupe-france"
+    ]
+  },
+  {
+    "id": "clasica-de-almeria-saison-1",
+    "nom": "Clasica de Almeria",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "05/02",
+    "dateFin": "05/02",
+    "coupes": [
+      "coupe-espagne"
+    ]
+  },
+  {
+    "id": "nieuwsblad-saison-1",
+    "nom": "Nieuwsblad",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "10/02",
+    "dateFin": "10/02",
+    "coupes": [
+      "coupe-belgique"
+    ]
+  },
+  {
+    "id": "kuurne-bruxelles-kuurne-saison-1",
+    "nom": "Kuurne-Bruxelles-Kuurne",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "13/02",
+    "dateFin": "13/02",
+    "coupes": [
+      "coupe-belgique"
+    ]
+  },
+  {
+    "id": "le-samyn-saison-1",
+    "nom": "Le Samyn",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "15/02",
+    "dateFin": "15/02",
+    "coupes": [
+      "coupe-belgique"
+    ]
+  },
+  {
+    "id": "tour-d-algarve-saison-1",
+    "nom": "Tour d'Algarve",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Portugal",
+    "nbEtapes": 5,
+    "profil": "mixte",
+    "dateDebut": "15/02",
+    "dateFin": "19/02",
+    "coupes": []
+  },
+  {
+    "id": "trofeo-laigueglia-saison-1",
+    "nom": "Trofeo Laigueglia",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "18/02",
+    "dateFin": "18/02",
+    "coupes": [
+      "coupe-italie"
+    ]
+  },
+  {
+    "id": "faun-ardeche-classic-saison-1",
+    "nom": "Faun-Ardèche Classic",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "24/02",
+    "dateFin": "24/02",
+    "coupes": [
+      "coupe-france"
+    ]
+  },
+  {
+    "id": "drome-classic-saison-1",
+    "nom": "Drôme Classic",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "25/02",
+    "dateFin": "25/02",
+    "coupes": [
+      "coupe-france"
+    ]
+  },
+  {
+    "id": "milan-turin-saison-1",
+    "nom": "Milan-Turin",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "27/02",
+    "dateFin": "27/02",
+    "coupes": [
+      "coupe-italie"
+    ]
+  },
+  {
+    "id": "strade-bianche-saison-1",
+    "nom": "Strade Bianche",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "01/03",
+    "dateFin": "01/03",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "jean-paraiso-interior-saison-1",
+    "nom": "Jean Paraiso Interior",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "03/03",
+    "dateFin": "03/03",
+    "coupes": [
+      "coupe-espagne"
+    ]
+  },
+  {
+    "id": "paris-nice-saison-1",
+    "nom": "Paris-Nice",
+    "categorie": "world-tour",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": 8,
+    "profil": "mixte",
+    "dateDebut": "05/03",
+    "dateFin": "12/03",
+    "coupes": []
+  },
+  {
+    "id": "tirreno-saison-1",
+    "nom": "Tirreno",
+    "categorie": "world-tour",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": 7,
+    "profil": "mixte",
+    "dateDebut": "06/03",
+    "dateFin": "12/03",
+    "coupes": []
+  },
+  {
+    "id": "gp-de-denain-saison-1",
+    "nom": "GP de Denain",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "08/03",
+    "dateFin": "08/03",
+    "coupes": [
+      "coupe-france"
+    ]
+  },
+  {
+    "id": "classic-de-brugge-la-panne-saison-1",
+    "nom": "Classic de Brugge - La Panne",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "14/03",
+    "dateFin": "14/03",
+    "coupes": [
+      "coupe-belgique"
+    ]
+  },
+  {
+    "id": "milan-san-remo-saison-1",
+    "nom": "Milan - San Remo",
+    "categorie": "legend-tour",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "14/03",
+    "dateFin": "14/03",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "gp-e3-saison-1",
+    "nom": "GP E3",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "16/03",
+    "dateFin": "16/03",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "tour-du-pays-basque-saison-1",
+    "nom": "Tour du Pays-Basque",
+    "categorie": "world-tour",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": 6,
+    "profil": "mixte",
+    "dateDebut": "17/03",
+    "dateFin": "22/03",
+    "coupes": []
+  },
+  {
+    "id": "gand-wevelgem-saison-1",
+    "nom": "Gand-Wevelgem",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "20/03",
+    "dateFin": "20/03",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "gp-miguel-indurain-saison-1",
+    "nom": "GP Miguel Indurain",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "25/03",
+    "dateFin": "25/03",
+    "coupes": [
+      "coupe-espagne"
+    ]
+  },
+  {
+    "id": "tour-des-flandres-saison-1",
+    "nom": "Tour des Flandres",
+    "categorie": "legend-tour",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "01/04",
+    "dateFin": "01/04",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "tour-du-luxembourg-saison-1",
+    "nom": "Tour du Luxembourg",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Luxembourg",
+    "nbEtapes": 5,
+    "profil": "mixte",
+    "dateDebut": "05/04",
+    "dateFin": "09/04",
+    "coupes": []
+  },
+  {
+    "id": "paris-roubaix-saison-1",
+    "nom": "Paris-Roubaix",
+    "categorie": "legend-tour",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "08/04",
+    "dateFin": "08/04",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "la-fleche-brabanconne-saison-1",
+    "nom": "La Flèche Brabançonne",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "12/04",
+    "dateFin": "12/04",
+    "coupes": [
+      "coupe-belgique"
+    ]
+  },
+  {
+    "id": "amstel-gold-race-saison-1",
+    "nom": "Amstel Gold Race",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Netherlands",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "15/04",
+    "dateFin": "15/04",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "la-fleche-wallonne-saison-1",
+    "nom": "La Flèche Wallonne",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "18/04",
+    "dateFin": "18/04",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "liege-bastogne-liege-saison-1",
+    "nom": "Liège-Bastogne-Liège",
+    "categorie": "legend-tour",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "22/04",
+    "dateFin": "22/04",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "tour-de-francfort-saison-1",
+    "nom": "Tour de Francfort",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Germany",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "24/04",
+    "dateFin": "24/04",
+    "coupes": []
+  },
+  {
+    "id": "tour-de-romandie-saison-1",
+    "nom": "Tour de Romandie",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Switzerland",
+    "nbEtapes": 6,
+    "profil": "mixte",
+    "dateDebut": "24/04",
+    "dateFin": "29/04",
+    "coupes": []
+  },
+  {
+    "id": "classique-de-cologne-saison-1",
+    "nom": "Classique de Cologne",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Germany",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "26/04",
+    "dateFin": "26/04",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "sparkassen-saison-1",
+    "nom": "Sparkassen",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Germany",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "27/04",
+    "dateFin": "27/04",
+    "coupes": []
+  },
+  {
+    "id": "tour-d-italie-saison-1",
+    "nom": "Tour d'Italie",
+    "categorie": "grand-tour",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": 21,
+    "profil": "mixte",
+    "dateDebut": "01/05",
+    "dateFin": "22/05",
+    "coupes": []
+  },
+  {
+    "id": "tour-de-suede-saison-1",
+    "nom": "Tour de Suède",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Sweden",
+    "nbEtapes": 6,
+    "profil": "mixte",
+    "dateDebut": "05/05",
+    "dateFin": "10/05",
+    "coupes": []
+  },
+  {
+    "id": "memorial-otxoa-saison-1",
+    "nom": "Memorial Otxoa",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "09/05",
+    "dateFin": "09/05",
+    "coupes": [
+      "coupe-espagne"
+    ]
+  },
+  {
+    "id": "ordiziako-klasika-saison-1",
+    "nom": "Ordiziako Klasika",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "15/05",
+    "dateFin": "15/05",
+    "coupes": [
+      "coupe-espagne"
+    ]
+  },
+  {
+    "id": "tour-de-hongrie-saison-1",
+    "nom": "Tour de Hongrie",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Hungary",
+    "nbEtapes": 5,
+    "profil": "mixte",
+    "dateDebut": "17/05",
+    "dateFin": "21/05",
+    "coupes": []
+  },
+  {
+    "id": "lincoln-gp-saison-1",
+    "nom": "Lincoln GP",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "United-Kingdom",
+    "nbEtapes": null,
+    "profil": null,
+    "dateDebut": "25/05",
+    "dateFin": "25/05",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "coppa-sabatini-saison-1",
+    "nom": "Coppa Sabatini",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "25/05",
+    "dateFin": "25/05",
+    "coupes": [
+      "coupe-italie"
+    ]
+  },
+  {
+    "id": "gp-du-luxembourg-saison-1",
+    "nom": "GP du Luxembourg",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Luxembourg",
+    "nbEtapes": 5,
+    "profil": "mixte",
+    "dateDebut": "02/06",
+    "dateFin": "06/06",
+    "coupes": []
+  },
+  {
+    "id": "tour-de-galles-saison-1",
+    "nom": "Tour de Galles",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Pays-de-Galles",
+    "nbEtapes": 3,
+    "profil": "mixte",
+    "dateDebut": "07/06",
+    "dateFin": "09/06",
+    "coupes": []
+  },
+  {
+    "id": "dauphine-saison-1",
+    "nom": "Dauphiné",
+    "categorie": "world-tour",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": 6,
+    "profil": "mixte",
+    "dateDebut": "07/06",
+    "dateFin": "12/06",
+    "coupes": []
+  },
+  {
+    "id": "tour-de-pologne-saison-1",
+    "nom": "Tour de Pologne",
+    "categorie": "world-tour",
+    "saison": "saison-1",
+    "pays": "Poland",
+    "nbEtapes": 6,
+    "profil": "mixte",
+    "dateDebut": "09/06",
+    "dateFin": "14/06",
+    "coupes": []
+  },
+  {
+    "id": "championnat-national-contre-la-montre-saison-1",
+    "nom": "Championnat national contre-la-montre",
+    "categorie": "championnat-national",
+    "saison": "saison-1",
     "pays": null,
     "nbEtapes": null,
-    "profil": "montagne"
+    "profil": "clm",
+    "dateDebut": "20/06",
+    "dateFin": "20/06",
+    "coupes": []
+  },
+  {
+    "id": "championnat-national-en-ligne-saison-1",
+    "nom": "Championnat national en ligne",
+    "categorie": "championnat-national",
+    "saison": "saison-1",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "22/06",
+    "dateFin": "22/06",
+    "coupes": []
+  },
+  {
+    "id": "tour-de-france-saison-1",
+    "nom": "Tour de France",
+    "categorie": "grand-tour",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": 21,
+    "profil": "mixte",
+    "dateDebut": "02/07",
+    "dateFin": "24/07",
+    "coupes": []
+  },
+  {
+    "id": "sibiu-tour-saison-1",
+    "nom": "Sibiu Tour",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Romania",
+    "nbEtapes": 5,
+    "profil": "mixte",
+    "dateDebut": "07/07",
+    "dateFin": "10/07",
+    "coupes": []
+  },
+  {
+    "id": "lotto-famenne-saison-1",
+    "nom": "Lotto Famenne",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "14/07",
+    "dateFin": "14/07",
+    "coupes": [
+      "coupe-belgique"
+    ]
+  },
+  {
+    "id": "tour-du-portugal-saison-1",
+    "nom": "Tour du Portugal",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Portugal",
+    "nbEtapes": 9,
+    "profil": "mixte",
+    "dateDebut": "16/07",
+    "dateFin": "24/07",
+    "coupes": []
+  },
+  {
+    "id": "klasikoa-saison-1",
+    "nom": "Klasikoa",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "28/07",
+    "dateFin": "28/07",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "renewi-tour-saison-1",
+    "nom": "Renewi Tour",
+    "categorie": "world-tour",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": 7,
+    "profil": "mixte",
+    "dateDebut": "02/08",
+    "dateFin": "08/08",
+    "coupes": []
+  },
+  {
+    "id": "gp-de-wallonie-saison-1",
+    "nom": "GP de Wallonie",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "10/08",
+    "dateFin": "10/08",
+    "coupes": [
+      "coupe-belgique"
+    ]
+  },
+  {
+    "id": "tour-d-amerique-du-sud-saison-1",
+    "nom": "Tour d'Amérique du Sud",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Colombia",
+    "nbEtapes": 8,
+    "profil": "mixte",
+    "dateDebut": "11/08",
+    "dateFin": "18/08",
+    "coupes": []
+  },
+  {
+    "id": "bretagne-classic-saison-1",
+    "nom": "Bretagne Classic",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "14/08",
+    "dateFin": "14/08",
+    "coupes": [
+      "coupe-france"
+    ]
+  },
+  {
+    "id": "tro-bro-leon-saison-1",
+    "nom": "Tro Bro Leon",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "17/08",
+    "dateFin": "17/08",
+    "coupes": [
+      "coupe-france"
+    ]
+  },
+  {
+    "id": "classic-du-mercantour-saison-1",
+    "nom": "Classic du Mercantour",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "montagne",
+    "dateDebut": "20/08",
+    "dateFin": "20/08",
+    "coupes": [
+      "coupe-france"
+    ]
+  },
+  {
+    "id": "memorial-marco-pantani-saison-1",
+    "nom": "Memorial Marco Pantani",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "20/08",
+    "dateFin": "20/08",
+    "coupes": [
+      "coupe-italie"
+    ]
+  },
+  {
+    "id": "trofeo-palma-saison-1",
+    "nom": "Trofeo Palma",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "20/08",
+    "dateFin": "20/08",
+    "coupes": [
+      "coupe-espagne"
+    ]
+  },
+  {
+    "id": "tour-d-espagne-saison-1",
+    "nom": "Tour d'Espagne",
+    "categorie": "grand-tour",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": 21,
+    "profil": "mixte",
+    "dateDebut": "22/08",
+    "dateFin": "13/09",
+    "coupes": []
+  },
+  {
+    "id": "richmond-classic-saison-1",
+    "nom": "Richmond Classic",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "United-States",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "01/09",
+    "dateFin": "01/09",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "tour-du-kazakhstan-saison-1",
+    "nom": "Tour du Kazakhstan",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Kazakhstan",
+    "nbEtapes": 4,
+    "profil": "mixte",
+    "dateDebut": "03/09",
+    "dateFin": "06/09",
+    "coupes": []
+  },
+  {
+    "id": "tour-d-ukraine-saison-1",
+    "nom": "Tour d'Ukraine",
+    "categorie": "national-tour",
+    "saison": "saison-1",
+    "pays": "Ukraine",
+    "nbEtapes": 5,
+    "profil": "mixte",
+    "dateDebut": "08/09",
+    "dateFin": "12/09",
+    "coupes": []
+  },
+  {
+    "id": "tour-d-emilie-saison-1",
+    "nom": "Tour d'Emilie",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "12/09",
+    "dateFin": "12/09",
+    "coupes": [
+      "coupe-italie"
+    ]
+  },
+  {
+    "id": "coppa-bernocchi-saison-1",
+    "nom": "Coppa Bernocchi",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "15/09",
+    "dateFin": "15/09",
+    "coupes": [
+      "coupe-italie"
+    ]
+  },
+  {
+    "id": "tour-de-lombardie-saison-1",
+    "nom": "Tour de Lombardie",
+    "categorie": "legend-tour",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "montagne",
+    "dateDebut": "17/09",
+    "dateFin": "17/09",
+    "coupes": [
+      "coupe-du-monde"
+    ]
+  },
+  {
+    "id": "trofeo-andratx-saison-1",
+    "nom": "Trofeo Andratx",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": null,
+    "profil": "montagne",
+    "dateDebut": "20/09",
+    "dateFin": "20/09",
+    "coupes": [
+      "coupe-espagne"
+    ]
+  },
+  {
+    "id": "giro-del-veneto-saison-1",
+    "nom": "Giro del Veneto",
+    "categorie": "national-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "21/09",
+    "dateFin": "21/09",
+    "coupes": [
+      "coupe-italie"
+    ]
+  },
+  {
+    "id": "classique-itt-saint-marin-saison-1",
+    "nom": "Classique ITT Saint Marin",
+    "categorie": "world-classic",
+    "saison": "saison-1",
+    "pays": "San-Marino",
+    "nbEtapes": null,
+    "profil": "clm",
+    "dateDebut": "23/09",
+    "dateFin": "23/09",
+    "coupes": []
+  },
+  {
+    "id": "tour-du-japon-saison-1",
+    "nom": "Tour du Japon",
+    "categorie": "world-tour",
+    "saison": "saison-1",
+    "pays": "Japan",
+    "nbEtapes": 6,
+    "profil": "mixte",
+    "dateDebut": "25/09",
+    "dateFin": "30/09",
+    "coupes": []
+  },
+  {
+    "id": "championnats-du-monde-contre-la-montre-saison-1",
+    "nom": "Championnats du Monde contre-la-montre",
+    "categorie": "championnat-monde",
+    "saison": "saison-1",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "clm",
+    "dateDebut": "01/10",
+    "dateFin": "01/10",
+    "coupes": []
+  },
+  {
+    "id": "championnats-du-monde-en-ligne-saison-1",
+    "nom": "Championnats du Monde en ligne",
+    "categorie": "championnat-monde",
+    "saison": "saison-1",
+    "pays": null,
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "03/10",
+    "dateFin": "03/10",
+    "coupes": []
   }
 ]

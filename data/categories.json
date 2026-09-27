@@ -1,34 +1,11 @@
 [
-  {
-    "id": "monument",
-    "nom": "Monument"
-  },
-  {
-    "id": "gt",
-    "nom": "Grand Tour"
-  },
-  {
-    "id": "cpe-wt",
-    "nom": "Course par étapes World Tour"
-  },
-  {
-    "id": "classique-wt",
-    "nom": "Classique World Tour"
-  },
-  {
-    "id": "cpe-conti",
-    "nom": "Course par étapes Continentale"
-  },
-  {
-    "id": "classique-conti",
-    "nom": "Classique Continentale"
-  },
-  {
-    "id": "championnat-national",
-    "nom": "Championnat national"
-  },
-  {
-    "id": "course-test",
-    "nom": "Course test"
-  }
+  { "id": "grand-tour", "nom": "Grand Tour" },
+  { "id": "legend-tour", "nom": "Legend Tour" },
+  { "id": "world-tour", "nom": "World Tour" },
+  { "id": "world-classic", "nom": "World Classic" },
+  { "id": "national-tour", "nom": "Tour national" },
+  { "id": "national-classic", "nom": "Classique nationale" },
+  { "id": "championnat-national", "nom": "Championnat national" },
+  { "id": "championnat-monde", "nom": "Championnat du monde" },
+  { "id": "course-test", "nom": "Course test" }
 ]

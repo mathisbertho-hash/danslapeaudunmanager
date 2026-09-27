@@ -1,18 +1,19 @@
 {
   "_comment": "Barème à remplir : points[categorie][place] = points. Place '1'..'N', laisser vide tant que non fourni par l'organisateur.",
   "individuel_scratch": {
-    "monument": {},
-    "gt": {},
-    "cpe-wt": {},
-    "classique-wt": {},
-    "cpe-conti": {},
-    "classique-conti": {},
-    "championnat-national": {}
+    "grand-tour": {},
+    "legend-tour": {},
+    "world-tour": {},
+    "world-classic": {},
+    "national-tour": {},
+    "national-classic": {},
+    "championnat-national": {},
+    "championnat-monde": {}
   },
   "etape": {
-    "gt": {},
-    "cpe-wt": {},
-    "cpe-conti": {}
+    "grand-tour": {},
+    "world-tour": {},
+    "national-tour": {}
   },
   "classement_annexe": {
     "points": {},
@@ -22,5 +23,13 @@
   "maillot_porte": {
     "actif": false,
     "points_par_jour": {}
+  },
+  "coupe": {
+    "_comment": "Barème séparé pour les classements de coupe (Coupe du Monde, coupes nationales). points[coupeId][place] = points, appliqué au résultat scratch/général de chaque course rattachée à la coupe.",
+    "coupe-du-monde": {},
+    "coupe-italie": {},
+    "coupe-espagne": {},
+    "coupe-france": {},
+    "coupe-belgique": {}
   }
 }
