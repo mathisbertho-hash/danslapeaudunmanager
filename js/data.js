@@ -12,8 +12,11 @@ const DATA_FILES = {
   resultats: 'data/resultats.json',
   bareme: 'data/bareme.json',
   paysIso: 'data/pays_iso.json',
+  coupes: 'data/coupes.json',
 };
 
+// Drapeaux réels (images, en couleur) via flagcdn.com — plus fiable que l'emoji,
+// qui ne s'affiche pas en couleur sur toutes les plateformes (Windows notamment).
 const SPECIAL_FLAGS = {
   'GB-WLS': '\u{1F3F4}\u{E0067}\u{E0062}\u{E0077}\u{E006C}\u{E0073}\u{E007F}',
   'GB-SCT': '\u{1F3F4}\u{E0067}\u{E0062}\u{E0073}\u{E0063}\u{E0074}\u{E007F}',
@@ -28,10 +31,7 @@ function flagEmoji(alpha2) {
   return [...alpha2.toUpperCase()].map(c => String.fromCodePoint(127397 + c.charCodeAt(0))).join('');
 }
 
-// Drapeaux réels (images) via flagcdn.com — plus fiable que l'emoji, qui ne
-// s'affiche pas en couleur sur toutes les plateformes (Windows notamment).
-// Codes spéciaux (Pays de Galles) : pas de code ISO standard, on retombe sur
-// l'emoji. Sans code du tout (ex. Bougainville) : pas d'image, juste rien.
+// Sans code du tout (ex. Bougainville) : pas d'image, rien n'est affiché.
 function flagImg(alpha2, alt) {
   if (!alpha2) return '';
   if (alpha2.startsWith('GB-')) {
@@ -55,6 +55,7 @@ async function loadAllData() {
   db.equipesById = Object.fromEntries(db.equipes.map(e => [e.id, e]));
   db.coursesById = Object.fromEntries(db.courses.map(c => [c.id, c]));
   db.categoriesById = Object.fromEntries(db.categories.map(c => [c.id, c]));
+  db.coupesById = Object.fromEntries(db.coupes.map(c => [c.id, c]));
 
   // équipe d'un coureur pour une saison donnée (référentiel d'effectifs daté)
   db.equipeDuCoureur = (coureurId, saisonId) => {

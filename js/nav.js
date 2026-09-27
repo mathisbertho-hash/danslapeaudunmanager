@@ -1,6 +1,7 @@
 const NAV_ITEMS = [
   { href: 'index.html', label: 'Accueil' },
   { href: 'classements.html', label: 'Classements' },
+  { href: 'coupes.html', label: 'Coupes' },
   { href: 'coureurs.html', label: 'Coureurs' },
   { href: 'equipes.html', label: 'Équipes' },
   { href: 'courses.html', label: 'Courses' },

@@ -93,3 +93,46 @@ function avecRang(liste) {
     return { ...item, rang: dernierePosition };
   });
 }
+
+/**
+ * Classement d'une coupe (Coupe du Monde ou coupe nationale) pour une saison :
+ * seuls les résultats scratch/général des courses rattachées à cette coupe
+ * (course.coupes contient coupeId) comptent, avec le barème dédié
+ * bareme.coupe[coupeId]. Même logique DNF/ex æquo que les classements
+ * généraux ; individuel et par équipes, comme les classements par catégorie.
+ */
+function calculerClassementCoupe(db, coupeId, saisonId) {
+  const indivPoints = new Map();
+  const equipePoints = new Map();
+  const bareme = db.bareme.coupe?.[coupeId] || {};
+
+  const resultatsCoupe = db.resultats.filter(res => {
+    if (res.saison !== saisonId) return false;
+    if (res.type !== 'scratch' && res.type !== 'general') return false;
+    const course = db.coursesById[res.courseId];
+    return course && Array.isArray(course.coupes) && course.coupes.includes(coupeId);
+  });
+
+  for (const res of resultatsCoupe) {
+    for (const ligne of res.classement) {
+      if (ligne.statut !== 'classe') continue;
+      const v = bareme[String(ligne.place)];
+      const pts = typeof v === 'number' ? v : 0;
+      if (pts <= 0) continue;
+      const equipeId = db.equipeDuCoureur(ligne.coureurId, saisonId);
+      indivPoints.set(ligne.coureurId, (indivPoints.get(ligne.coureurId) || 0) + pts);
+      if (equipeId) equipePoints.set(equipeId, (equipePoints.get(equipeId) || 0) + pts);
+    }
+  }
+
+  const toSortedArray = (map, labelFn) =>
+    [...map.entries()]
+      .map(([id, valeur]) => ({ id, label: labelFn(id), valeur }))
+      .sort((a, b) => b.valeur - a.valeur);
+
+  return {
+    individuel: toSortedArray(indivPoints, id => db.coureursById[id]?.nom || id),
+    equipes: toSortedArray(equipePoints, id => db.equipesById[id]?.nom || id),
+    nbCourses: resultatsCoupe.length,
+  };
+}
