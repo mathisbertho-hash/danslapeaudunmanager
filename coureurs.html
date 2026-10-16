@@ -9,7 +9,7 @@
 <body data-page="coureurs.html">
 <main>
   <h1>Coureurs</h1>
-  <p class="lede">574 coureurs recensés pour la saison en cours. Cherche un nom ou filtre par équipe.</p>
+  <p class="lede"><span id="nb"></span> coureurs recensés pour la saison en cours (pros et développement). Cherche un nom ou filtre par équipe.</p>
 
   <div class="filters">
     <input type="text" id="q" placeholder="Chercher un coureur…">
@@ -27,15 +27,16 @@
   const saison = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
 
   const fEquipe = document.getElementById('fEquipe');
-  fEquipe.innerHTML += db.equipes
-    .slice().sort((a, b) => a.nom.localeCompare(b.nom))
-    .map(e => `<option value="${e.id}">${e.nom}</option>`).join('');
+  const optEq = liste => liste.sort((a, b) => a.nom.localeCompare(b.nom)).map(e => `<option value="${e.id}">${e.nom}</option>`).join('');
+  fEquipe.innerHTML += `<optgroup label="Équipes pro">${optEq(db.equipes.filter(e => e.type !== 'developpement'))}</optgroup>`
+    + `<optgroup label="Équipes de développement">${optEq(db.equipes.filter(e => e.type === 'developpement'))}</optgroup>`;
 
   const rows = db.coureurs.map(c => ({
     ...c,
     equipeId: db.equipeDuCoureur(c.id, saison.id),
   })).sort((a, b) => a.nom.localeCompare(b.nom));
 
+  document.getElementById('nb').textContent = rows.filter(r => r.equipeId).length;
   const q = document.getElementById('q');
   const el = document.getElementById('liste');
 
@@ -51,12 +52,13 @@
       return;
     }
     el.innerHTML = `<table class="results">
-      <thead><tr><th>Coureur</th><th>Équipe</th><th>Nationalité</th></tr></thead>
+      <thead><tr><th>Coureur</th><th>Équipe</th><th>Nationalité</th><th class="num">Âge</th><th class="num">Taille</th></tr></thead>
       <tbody>${filtered.map(r => `
         <tr>
           <td><a href="coureur.html?id=${encodeURIComponent(r.id)}">${r.nom}</a></td>
           <td>${r.equipeId ? `<a href="equipe.html?id=${encodeURIComponent(r.equipeId)}">${db.equipesById[r.equipeId].nom}</a>` : '<span class="badge warn">équipe inconnue</span>'}</td>
           <td>${r.nationalite ? `${db.flagForCountry(r.nationalite)} ${r.nationalite}` : '<span class="badge warn">?</span>'}</td>
+          <td class="num">${r.age || '—'}</td><td class="num">${r.taille ? r.taille + ' cm' : '—'}</td>
         </tr>`).join('')}
       </tbody></table>`;
   }

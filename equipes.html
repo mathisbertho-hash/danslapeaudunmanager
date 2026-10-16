@@ -9,8 +9,10 @@
 <body data-page="equipes.html">
 <main>
   <h1>Équipes</h1>
-  <p class="lede">Les écuries du jeu.</p>
+  <p class="lede">Les écuries pro et leurs équipes de développement (circuit Espoirs).</p>
   <div class="table-wrap"><div id="liste"><p class="empty">Chargement…</p></div></div>
+  <h2 id="titreDev" style="margin: 1.4rem 0 0.6rem;">Équipes de développement</h2>
+  <div class="table-wrap"><div id="listeDev"></div></div>
 </main>
 
 <script src="js/data.js"></script>
@@ -25,17 +27,22 @@
     effectifCount[e.equipe] = (effectifCount[e.equipe] || 0) + 1;
   });
 
-  const equipes = db.equipes.slice().sort((a, b) => a.nom.localeCompare(b.nom));
-  document.getElementById('liste').innerHTML = `<table class="results">
-    <thead><tr><th>Équipe</th><th>Manager</th><th>Nationalité</th><th class="num">Effectif</th></tr></thead>
-    <tbody>${equipes.map(e => `
+  const ligne = e => `
       <tr>
         <td><a href="equipe.html?id=${e.id}">${e.nom}</a></td>
         <td>${e.manager_forum || '—'}</td>
         <td>${e.nationalite ? `${db.flagForCode(e.nationalite_code, e.nationalite)} ${e.nationalite}` : '<span class="badge">?</span>'}</td>
         <td class="num">${effectifCount[e.id] || 0}</td>
-      </tr>`).join('')}
-    </tbody></table>`;
+      </tr>`;
+  const tableau = (liste) => `<table class="results">
+    <thead><tr><th>Équipe</th><th>Manager</th><th>Nationalité</th><th class="num">Effectif</th></tr></thead>
+    <tbody>${liste.map(ligne).join('')}</tbody></table>`;
+  const tri = (a, b) => a.nom.localeCompare(b.nom);
+  const pros = db.equipes.filter(e => e.type !== 'developpement').sort(tri);
+  const devs = db.equipes.filter(e => e.type === 'developpement').sort(tri);
+  document.getElementById('liste').innerHTML = tableau(pros);
+  if (devs.length) document.getElementById('listeDev').innerHTML = tableau(devs);
+  document.getElementById('titreDev').style.display = devs.length ? '' : 'none';
 })();
 </script>
 </body>

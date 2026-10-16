@@ -25,7 +25,7 @@
   const course = db.coursesById[resultat.courseId];
   const saisonLabel = db.saisons.find(s => s.id === resultat.saison)?.label || resultat.saison;
   const typeLabels = {
-    scratch: 'Classement', general: 'Général final', etape: `Étape ${resultat.etapeNumero ?? ''}`,
+    classique: 'Classique', general: 'Général final', etape: `Étape ${resultat.etapeNumero ?? ''}`,
     points: 'Classement annexe — points', montagne: 'Classement annexe — montagne', jeune: 'Classement annexe — jeune',
   };
 

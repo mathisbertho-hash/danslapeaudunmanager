@@ -44,7 +44,7 @@
   let onglet = saisonsOfficielles.some(s => s.id === saisonOuverte?.id) ? saisonOuverte.id
     : (saisonsOfficielles.length ? saisonsOfficielles[saisonsOfficielles.length - 1].id : (aPreSaison ? 'pre' : null));
 
-  const TYPES_PODIUM = ['scratch', 'general', 'etape'];
+  const TYPES_PODIUM = ['classique', 'general', 'etape'];
   const LABEL_ANNEXE = { points: 'Classement par points', montagne: 'Classement de la montagne', jeune: 'Classement des jeunes' };
   const dateKey = c => { if (!c.dateDebut) return '9999'; const [j, m] = c.dateDebut.split('/'); return m + j; };
   const periode = c => c.dateDebut ? (c.dateDebut === c.dateFin ? c.dateDebut : `${c.dateDebut} – ${c.dateFin}`) : '';
@@ -57,7 +57,7 @@
       pts: rows.reduce((a, r) => a + r.pts, 0),
       prime: rows.reduce((a, r) => a + r.prime, 0),
       victoires: pod.filter(r => r.place === 1).length,
-      classiques: pod.filter(r => r.place === 1 && r.type === 'scratch').length,
+      classiques: pod.filter(r => r.place === 1 && r.type === 'classique').length,
       generaux: pod.filter(r => r.place === 1 && r.type === 'general').length,
       etapes: pod.filter(r => r.place === 1 && r.type === 'etape').length,
       podiums: pod.filter(r => r.place <= 3).length,
@@ -105,13 +105,13 @@
     const parCourse = new Map();
     rows.forEach(r => { if (!parCourse.has(r.course.id)) parCourse.set(r.course.id, []); parCourse.get(r.course.id).push(r); });
     const courses = [...parCourse.values()].sort((a, b) => dateKey(a[0].course).localeCompare(dateKey(b[0].course)));
-    const ordre = { general: 0, scratch: 0, points: 1, montagne: 2, jeune: 3, etape: 4 };
+    const ordre = { general: 0, classique: 0, points: 1, montagne: 2, jeune: 3, etape: 4 };
 
     const corps = courses.map(rs => {
       const c = rs[0].course;
       const cat = `<span class="badge cat-${c.categorie}">${esc(db.categoriesById[c.categorie]?.nom || c.categorie)}</span>`;
       const nom = `<a href="course.html?id=${c.id}">${esc(c.nom)}</a>`;
-      const estTour = rs.some(r => r.type !== 'scratch') || c.nbEtapes > 1;
+      const estTour = rs.some(r => r.type !== 'classique') || c.nbEtapes > 1;
       if (!estTour) {
         const r = rs[0];
         const place = r.classe ? `${r.place}` : '<span class="badge warn">abandon</span>';
@@ -123,7 +123,7 @@
       const subs = rs.slice().sort((a, b) => (ordre[a.type] - ordre[b.type]) || ((a.res.etapeNumero || 0) - (b.res.etapeNumero || 0)))
         .map(r => {
           const lib = r.type === 'etape' ? `<span class="badge">Étape ${r.res.etapeNumero ?? '?'}</span>`
-            : r.type === 'general' || r.type === 'scratch' ? 'Classement général' : LABEL_ANNEXE[r.type] || r.type;
+            : r.type === 'general' || r.type === 'classique' ? 'Classement général' : LABEL_ANNEXE[r.type] || r.type;
           return ligneResultat(r, `<a href="resultat.html?id=${r.res.id}">${lib}</a>`, 'sous');
         }).join('');
       return `<tr class="course-head"><td>${periode(c)}</td><td></td><td>${nom} ${cat} <span class="badge">Tour${c.nbEtapes ? ` · ${c.nbEtapes} étapes` : ''}</span></td>
@@ -188,7 +188,7 @@
         <div class="table-wrap"><table class="results"><thead><tr><th class="num">Place</th><th>Course</th><th>Type</th></tr></thead><tbody>${rows
           .sort((a, b) => (a.place || 999) - (b.place || 999)).map(r => `<tr><td class="place num">${r.classe ? r.place : '—'}</td>
           <td><a href="course.html?id=${r.course.id}">${esc(r.course.nom)}</a></td>
-          <td>${r.type === 'etape' ? `étape ${r.res.etapeNumero ?? ''}` : r.type} ${r.classe ? '' : '<span class="badge warn">abandon</span>'}</td></tr>`).join('')}</tbody></table></div>`;
+          <td>${r.type === 'etape' ? `étape ${r.res.etapeNumero ?? ''}` : r.type === 'classique' ? 'classique' : r.type === 'general' ? 'général' : r.type} ${r.classe ? '' : '<span class="badge warn">abandon</span>'}</td></tr>`).join('')}</tbody></table></div>`;
     } else {
       const rows = toutes.filter(t => t.saison === onglet);
       const t = totaux(rows);

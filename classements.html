@@ -70,8 +70,12 @@
   const saisonOuverte = db.saisons.find(s => s.statut === 'ouverte' && !s.preSaison);
   if (saisonOuverte) fSaison.value = saisonOuverte.id;
 
-  fEquipe.innerHTML += db.equipes.slice().sort((a, b) => a.nom.localeCompare(b.nom))
-    .map(e => `<option value="${e.id}">${e.nom}</option>`).join('');
+  function remplirEquipes() {
+    const dev = circuit === 'espoirs';
+    fEquipe.innerHTML = '<option value="">Toutes les équipes</option>' + db.equipes
+      .filter(e => (e.type === 'developpement') === dev)
+      .sort((a, b) => a.nom.localeCompare(b.nom)).map(e => `<option value="${e.id}">${e.nom}</option>`).join('');
+  }
 
   function remplirSelects() {
     fClassement.innerHTML = CLASSEMENTS[circuit].map(c => `<option value="${c.id}">${c.label}</option>`).join('');
@@ -156,6 +160,7 @@
     params.delete('classement'); params.delete('vue');
     fPays.value = ''; fEquipe.value = ''; fRecherche.value = '';
     remplirSelects();
+    remplirEquipes();
     render();
   }));
   fVue.addEventListener('change', () => { fPays.value = ''; render(); });
@@ -163,6 +168,7 @@
   fRecherche.addEventListener('input', render);
 
   remplirSelects();
+  remplirEquipes();
   render();
 })();
 </script>

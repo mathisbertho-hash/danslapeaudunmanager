@@ -22,7 +22,7 @@
   if (!course) { el.innerHTML = '<p class="empty">Course introuvable.</p>'; return; }
 
   const resultatsPrincipaux = db.resultats.filter(r =>
-    r.courseId === course.id && (r.type === 'scratch' || r.type === 'general')
+    r.courseId === course.id && (r.type === 'classique' || r.type === 'general')
   );
   const etapes = db.resultats
     .filter(r => r.courseId === course.id && r.type === 'etape')
@@ -63,7 +63,7 @@
         </tbody></table>
     </div>` : ''}
 
-    <h2 style="margin: 1rem 0 0.6rem;">Vainqueurs successifs (scratch / général)</h2>
+    <h2 style="margin: 1rem 0 0.6rem;">Vainqueurs successifs (classique / général)</h2>
     <div class="table-wrap">
       ${resultatsPrincipaux.length === 0 ? '<p class="empty">Aucun résultat enregistré pour cette course.</p>' : `
       <table class="results">

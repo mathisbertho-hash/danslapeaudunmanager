@@ -49,12 +49,12 @@ Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureur
 - **3 nouvelles catégories** : Tour Espoirs (`Dev Tour`), Classique Espoirs (`Dev Classic`) et Juniors. Chaque catégorie porte maintenant un champ `circuit` (`pro`, `espoirs`, `juniors`).
 - **Classements par circuit** : la page Classements (et l'accueil) affiche par défaut le **circuit Pro** uniquement ; un sélecteur permet de voir Espoirs, Juniors ou tous les circuits. Les catégories proposées s'adaptent au circuit choisi, la liste des courses les groupe par circuit.
 - **Fiche coureur** : l'historique par saison indique le rang Pro, et ajoute une ligne Espoirs / Juniors si le coureur y a marqué des points.
-- **Barème** : emplacements vides ajoutés pour `dev-classic`, `dev-tour` et `juniors` (scratch/général, et étape pour les tours). À remplir comme les autres.
+- **Barème** : emplacements vides ajoutés pour `dev-classic`, `dev-tour` et `juniors` (classique/général, et étape pour les tours). À remplir comme les autres.
 - **Lien PCMMOD** : la colonne du calendrier est conservée (`lienPcmmod`) et affichée sur la fiche course quand elle est renseignée.
 
 ## Barèmes, primes et refonte des classements (16 octobre)
 
-- **Barèmes importés** depuis `Barèmes.xlsx` dans `data/bareme.json` : pour chaque place, `{ "pts": …, "prime": … }`. Un tour utilise le tableau **Étapes** (`etape`) pour chaque étape et le tableau **Général** (`individuel_scratch`) pour le classement final ; les deux se cumulent. Aucun barème pour les championnats ni les classements annexes : 0 point, 0 prime.
+- **Barèmes importés** depuis `Barèmes.xlsx` dans `data/bareme.json` : pour chaque place, `{ "pts": …, "prime": … }`. Un tour utilise le tableau **Étapes** (`etape`) pour chaque étape et le tableau **Général** (`individuel_classique`) pour le classement final ; les deux se cumulent. Aucun barème pour les championnats ni les classements annexes : 0 point, 0 prime.
 - **Espoirs / Juniors** : ils empruntent le barème National Classic (course en un jour) ou National Tour (par étapes), **sans prime** — réglable dans `bareme.json` (`alias_categories`, `sans_prime`).
 - **Classements** (page unique, 3 circuits) :
   - *Pro* : global, World Tour (Grand Tour + World Tour + World Classic + Legend Tour), Continental (National Tour + National Classic), victoires, primes — en individuel ou par équipes.
@@ -65,6 +65,13 @@ Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureur
 - **Fiche coureur** : onglets par saison, tuiles (points, primes, rang, victoires, podiums, top 10), résultats groupés par épreuve avec la distinction Classique / Tour / Étape (points et primes à chaque ligne), meilleurs résultats, statistiques clés, historique des équipes et historique par saison (rang points, rang primes, coupes). Les champs optionnels `taille` (cm) et `poids` (kg) de `data/coureurs.json` s'affichent dès qu'ils sont renseignés, comme `age`.
 - **Fiche équipe** : onglets par saison, points, primes, rang global et rang des primes, victoires, podiums, effectif avec points/primes par coureur, meilleurs résultats, victoires, historique par saison.
 - **Classement complet d'une course** : colonnes points et primes.
+
+## Effectifs complets (16 octobre) et « classique »
+
+- **Effectifs saison 1** importés depuis `EFFECTIFS_COMPLETS.xlsx` : 622 coureurs pro et 230 coureurs de développement. Pour chaque coureur déjà connu : âge, taille et nationalité mis à jour ; 253 nouveaux coureurs créés (24 pro, 229 espoirs). Tous les coureurs ont maintenant leur équipe pour la saison 1 dans `data/effectifs.json`.
+- **19 équipes de développement** créées dans `data/equipes.json` (`type: "developpement"`, `parent` = l'équipe pro du même manager). Elles servent au classement Espoirs par équipes ; la page Équipes les liste à part et chaque fiche renvoie à l'équipe liée.
+- **Taille et âge** affichés sur la fiche et la liste des coureurs.
+- **« Scratch » devient « classique »** dans les données : type de résultat `classique` dans `data/resultats.json`, clé `individuel_classique` et alias `classique` dans `data/bareme.json`. Le site convertit aussi à la volée d'éventuels anciens résultats encore en `scratch`.
 
 ## Fichiers modifiés depuis ta dernière mise à jour du repo
 
