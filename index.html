@@ -18,7 +18,7 @@
   <div class="grid-links">
     <a href="classements.html">
       <span class="tag">Classement général</span>
-      <span class="sub">Individuel &amp; par équipes, points &amp; victoires</span>
+      <span class="sub">Pro, Espoirs, Juniors — points, victoires, primes</span>
     </a>
     <a href="coureurs.html">
       <span class="tag">Coureurs</span>
@@ -35,7 +35,7 @@
   </div>
 
   <div class="panel">
-    <h2 style="margin-bottom:0.5rem;">Top 10 — Classement individuel aux points</h2>
+    <h2 style="margin-bottom:0.5rem;">Top 10 — Classement global Pro</h2>
     <div id="top10" class="table-wrap"><p class="empty">Chargement…</p></div>
     <p style="margin-top:0.6rem;"><a href="classements.html">Voir le classement complet →</a></p>
   </div>
@@ -49,7 +49,7 @@
   try {
     const db = await loadAllData();
     const saisonCourante = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
-    const resultats = filtrerResultats(db, db.resultats, { saisonId: saisonCourante?.id });
+    const resultats = filtrerResultats(db, db.resultats, { saisonId: saisonCourante?.id, circuit: 'pro' });
     const { individuelPoints } = calculerClassements(db, resultats, saisonCourante?.id);
     const classe = avecRang(individuelPoints).slice(0, 10);
 
@@ -59,12 +59,13 @@
       return;
     }
     el.innerHTML = `<table class="results">
-      <thead><tr><th class="num">Rg</th><th>Coureur</th><th class="num">Points</th></tr></thead>
+      <thead><tr><th class="num">Rg</th><th>Coureur</th><th class="num">Points</th><th class="num">Primes</th></tr></thead>
       <tbody>${classe.map(c => `
         <tr class="${c.rang <= 3 ? 'top3' : ''}">
           <td class="place num">${c.rang}</td>
           <td><a href="coureur.html?id=${encodeURIComponent(c.id)}">${c.label}</a></td>
           <td class="num">${c.valeur}</td>
+          <td class="num">${fmtPrime(c.prime)}</td>
         </tr>`).join('')}
       </tbody></table>`;
   } catch (e) {

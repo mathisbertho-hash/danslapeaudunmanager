@@ -27,7 +27,7 @@
 
   el.innerHTML = `
     <h1>${coupe.portee === 'national' ? db.flagForCountry(coupe.pays) + ' ' : '🌍 '}${coupe.nom}</h1>
-    <p class="lede">Additionne les points du barème de coupe sur les courses de la saison rattachées à « ${coupe.nom} ».</p>
+    <p class="lede">Additionne les points obtenus (selon le barème de chaque course) sur les courses de la saison rattachées à « ${coupe.nom} ». Les primes ne comptent pas.</p>
 
     <div class="filters">
       <select id="fSaison">${saisonsNonPreSaison.map(s => `<option value="${s.id}">${s.label}</option>`).join('')}</select>
@@ -51,11 +51,10 @@
   function render() {
     const saisonId = fSaison.value;
     const resultat = calculerClassementCoupe(db, coupe.id, saisonId);
-    const bareme = db.bareme.coupe?.[coupe.id] || {};
-    const baremeVide = Object.keys(bareme).length === 0;
+    const baremeVide = resultat.nbCourses > 0 && resultat.individuel.length === 0;
 
     document.getElementById('resume').innerHTML = `${resultat.nbCourses} résultat${resultat.nbCourses > 1 ? 's' : ''} pris en compte cette saison.`
-      + (baremeVide ? ' <span class="badge warn">Barème de cette coupe pas encore renseigné — tous les classements afficheront 0 point.</span>' : '');
+      + (baremeVide ? ' <span class="badge warn">Aucun point attribué : barème manquant pour ces courses.</span>' : '');
 
     const cle = fType.value === 'equipes' ? 'equipes' : 'individuel';
     const classe = avecRang(resultat[cle]);
@@ -65,12 +64,13 @@
     } else {
       const isTeam = cle === 'equipes';
       tableau.innerHTML = `<table class="results">
-        <thead><tr><th class="num">Rg</th><th>${isTeam ? 'Équipe' : 'Coureur'}</th><th class="num">Points</th></tr></thead>
+        <thead><tr><th class="num">Rg</th><th>${isTeam ? 'Équipe' : 'Coureur'}</th><th class="num">Courses</th><th class="num sorted">Points</th></tr></thead>
         <tbody>${classe.map(c => `
           <tr class="${c.rang <= 3 ? 'top3' : ''}">
             <td class="place num">${c.rang}</td>
             <td><a href="${isTeam ? 'equipe' : 'coureur'}.html?id=${encodeURIComponent(c.id)}">${c.label}</a></td>
-            <td class="num">${c.valeur}</td>
+            <td class="num">${c.nbResultats}</td>
+            <td class="num sorted">${c.valeur}</td>
           </tr>`).join('')}
         </tbody></table>`;
     }

@@ -29,7 +29,9 @@
   const saisonOuverte = db.saisons.find(s => s.statut === 'ouverte');
   if (saisonOuverte) fSaison.value = saisonOuverte.id;
 
-  fCategorie.innerHTML += db.categories.map(c => `<option value="${c.id}">${c.nom}</option>`).join('');
+  const CIRCUITS = { pro: 'Pro', espoirs: 'Espoirs', juniors: 'Juniors' };
+  fCategorie.innerHTML += Object.entries(CIRCUITS).map(([k, label]) =>
+    `<optgroup label="${label}">${db.categories.filter(c => (c.circuit || 'pro') === k).map(c => `<option value="${c.id}">${c.nom}</option>`).join('')}</optgroup>`).join('');
 
   function dateKey(c) {
     if (!c.dateDebut) return '99/99';

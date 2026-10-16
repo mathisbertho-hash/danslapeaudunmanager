@@ -46,6 +46,7 @@
       ${course.nbEtapes ? ` · ${course.nbEtapes} étapes` : ''}
       ${periode ? ` · ${periode}` : ''}
       ${coupes.map(c => ` · <a href="coupe.html?id=${c.id}"><span class="badge">${c.nom}</span></a>`).join('')}
+      ${course.lienPcmmod ? ` · <a href="${course.lienPcmmod}" target="_blank" rel="noopener">Parcours PCMMOD ↗</a>` : ''}
     </p>
 
     ${etapes.length > 0 ? `

@@ -9,19 +9,26 @@
 <body data-page="classements.html">
 <main>
   <h1>Classements</h1>
-  <p class="lede">Filtre par saison et par catégorie de course. Les égalités sont affichées ex æquo.</p>
+  <p class="lede">Trois circuits, chacun avec ses classements. Les égalités sont affichées ex æquo ; le rang affiché reste celui du classement complet, même quand tu filtres.</p>
+
+  <div class="seg" id="circuits" role="tablist">
+    <button type="button" data-circuit="pro" class="active">Pro</button>
+    <button type="button" data-circuit="espoirs">Espoirs</button>
+    <button type="button" data-circuit="juniors">Juniors</button>
+  </div>
 
   <div class="filters">
     <select id="fSaison"></select>
-    <select id="fCategorie"><option value="">Toutes catégories</option></select>
-    <select id="fType">
-      <option value="individuel-points">Individuel — points</option>
-      <option value="individuel-victoires">Individuel — victoires</option>
-      <option value="equipe-points">Équipes — points</option>
-      <option value="equipe-victoires">Équipes — victoires</option>
-    </select>
+    <select id="fClassement"></select>
+    <select id="fVue"></select>
+  </div>
+  <div class="filters">
+    <select id="fPays"><option value="">Tous les pays</option></select>
+    <select id="fEquipe"><option value="">Toutes les équipes</option></select>
+    <input type="text" id="fRecherche" placeholder="Chercher…">
   </div>
 
+  <p id="resume" class="lede" style="margin:0 0 0.6rem;"></p>
   <div class="table-wrap"><div id="tableau"><p class="empty">Chargement…</p></div></div>
 </main>
 
@@ -31,54 +38,131 @@
 <script>
 (async function () {
   const db = await loadAllData();
-  const fSaison = document.getElementById('fSaison');
-  const fCategorie = document.getElementById('fCategorie');
-  const fType = document.getElementById('fType');
 
-  fSaison.innerHTML = db.saisons
-    .filter(s => !s.preSaison)
+  // Classements proposés par circuit. `niveau` s'appuie sur categories.json (world | continental).
+  const CLASSEMENTS = {
+    pro: [
+      { id: 'global', label: 'Classement global', metrique: 'pts' },
+      { id: 'world', label: 'Classement World Tour', metrique: 'pts', niveau: 'world' },
+      { id: 'continental', label: 'Classement Continental', metrique: 'pts', niveau: 'continental' },
+      { id: 'victoires', label: 'Classement des victoires', metrique: 'victoires' },
+      { id: 'primes', label: 'Classement des primes', metrique: 'prime' },
+    ],
+    espoirs: [{ id: 'global', label: 'Classement global', metrique: 'pts' }],
+    juniors: [{ id: 'global', label: 'Classement global', metrique: 'pts' }],
+  };
+  const VUES = {
+    pro: [['coureur', 'Individuel'], ['equipe', 'Par équipes']],
+    espoirs: [['coureur', 'Individuel'], ['equipe', 'Par équipes']],
+    juniors: [['coureur', 'Individuel'], ['pays', 'Par pays']],
+  };
+
+  const $ = id => document.getElementById(id);
+  const fSaison = $('fSaison'), fClassement = $('fClassement'), fVue = $('fVue');
+  const fPays = $('fPays'), fEquipe = $('fEquipe'), fRecherche = $('fRecherche');
+  let circuit = 'pro';
+
+  const params = new URLSearchParams(location.search);
+  if (CLASSEMENTS[params.get('circuit')]) circuit = params.get('circuit');
+
+  fSaison.innerHTML = db.saisons.filter(s => !s.preSaison)
     .map(s => `<option value="${s.id}">${s.label}</option>`).join('');
-  const saisonOuverte = db.saisons.find(s => s.statut === 'ouverte');
+  const saisonOuverte = db.saisons.find(s => s.statut === 'ouverte' && !s.preSaison);
   if (saisonOuverte) fSaison.value = saisonOuverte.id;
 
-  fCategorie.innerHTML += db.categories.map(c => `<option value="${c.id}">${c.nom}</option>`).join('');
+  fEquipe.innerHTML += db.equipes.slice().sort((a, b) => a.nom.localeCompare(b.nom))
+    .map(e => `<option value="${e.id}">${e.nom}</option>`).join('');
 
-  function labelFor(kind) {
-    return {
-      'individuel-points': ['individuelPoints', 'Coureur', 'Points'],
-      'individuel-victoires': ['individuelVictoires', 'Coureur', 'Victoires'],
-      'equipe-points': ['equipePoints', 'Équipe', 'Points'],
-      'equipe-victoires': ['equipeVictoires', 'Équipe', 'Victoires'],
-    }[kind];
+  function remplirSelects() {
+    fClassement.innerHTML = CLASSEMENTS[circuit].map(c => `<option value="${c.id}">${c.label}</option>`).join('');
+    fVue.innerHTML = VUES[circuit].map(([k, l]) => `<option value="${k}">${l}</option>`).join('');
+    if (circuit === 'pro' && CLASSEMENTS.pro.some(c => c.id === params.get('classement'))) fClassement.value = params.get('classement');
+    if (VUES[circuit].some(([k]) => k === params.get('vue'))) fVue.value = params.get('vue');
+    document.querySelectorAll('#circuits button').forEach(b => b.classList.toggle('active', b.dataset.circuit === circuit));
   }
 
-  function render() {
-    const resultats = filtrerResultats(db, db.resultats, {
-      saisonId: fSaison.value || null,
-      categorieId: fCategorie.value || null,
-    });
-    const classements = calculerClassements(db, resultats, fSaison.value);
-    const [key, labelCol, valeurCol] = labelFor(fType.value);
-    const classe = avecRang(classements[key]);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-    const el = document.getElementById('tableau');
-    if (classe.length === 0) {
+  function render() {
+    const def = CLASSEMENTS[circuit].find(c => c.id === fClassement.value) || CLASSEMENTS[circuit][0];
+    const vue = fVue.value;
+    const saisonId = fSaison.value;
+
+    const resultats = filtrerResultats(db, db.resultats, { saisonId, circuit, niveau: def.niveau });
+    const lignes = calculerLignes(db, resultats, saisonId);
+    let items = classerPar(agreger(db, lignes, vue), def.metrique).map(i => {
+      if (vue === 'coureur') {
+        const c = db.coureursById[i.id];
+        return { ...i, pays: c?.nationalite || null, equipeId: db.equipeDuCoureur(i.id, saisonId) };
+      }
+      if (vue === 'equipe') return { ...i, pays: db.equipesById[i.id]?.nationalite || null, equipeId: i.id };
+      return { ...i, pays: i.id, equipeId: null };
+    });
+    items = avecRang(items); // rang du classement complet, avant filtres
+
+    // Filtres : les listes de pays/équipes ne proposent que ce qui existe dans ce classement
+    const paysPresents = [...new Set(items.map(i => i.pays).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const paysChoisi = paysPresents.includes(fPays.value) ? fPays.value : '';
+    fPays.innerHTML = '<option value="">Tous les pays</option>' + paysPresents.map(p => `<option value="${esc(p)}">${esc(p)}</option>`).join('');
+    fPays.value = paysChoisi;
+    fEquipe.style.display = (circuit === 'juniors' || vue === 'pays') ? 'none' : '';
+    fPays.style.display = '';
+    fRecherche.placeholder = vue === 'coureur' ? 'Chercher un coureur…' : vue === 'equipe' ? 'Chercher une équipe…' : 'Chercher un pays…';
+
+    const terme = fRecherche.value.trim().toLowerCase();
+    const equipeFiltre = fEquipe.style.display === 'none' ? '' : fEquipe.value;
+    const filtres = items.filter(i =>
+      (!paysChoisi || i.pays === paysChoisi) &&
+      (!equipeFiltre || i.equipeId === equipeFiltre) &&
+      (!terme || i.label.toLowerCase().includes(terme)));
+
+    const nbRes = resultats.length;
+    const baremeVide = items.length === 0 && nbRes > 0;
+    $('resume').innerHTML = `${nbRes} résultat${nbRes > 1 ? 's' : ''} pris en compte · ${items.length} classé${items.length > 1 ? 's' : ''}`
+      + (baremeVide ? ' <span class="badge warn">Aucun point : barème manquant pour ces courses</span>' : '');
+
+    const el = $('tableau');
+    if (filtres.length === 0) {
       el.innerHTML = '<p class="empty">Aucune donnée pour ce filtre.</p>';
       return;
     }
-    const isTeam = fType.value.startsWith('equipe');
-    el.innerHTML = `<table class="results">
-      <thead><tr><th class="num">Rg</th><th>${labelCol}</th><th class="num">${valeurCol}</th></tr></thead>
-      <tbody>${classe.map(c => `
-        <tr class="${c.rang <= 3 ? 'top3' : ''}">
-          <td class="place num">${c.rang}</td>
-          <td><a href="${isTeam ? 'equipe' : 'coureur'}.html?id=${encodeURIComponent(c.id)}">${c.label}</a></td>
-          <td class="num">${c.valeur}</td>
-        </tr>`).join('')}
-      </tbody></table>`;
+
+    const primes = circuit === 'pro';
+    const m = def.metrique;
+    const th = (label, key) => `<th class="num ${m === key ? 'sorted' : ''}">${label}</th>`;
+    const td = (v, key) => `<td class="num ${m === key ? 'sorted' : ''}">${v}</td>`;
+    const entete = `<th class="num">Rg</th>`
+      + `<th>${vue === 'coureur' ? 'Coureur' : vue === 'equipe' ? 'Équipe' : 'Pays'}</th>`
+      + (vue === 'coureur' && circuit !== 'juniors' ? '<th>Équipe</th>' : '')
+      + th('Points', 'pts') + th('Victoires', 'victoires') + (primes ? th('Primes', 'prime') : '');
+
+    el.innerHTML = `<table class="results"><thead><tr>${entete}</tr></thead><tbody>${filtres.map(i => {
+      let nom;
+      if (vue === 'coureur') nom = `${i.pays ? db.flagForCountry(i.pays) + ' ' : ''}<a href="coureur.html?id=${encodeURIComponent(i.id)}">${esc(i.label)}</a>`;
+      else if (vue === 'equipe') nom = `${db.flagForCode(db.equipesById[i.id]?.nationalite_code, i.pays) } <a href="equipe.html?id=${encodeURIComponent(i.id)}">${esc(i.label)}</a>`;
+      else nom = `${db.flagForCountry(i.id)} ${esc(i.id)}`;
+      const eq = i.equipeId && db.equipesById[i.equipeId];
+      return `<tr class="${i.rang <= 3 ? 'top3' : ''}">
+        <td class="place num">${i.rang}</td>
+        <td>${nom}</td>
+        ${vue === 'coureur' && circuit !== 'juniors' ? `<td>${eq ? `<a href="equipe.html?id=${eq.id}">${esc(eq.nom)}</a>` : '—'}</td>` : ''}
+        ${td(i.pts, 'pts')}${td(i.victoires, 'victoires')}${primes ? td(fmtPrime(i.prime), 'prime') : ''}
+      </tr>`;
+    }).join('')}</tbody></table>`;
   }
 
-  [fSaison, fCategorie, fType].forEach(el => el.addEventListener('change', render));
+  document.querySelectorAll('#circuits button').forEach(b => b.addEventListener('click', () => {
+    circuit = b.dataset.circuit;
+    params.delete('classement'); params.delete('vue');
+    fPays.value = ''; fEquipe.value = ''; fRecherche.value = '';
+    remplirSelects();
+    render();
+  }));
+  fVue.addEventListener('change', () => { fPays.value = ''; render(); });
+  [fSaison, fClassement, fPays, fEquipe].forEach(el => el.addEventListener('change', render));
+  fRecherche.addEventListener('input', render);
+
+  remplirSelects();
   render();
 })();
 </script>

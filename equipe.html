@@ -12,6 +12,7 @@
 </main>
 
 <script src="js/data.js"></script>
+<script src="js/points.js"></script>
 <script src="js/nav.js"></script>
 <script>
 (async function () {
@@ -21,53 +22,99 @@
   const el = document.getElementById('contenu');
   if (!equipe) { el.innerHTML = '<p class="empty">Équipe introuvable.</p>'; return; }
 
-  const saison = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
-  const effectif = db.effectifs
-    .filter(e => e.saison === saison.id && e.equipe === equipe.id)
-    .map(e => db.coureursById[e.coureur_id])
-    .filter(Boolean)
-    .sort((a, b) => a.nom.localeCompare(b.nom));
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const saisons = db.saisons.filter(s => !s.preSaison).sort((a, b) => a.annee - b.annee);
+  let saisonId = (db.saisons.find(s => s.statut === 'ouverte' && !s.preSaison) || saisons[saisons.length - 1])?.id;
+  const rangTxt = r => r ? `${r}<sup>${r === 1 ? 'er' : 'e'}</sup>` : '—';
 
-  const resultatsEquipe = [];
-  for (const res of db.resultats) {
-    if (res.saison !== saison.id) continue; // palmarès officiel de la saison affichée uniquement
-    const course = db.coursesById[res.courseId];
-    for (const ligne of res.classement) {
-      const eqId = db.equipeDuCoureur(ligne.coureurId, saison.id);
-      if (eqId === equipe.id && ligne.statut === 'classe') {
-        resultatsEquipe.push({ ...ligne, course, coureur: db.coureursById[ligne.coureurId] });
-      }
-    }
+  // Lignes de la saison pour cette équipe (tous circuits), l'équipe venant des effectifs datés
+  function lignesEquipe(sid, circuit) {
+    const res = filtrerResultats(db, db.resultats, { saisonId: sid, circuit });
+    return calculerLignes(db, res, sid);
   }
-  const victoires = resultatsEquipe.filter(r => r.place === 1);
+  function rangEquipe(sid, circuit, metrique) {
+    const classe = avecRang(classerPar(agreger(db, lignesEquipe(sid, circuit), 'equipe'), metrique));
+    return classe.find(x => x.id === equipe.id)?.rang || null;
+  }
 
-  el.innerHTML = `
-    <h1>${equipe.nom}</h1>
-    <p class="lede">Manager : ${equipe.manager_forum || '—'}${equipe.nationalite ? ` · ${db.flagForCode(equipe.nationalite_code, equipe.nationalite)} ${equipe.nationalite}` : ''}${equipe.lien_maillot ? ` · <a href="${equipe.lien_maillot}" target="_blank" rel="noopener">Maillot</a>` : ''}</p>
+  function render() {
+    const effectif = db.effectifs.filter(e => e.saison === saisonId && e.equipe === equipe.id)
+      .map(e => db.coureursById[e.coureur_id]).filter(Boolean);
+    const miennes = lignesEquipe(saisonId).filter(l => l.equipeId === equipe.id);
+    const pro = miennes.filter(l => circuitDeCourse(db, l.course) === 'pro');
+    const esp = miennes.filter(l => circuitDeCourse(db, l.course) === 'espoirs');
+    const somme = (ls, k) => ls.reduce((a, l) => a + l[k], 0);
+    const victoires = pro.filter(l => l.victoire);
+    const podiums = pro.filter(l => l.place <= 3 && TYPES_VICTOIRE.includes(l.type));
 
-    <div class="panel">
-      <h2 style="margin-bottom:0.4rem;">Palmarès</h2>
-      <p>${victoires.length} victoire${victoires.length > 1 ? 's' : ''} · ${effectif.length} coureurs dans l'effectif ${saison.label}</p>
-    </div>
+    // Effectif : points / primes / victoires par coureur
+    const parCoureur = new Map(effectif.map(c => [c.id, { c, pts: 0, prime: 0, vic: 0 }]));
+    miennes.forEach(l => {
+      const r = parCoureur.get(l.coureurId);
+      if (!r) return;
+      r.pts += l.pts; r.prime += l.prime; if (l.victoire) r.vic += 1;
+    });
+    const lignesEffectif = [...parCoureur.values()].sort((a, b) => b.pts - a.pts || b.prime - a.prime || a.c.nom.localeCompare(b.c.nom));
 
-    <h2 style="margin: 1.2rem 0 0.6rem;">Effectif</h2>
-    <div class="table-wrap">
-      <table class="results">
-        <tbody>${effectif.map(c => `<tr><td><a href="coureur.html?id=${c.id}">${c.nom}</a></td></tr>`).join('') || '<tr><td class="empty">Effectif non renseigné.</td></tr>'}</tbody>
-      </table>
-    </div>
+    const top = pro.filter(l => l.pts > 0).sort((a, b) => b.pts - a.pts || b.prime - a.prime || a.place - b.place).slice(0, 8);
+    const suffixe = l => l.type === 'etape' ? ` — étape ${l.etapeNumero ?? ''}` : l.type === 'general' ? ' — général' : '';
 
-    <h2 style="margin: 1.2rem 0 0.6rem;">Victoires</h2>
-    <div class="table-wrap">
-      ${victoires.length === 0 ? '<p class="empty">Aucune victoire enregistrée.</p>' : `
-      <table class="results">
-        <thead><tr><th>Coureur</th><th>Course</th></tr></thead>
-        <tbody>${victoires.map(v => `
-          <tr><td><a href="coureur.html?id=${v.coureur?.id}">${v.coureur?.nom || '?'}</a></td>
-          <td>${v.course ? `<a href="course.html?id=${v.course.id}">${v.course.nom}</a>` : '?'}</td></tr>`).join('')}
-        </tbody></table>`}
-    </div>
-  `;
+    // Historique par saison
+    const histo = saisons.map(s => {
+      const ls = lignesEquipe(s.id, 'pro').filter(l => l.equipeId === equipe.id);
+      if (!ls.length) return '';
+      return `<tr><td>${s.label}</td><td class="num">${somme(ls, 'pts')}</td><td class="num">${rangTxt(rangEquipe(s.id, 'pro', 'pts'))}</td>
+        <td class="num">${fmtPrime(somme(ls, 'prime'))}</td><td class="num">${rangTxt(rangEquipe(s.id, 'pro', 'prime'))}</td>
+        <td class="num">${ls.filter(l => l.victoire).length}</td></tr>`;
+    }).join('');
+
+    el.innerHTML = `
+      <h1>${esc(equipe.nom)}</h1>
+      <p class="lede" style="margin-bottom:0.4rem;">Manager : ${esc(equipe.manager_forum || '—')}${equipe.nationalite ? ` · ${db.flagForCode(equipe.nationalite_code, equipe.nationalite)} ${esc(equipe.nationalite)}` : ''}${equipe.lien_maillot ? ` · <a href="${esc(equipe.lien_maillot)}" target="_blank" rel="noopener">Maillot ↗</a>` : ''}</p>
+      <div class="tabs-saison">${saisons.map(s => `<button type="button" data-s="${s.id}" class="${s.id === saisonId ? 'active' : ''}">${s.label}</button>`).join('')}</div>
+
+      <div class="stats">
+        <div class="stat accent"><span class="v">${somme(pro, 'pts')}</span><span class="l">Points (Pro)</span></div>
+        <div class="stat accent"><span class="v">${fmtPrime(somme(pro, 'prime'))}</span><span class="l">Primes</span></div>
+        <div class="stat"><span class="v">${rangTxt(rangEquipe(saisonId, 'pro', 'pts'))}</span><span class="l">Classement global</span></div>
+        <div class="stat"><span class="v">${rangTxt(rangEquipe(saisonId, 'pro', 'prime'))}</span><span class="l">Classement des primes</span></div>
+        <div class="stat"><span class="v">${victoires.length}</span><span class="l">Victoires</span></div>
+        <div class="stat"><span class="v">${podiums.length}</span><span class="l">Podiums</span></div>
+        <div class="stat"><span class="v">${effectif.length}</span><span class="l">Coureurs</span></div>
+        <div class="stat"><span class="v">${somme(esp, 'pts')}</span><span class="l">Points Espoirs${somme(esp, 'pts') ? ` · ${rangTxt(rangEquipe(saisonId, 'espoirs', 'pts'))}` : ''}</span></div>
+      </div>
+
+      <div class="cols-2">
+        <div>
+          <h2 style="margin-bottom:0.6rem;">Effectif</h2>
+          <div class="table-wrap"><table class="results">
+            <thead><tr><th>Coureur</th><th class="num">Points</th><th class="num">Victoires</th><th class="num">Primes</th></tr></thead>
+            <tbody>${lignesEffectif.map(r => `<tr>
+              <td>${r.c.nationalite ? db.flagForCountry(r.c.nationalite) + ' ' : ''}<a href="coureur.html?id=${r.c.id}">${esc(r.c.nom)}</a></td>
+              <td class="num">${r.pts || '—'}</td><td class="num">${r.vic || '—'}</td><td class="num">${r.prime ? fmtPrime(r.prime) : '—'}</td></tr>`).join('')
+              || '<tr><td colspan="4" class="empty">Effectif non renseigné.</td></tr>'}</tbody></table></div>
+        </div>
+        <div>
+          <div class="panel"><h2 style="margin-bottom:0.5rem;">Meilleurs résultats</h2>
+            ${top.length ? `<table class="results"><tbody>${top.map(l => `<tr><td class="place num">${l.place}</td>
+              <td><a href="resultat.html?id=${l.res.id}">${esc(l.course.nom)}</a>${suffixe(l)}<br><a class="muted" href="coureur.html?id=${l.coureurId}">${esc(db.coureursById[l.coureurId]?.nom || '?')}</a></td>
+              <td class="num">${l.pts} pts</td></tr>`).join('')}</tbody></table>` : '<p class="empty">Pas encore de résultat avec points.</p>'}
+          </div>
+          <div class="panel"><h2 style="margin-bottom:0.5rem;">Victoires</h2>
+            ${victoires.length ? `<table class="results"><tbody>${victoires.map(l => `<tr>
+              <td><a href="coureur.html?id=${l.coureurId}">${esc(db.coureursById[l.coureurId]?.nom || '?')}</a></td>
+              <td><a href="resultat.html?id=${l.res.id}">${esc(l.course.nom)}</a>${suffixe(l)}</td></tr>`).join('')}</tbody></table>` : '<p class="empty">Aucune victoire enregistrée.</p>'}
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin: 1.4rem 0 0.6rem;">Historique par saison (Pro)</h2>
+      <div class="table-wrap"><table class="results">
+        <thead><tr><th>Saison</th><th class="num">Points</th><th class="num">Rang</th><th class="num">Primes</th><th class="num">Rang</th><th class="num">Victoires</th></tr></thead>
+        <tbody>${histo || '<tr><td colspan="6" class="empty">Pas encore de résultat.</td></tr>'}</tbody></table></div>`;
+    el.querySelectorAll('.tabs-saison button').forEach(b => b.addEventListener('click', () => { saisonId = b.dataset.s; render(); }));
+  }
+  render();
 })();
 </script>
 </body>

@@ -20,99 +20,221 @@
   const id = new URLSearchParams(location.search).get('id');
   const coureur = db.coureursById[id];
   const el = document.getElementById('contenu');
+  if (!coureur) { el.innerHTML = '<p class="empty">Coureur introuvable.</p>'; return; }
 
-  if (!coureur) {
-    el.innerHTML = '<p class="empty">Coureur introuvable.</p>';
-    return;
-  }
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const preSaisonIds = new Set(db.saisons.filter(s => s.preSaison).map(s => s.id));
+  const saisonLabel = sid => db.saisons.find(s => s.id === sid)?.label || sid;
 
-  const saison = db.saisons.find(s => s.statut === 'ouverte') || db.saisons[0];
-  const equipeId = db.equipeDuCoureur(coureur.id, saison.id);
-  const equipe = equipeId ? db.equipesById[equipeId] : null;
-
-  // Toutes les lignes de résultat concernant ce coureur, toutes courses
-  const apparitions = [];
+  // Toutes les lignes de ce coureur, avec points et primes (0 pour DNF / sans barème)
+  const toutes = [];
   for (const res of db.resultats) {
     const course = db.coursesById[res.courseId];
+    if (!course) continue;
     for (const ligne of res.classement) {
-      if (ligne.coureurId === coureur.id) {
-        apparitions.push({ ...ligne, course, type: res.type, etapeNumero: res.etapeNumero, saison: res.saison });
-      }
+      if (ligne.coureurId !== coureur.id) continue;
+      const pp = ligne.statut === 'classe' ? pointsEtPrime(db, course, res.type, ligne.place) : { pts: 0, prime: 0 };
+      toutes.push({ course, res, ligne, saison: res.saison, type: res.type, place: ligne.place, classe: ligne.statut === 'classe', ...pp });
     }
   }
-  apparitions.sort((a, b) => (a.place || 999) - (b.place || 999));
 
-  const preSaisonIds = new Set(db.saisons.filter(s => s.preSaison).map(s => s.id));
-  const officielles = apparitions.filter(a => !preSaisonIds.has(a.saison));
-  const victoires = officielles.filter(a => a.place === 1 && a.statut === 'classe');
-  const podiums = officielles.filter(a => a.place <= 3 && a.statut === 'classe');
+  const saisonsOfficielles = db.saisons.filter(s => !s.preSaison && toutes.some(t => t.saison === s.id)).sort((a, b) => a.annee - b.annee);
+  const aPreSaison = toutes.some(t => preSaisonIds.has(t.saison));
+  const saisonOuverte = db.saisons.find(s => s.statut === 'ouverte' && !s.preSaison);
+  let onglet = saisonsOfficielles.some(s => s.id === saisonOuverte?.id) ? saisonOuverte.id
+    : (saisonsOfficielles.length ? saisonsOfficielles[saisonsOfficielles.length - 1].id : (aPreSaison ? 'pre' : null));
 
-  el.innerHTML = `
-    <h1>${coureur.nom}</h1>
-    <p class="lede">${equipe ? `<a href="equipe.html?id=${equipe.id}">${equipe.nom}</a>` : 'Équipe inconnue pour cette saison'} — ${saison.label}${coureur.nationalite ? ` · ${db.flagForCountry(coureur.nationalite)} ${coureur.nationalite}` : ''}${coureur.age ? ` · ${coureur.age} ans` : ''}</p>
+  const TYPES_PODIUM = ['scratch', 'general', 'etape'];
+  const LABEL_ANNEXE = { points: 'Classement par points', montagne: 'Classement de la montagne', jeune: 'Classement des jeunes' };
+  const dateKey = c => { if (!c.dateDebut) return '9999'; const [j, m] = c.dateDebut.split('/'); return m + j; };
+  const periode = c => c.dateDebut ? (c.dateDebut === c.dateFin ? c.dateDebut : `${c.dateDebut} – ${c.dateFin}`) : '';
+  const avecPrime = c => !(db.bareme.sans_prime || []).includes(c.categorie);
 
-    <div class="panel">
-      <h2 style="margin-bottom:0.4rem;">Palmarès officiel</h2>
-      <p>${victoires.length} victoire${victoires.length > 1 ? 's' : ''} · ${podiums.length} podium${podiums.length > 1 ? 's' : ''} · ${officielles.length} résultat${officielles.length > 1 ? 's' : ''} officiel${officielles.length > 1 ? 's' : ''}</p>
-      <p class="lede" style="margin:0.3rem 0 0;">Hors pré-saison, qui ne compte pas dans le palmarès officiel.</p>
-    </div>
+  function totaux(rows) {
+    const cl = rows.filter(r => r.classe);
+    const pod = cl.filter(r => TYPES_PODIUM.includes(r.type));
+    return {
+      pts: rows.reduce((a, r) => a + r.pts, 0),
+      prime: rows.reduce((a, r) => a + r.prime, 0),
+      victoires: pod.filter(r => r.place === 1).length,
+      classiques: pod.filter(r => r.place === 1 && r.type === 'scratch').length,
+      generaux: pod.filter(r => r.place === 1 && r.type === 'general').length,
+      etapes: pod.filter(r => r.place === 1 && r.type === 'etape').length,
+      podiums: pod.filter(r => r.place <= 3).length,
+      top10: pod.filter(r => r.place <= 10).length,
+      courses: new Set(rows.map(r => r.course.id)).size,
+    };
+  }
 
-    <div class="panel" id="historique">
-      <h2 style="margin-bottom:0.6rem;">Historique par saison</h2>
-      <div id="historiqueContenu"><p class="empty">Calcul…</p></div>
-    </div>
+  function rangDansCircuit(saisonId, circuit, metrique) {
+    const res = filtrerResultats(db, db.resultats, { saisonId, circuit });
+    const classe = avecRang(classerPar(agreger(db, calculerLignes(db, res, saisonId), 'coureur'), metrique));
+    const m = classe.find(x => x.id === coureur.id);
+    return m ? m.rang : null;
+  }
+  const rangTxt = r => r ? `${r}<sup>${r === 1 ? 'er' : 'e'}</sup>` : '—';
 
-    <div class="table-wrap">
-      ${apparitions.length === 0 ? '<p class="empty">Aucun résultat enregistré pour ce coureur.</p>' : `
-      <table class="results">
-        <thead><tr><th class="num">Place</th><th>Course</th><th>Type</th><th>Statut</th></tr></thead>
-        <tbody>${apparitions.map(a => `
-          <tr class="${a.place <= 3 && !preSaisonIds.has(a.saison) ? 'top3' : ''}">
-            <td class="place num">${a.statut === 'classe' ? a.place : '—'}</td>
-            <td>${a.course ? `<a href="course.html?id=${a.course.id}">${a.course.nom}</a>` : '?'}</td>
-            <td>${a.type === 'etape' && a.etapeNumero ? `étape ${a.etapeNumero}` : a.type}</td>
-            <td>${preSaisonIds.has(a.saison) ? '<span class="badge">pré-saison</span>' : ''} ${a.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : ''}</td>
-          </tr>`).join('')}
-        </tbody>
-      </table>`}
-    </div>
-  `;
+  function circuitPrincipal(rows) {
+    const n = {};
+    rows.forEach(r => { const c = circuitDeCourse(db, r.course); n[c] = (n[c] || 0) + 1; });
+    return Object.entries(n).sort((a, b) => b[1] - a[1])[0]?.[0] || 'pro';
+  }
 
-  // Historique par saison : rang au classement général aux points et à chaque
-  // coupe où le coureur a marqué, saison par saison (hors pré-saison).
-  const saisonsAvecResultat = db.saisons
-    .filter(s => !s.preSaison && apparitions.some(a => a.saison === s.id))
-    .sort((a, b) => a.annee - b.annee);
+  const equipeDe = sid => { const e = db.equipeDuCoureur(coureur.id, sid); return e ? db.equipesById[e] : null; };
+  const equipeAffichee = equipeDe(onglet && onglet !== 'pre' ? onglet : (saisonOuverte?.id)) || equipeDe(saisonOuverte?.id);
 
-  const histEl = document.getElementById('historiqueContenu');
-  if (saisonsAvecResultat.length === 0) {
-    histEl.innerHTML = '<p class="empty">Pas encore de résultat en saison officielle.</p>';
-  } else {
-    const lignes = saisonsAvecResultat.map(s => {
-      const resultatsSaison = filtrerResultats(db, db.resultats, { saisonId: s.id });
-      const { individuelPoints } = calculerClassements(db, resultatsSaison, s.id);
-      const rangGeneral = avecRang(individuelPoints).find(r => r.id === coureur.id);
+  function enteteHtml() {
+    const bio = [
+      coureur.nationalite ? `${db.flagForCountry(coureur.nationalite)} ${esc(coureur.nationalite)}` : null,
+      coureur.age ? `${coureur.age} ans` : null,
+      coureur.taille ? `${coureur.taille} cm` : null,
+      coureur.poids ? `${coureur.poids} kg` : null,
+    ].filter(Boolean).join(' · ');
+    return `<h1>${esc(coureur.nom)}</h1>
+      <p class="lede" style="margin-bottom:0.4rem;">${equipeAffichee ? `<a href="equipe.html?id=${equipeAffichee.id}">${esc(equipeAffichee.nom)}</a>` : 'Équipe inconnue'}${bio ? ' · ' + bio : ''}</p>`;
+  }
 
-      const rangsCoupes = db.coupes
-        .map(coupe => {
-          const res = calculerClassementCoupe(db, coupe.id, s.id);
-          const rang = avecRang(res.individuel).find(r => r.id === coureur.id);
-          return rang ? { coupe, rang } : null;
-        })
-        .filter(Boolean);
+  function ligneResultat(r, libelle, cls) {
+    const place = r.classe ? `<span class="${r.place <= 3 ? 'top3' : ''}">${r.place}</span>` : '<span class="badge warn">abandon</span>';
+    return `<tr class="${cls || ''}${r.classe && r.place <= 3 ? ' top3' : ''}">
+      <td class="muted"></td><td class="place num">${place}</td><td>${libelle}</td>
+      <td class="num">${r.pts || '—'}</td><td class="num">${r.prime ? fmtPrime(r.prime) : '—'}</td></tr>`;
+  }
 
-      return `<tr>
-        <td>${s.label}</td>
-        <td>${rangGeneral ? `${rangGeneral.rang}<sup>e</sup> (${rangGeneral.valeur} pts)` : '—'}</td>
-        <td>${rangsCoupes.length ? rangsCoupes.map(rc => `<a href="coupe.html?id=${rc.coupe.id}">${rc.coupe.nom}</a> : ${rc.rang.rang}<sup>e</sup> (${rc.rang.valeur} pts)`).join('<br>') : '—'}</td>
-      </tr>`;
+  function tableauResultats(rows) {
+    const parCourse = new Map();
+    rows.forEach(r => { if (!parCourse.has(r.course.id)) parCourse.set(r.course.id, []); parCourse.get(r.course.id).push(r); });
+    const courses = [...parCourse.values()].sort((a, b) => dateKey(a[0].course).localeCompare(dateKey(b[0].course)));
+    const ordre = { general: 0, scratch: 0, points: 1, montagne: 2, jeune: 3, etape: 4 };
+
+    const corps = courses.map(rs => {
+      const c = rs[0].course;
+      const cat = `<span class="badge cat-${c.categorie}">${esc(db.categoriesById[c.categorie]?.nom || c.categorie)}</span>`;
+      const nom = `<a href="course.html?id=${c.id}">${esc(c.nom)}</a>`;
+      const estTour = rs.some(r => r.type !== 'scratch') || c.nbEtapes > 1;
+      if (!estTour) {
+        const r = rs[0];
+        const place = r.classe ? `${r.place}` : '<span class="badge warn">abandon</span>';
+        return `<tr class="${r.classe && r.place <= 3 ? 'top3' : ''}"><td class="muted">${periode(c)}</td>
+          <td class="place num">${place}</td><td>${nom} ${cat} <span class="badge">Classique</span></td>
+          <td class="num">${r.pts || '—'}</td><td class="num">${r.prime ? fmtPrime(r.prime) : '—'}</td></tr>`;
+      }
+      const tp = rs.reduce((a, r) => a + r.pts, 0), tpr = rs.reduce((a, r) => a + r.prime, 0);
+      const subs = rs.slice().sort((a, b) => (ordre[a.type] - ordre[b.type]) || ((a.res.etapeNumero || 0) - (b.res.etapeNumero || 0)))
+        .map(r => {
+          const lib = r.type === 'etape' ? `<span class="badge">Étape ${r.res.etapeNumero ?? '?'}</span>`
+            : r.type === 'general' || r.type === 'scratch' ? 'Classement général' : LABEL_ANNEXE[r.type] || r.type;
+          return ligneResultat(r, `<a href="resultat.html?id=${r.res.id}">${lib}</a>`, 'sous');
+        }).join('');
+      return `<tr class="course-head"><td>${periode(c)}</td><td></td><td>${nom} ${cat} <span class="badge">Tour${c.nbEtapes ? ` · ${c.nbEtapes} étapes` : ''}</span></td>
+        <td class="num">${tp || '—'}</td><td class="num">${tpr ? fmtPrime(tpr) : '—'}</td></tr>${subs}`;
     }).join('');
 
-    histEl.innerHTML = `<div class="table-wrap"><table class="results">
-      <thead><tr><th>Saison</th><th>Classement général (points)</th><th>Coupes</th></tr></thead>
-      <tbody>${lignes}</tbody>
-    </table></div>`;
+    return `<div class="table-wrap"><table class="results">
+      <thead><tr><th>Date</th><th class="num">Rés.</th><th>Épreuve</th><th class="num">Points</th><th class="num">Primes</th></tr></thead>
+      <tbody>${corps}</tbody></table></div>`;
   }
+
+  function topResultats(rows) {
+    const top = rows.filter(r => r.classe && r.pts > 0)
+      .sort((a, b) => b.pts - a.pts || b.prime - a.prime || a.place - b.place).slice(0, 8);
+    if (!top.length) return '<p class="empty">Pas encore de résultat avec points.</p>';
+    return `<table class="results"><tbody>${top.map(r => {
+      const suffixe = r.type === 'etape' ? ` — étape ${r.res.etapeNumero ?? ''}` : r.type === 'general' ? ' — général' : '';
+      return `<tr><td class="place num">${r.place}</td><td><a href="resultat.html?id=${r.res.id}">${esc(r.course.nom)}</a>${suffixe}</td><td class="num">${r.pts} pts</td></tr>`;
+    }).join('')}</tbody></table>`;
+  }
+
+  function historiqueEquipes() {
+    const lignes = db.effectifs.filter(e => e.coureur_id === coureur.id && e.equipe)
+      .map(e => ({ s: db.saisons.find(s => s.id === e.saison), eq: db.equipesById[e.equipe] }))
+      .filter(x => x.s && x.eq).sort((a, b) => b.s.annee - a.s.annee);
+    if (!lignes.length) return '<p class="empty">Aucune équipe renseignée.</p>';
+    return `<table class="results"><tbody>${lignes.map(x => `<tr><td class="muted">${x.s.label}</td><td><a href="equipe.html?id=${x.eq.id}">${esc(x.eq.nom)}</a></td></tr>`).join('')}</tbody></table>`;
+  }
+
+  function historiqueSaisons() {
+    if (!saisonsOfficielles.length) return '<p class="empty">Pas encore de résultat en saison officielle.</p>';
+    const lignes = saisonsOfficielles.slice().reverse().map(s => {
+      const rows = toutes.filter(t => t.saison === s.id);
+      const t = totaux(rows);
+      const circ = circuitPrincipal(rows);
+      const rangPts = rangDansCircuit(s.id, circ, 'pts');
+      const rangPrime = circ === 'pro' ? rangDansCircuit(s.id, 'pro', 'prime') : null;
+      const coupes = db.coupes.map(cp => {
+        const m = avecRang(calculerClassementCoupe(db, cp.id, s.id).individuel).find(x => x.id === coureur.id);
+        return m ? `<a href="coupe.html?id=${cp.id}">${esc(cp.nom)}</a> : ${rangTxt(m.rang)} (${m.valeur} pts)` : null;
+      }).filter(Boolean);
+      const eq = equipeDe(s.id);
+      return `<tr><td>${s.label}</td><td>${eq ? `<a href="equipe.html?id=${eq.id}">${esc(eq.nom)}</a>` : '—'}</td>
+        <td>${circ === 'pro' ? 'Pro' : circ === 'espoirs' ? 'Espoirs' : 'Juniors'}</td>
+        <td class="num">${t.pts}</td><td class="num">${rangTxt(rangPts)}</td>
+        <td class="num">${circ === 'pro' ? fmtPrime(t.prime) : '—'}</td><td class="num">${rangTxt(rangPrime)}</td>
+        <td>${coupes.join('<br>') || '—'}</td></tr>`;
+    }).join('');
+    return `<div class="table-wrap"><table class="results">
+      <thead><tr><th>Saison</th><th>Équipe</th><th>Circuit</th><th class="num">Points</th><th class="num">Rang</th><th class="num">Primes</th><th class="num">Rang</th><th>Coupes</th></tr></thead>
+      <tbody>${lignes}</tbody></table></div>`;
+  }
+
+  function render() {
+    const onglets = [...saisonsOfficielles.map(s => [s.id, s.label]), ...(aPreSaison ? [['pre', 'Pré-saison']] : [])];
+    let corps;
+    if (!onglet) {
+      corps = '<p class="empty">Aucun résultat enregistré pour ce coureur.</p>';
+    } else if (onglet === 'pre') {
+      const rows = toutes.filter(t => preSaisonIds.has(t.saison));
+      corps = `<p class="lede">La pré-saison ne compte pas dans les classements officiels : pas de points ni de primes.</p>
+        <div class="table-wrap"><table class="results"><thead><tr><th class="num">Place</th><th>Course</th><th>Type</th></tr></thead><tbody>${rows
+          .sort((a, b) => (a.place || 999) - (b.place || 999)).map(r => `<tr><td class="place num">${r.classe ? r.place : '—'}</td>
+          <td><a href="course.html?id=${r.course.id}">${esc(r.course.nom)}</a></td>
+          <td>${r.type === 'etape' ? `étape ${r.res.etapeNumero ?? ''}` : r.type} ${r.classe ? '' : '<span class="badge warn">abandon</span>'}</td></tr>`).join('')}</tbody></table></div>`;
+    } else {
+      const rows = toutes.filter(t => t.saison === onglet);
+      const t = totaux(rows);
+      const circ = circuitPrincipal(rows);
+      const rang = rangDansCircuit(onglet, circ, 'pts');
+      const career = totaux(toutes.filter(x => !preSaisonIds.has(x.saison)));
+      corps = `
+        <div class="stats">
+          <div class="stat accent"><span class="v">${t.pts}</span><span class="l">Points</span></div>
+          <div class="stat accent"><span class="v">${circ === 'pro' ? fmtPrime(t.prime) : '—'}</span><span class="l">Primes</span></div>
+          <div class="stat"><span class="v">${rangTxt(rang)}</span><span class="l">Classement ${circ === 'pro' ? 'Pro' : circ === 'espoirs' ? 'Espoirs' : 'Juniors'}</span></div>
+          <div class="stat"><span class="v">${t.victoires}</span><span class="l">Victoires</span></div>
+          <div class="stat"><span class="v">${t.podiums}</span><span class="l">Podiums</span></div>
+          <div class="stat"><span class="v">${t.top10}</span><span class="l">Top 10</span></div>
+          <div class="stat"><span class="v">${t.courses}</span><span class="l">Courses courues</span></div>
+          <div class="stat"><span class="v">${career.pts} pts</span><span class="l">Carrière · ${fmtPrime(career.prime)}</span></div>
+        </div>
+        <div class="cols-2">
+          <div>
+            <h2 style="margin-bottom:0.6rem;">Résultats ${saisonLabel(onglet)}</h2>
+            ${tableauResultats(rows)}
+          </div>
+          <div>
+            <div class="panel"><h2 style="margin-bottom:0.5rem;">Meilleurs résultats</h2>${topResultats(rows)}</div>
+            <div class="panel"><h2 style="margin-bottom:0.5rem;">Statistiques clés</h2>
+              <table class="results"><tbody>
+                <tr><td>Victoires</td><td class="num">${t.victoires}</td></tr>
+                <tr><td class="muted">dont classiques</td><td class="num">${t.classiques}</td></tr>
+                <tr><td class="muted">dont classements généraux</td><td class="num">${t.generaux}</td></tr>
+                <tr><td class="muted">dont étapes</td><td class="num">${t.etapes}</td></tr>
+                <tr><td>Podiums</td><td class="num">${t.podiums}</td></tr>
+                <tr><td>Top 10</td><td class="num">${t.top10}</td></tr>
+              </tbody></table></div>
+            <div class="panel"><h2 style="margin-bottom:0.5rem;">Équipes</h2>${historiqueEquipes()}</div>
+          </div>
+        </div>`;
+    }
+
+    el.innerHTML = `${enteteHtml()}
+      ${onglets.length ? `<div class="tabs-saison">${onglets.map(([k, l]) => `<button type="button" data-s="${k}" class="${k === onglet ? 'active' : ''}">${l}</button>`).join('')}</div>` : ''}
+      ${corps}
+      <h2 style="margin: 1.4rem 0 0.6rem;">Historique par saison</h2>${historiqueSaisons()}`;
+    el.querySelectorAll('.tabs-saison button').forEach(b => b.addEventListener('click', () => { onglet = b.dataset.s; render(); }));
+  }
+
+  render();
 })();
 </script>
 </body>

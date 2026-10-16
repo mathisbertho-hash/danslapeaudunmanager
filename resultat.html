@@ -12,6 +12,7 @@
 </main>
 
 <script src="js/data.js"></script>
+<script src="js/points.js"></script>
 <script src="js/nav.js"></script>
 <script>
 (async function () {
@@ -34,23 +35,27 @@
     return (a.place || 999) - (b.place || 999);
   });
 
+  const avecPrimes = course && !(db.bareme.sans_prime || []).includes(course.categorie);
+
   el.innerHTML = `
     <h1>${course ? course.nom : '?'}</h1>
     <p class="lede"><a href="course.html?id=${resultat.courseId}">← retour à la fiche course</a> · ${typeLabels[resultat.type] || resultat.type} · ${saisonLabel}</p>
 
     <div class="table-wrap">
       <table class="results">
-        <thead><tr><th class="num">Pl.</th><th>Coureur</th><th>Équipe</th><th>Nationalité</th><th>Temps</th></tr></thead>
+        <thead><tr><th class="num">Pl.</th><th>Coureur</th><th>Équipe</th><th>Nationalité</th><th>Temps</th><th class="num">Points</th>${avecPrimes ? '<th class="num">Primes</th>' : ''}</tr></thead>
         <tbody>${classement.map(l => {
           const c = db.coureursById[l.coureurId];
           const equipeId = db.equipeDuCoureur(l.coureurId, resultat.saison);
           const equipe = equipeId ? db.equipesById[equipeId] : null;
+          const pp = course && l.statut === 'classe' ? pointsEtPrime(db, course, resultat.type, l.place) : { pts: 0, prime: 0 };
           return `<tr class="${l.place <= 3 && l.statut === 'classe' ? 'top3' : ''}">
             <td class="place num">${l.statut === 'classe' ? l.place : '—'}</td>
             <td>${c ? `<a href="coureur.html?id=${c.id}">${c.nom}</a>` : (l.coureurId || '?')}</td>
             <td>${equipe ? `<a href="equipe.html?id=${equipe.id}">${equipe.nom}</a>` : '<span class="badge warn">inconnue</span>'}</td>
             <td>${c?.nationalite ? `${db.flagForCountry(c.nationalite)} ${c.nationalite}` : ''}</td>
             <td>${l.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : (l.temps || '—')}</td>
+            <td class="num">${pp.pts || '—'}</td>${avecPrimes ? `<td class="num">${pp.prime ? fmtPrime(pp.prime) : '—'}</td>` : ''}
           </tr>`;
         }).join('')}
         </tbody>
