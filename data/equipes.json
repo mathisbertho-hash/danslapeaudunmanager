@@ -171,30 +171,12 @@
     "type": "pro"
   },
   {
-    "id": "paraguay-cycles-club",
-    "nom": "Paraguay Cycles Club",
-    "manager_forum": "El Pino",
-    "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=18901",
-    "nationalite": "Paraguay",
-    "nationalite_code": "PY",
-    "type": "pro"
-  },
-  {
     "id": "genii-c-zonzini-srsm",
     "nom": "GENII-C Zonzini SRSM",
     "manager_forum": "Odonata",
     "lien_maillot": "https://pcmmod.com/jersey/team.php?id_team_year=6766",
     "nationalite": "Luxembourg",
     "nationalite_code": "LU",
-    "type": "pro"
-  },
-  {
-    "id": "bogenvil-tim",
-    "nom": "Bogenvil Tim",
-    "manager_forum": "Adra",
-    "lien_maillot": null,
-    "nationalite": "Bougainville",
-    "nationalite_code": null,
     "type": "pro"
   },
   {

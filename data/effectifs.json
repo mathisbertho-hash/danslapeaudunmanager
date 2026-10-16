@@ -90,11 +90,6 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "mllehave-oliver",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
     "coureur_id": "gianella-gianmarco",
     "equipe": "samruk-kaznya-air-astana",
     "saison": "saison-1"
@@ -4255,78 +4250,8 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "beeharry-rajesh",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "loor-tenesaca-byron",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hape-blair",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rawiri-toby",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tainatongo-jason",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "danquah-kofi",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ntsane-lehlohonolo",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ramli-muhammad",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tumusiime-joshua",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "wanyonyi-josphat",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fiorini-cristiano",
-    "equipe": "paraguay-cycles-club",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zanetti-mirko",
-    "equipe": "paraguay-cycles-club",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "havugimana-eric",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kamal-tarek",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "owona-fabrice",
-    "equipe": "bogenvil-tim",
+    "coureur_id": "mllehave-oliver",
+    "equipe": "team-tre-berg-postnord",
     "saison": "saison-1"
   }
 ]
