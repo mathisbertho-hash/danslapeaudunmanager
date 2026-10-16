@@ -9,7 +9,7 @@
 //   classement aux victoires
 // - égalités : affichées ex æquo, pas de départage
 // - un résultat de course par étapes rapporte les points/primes de l'étape
-//   (barème `etape`) ET ceux du général (barème `individuel_scratch`)
+//   (barème `etape`) ET ceux du général (barème `individuel_classique`)
 // - classements annexes (points, montagne, jeune) et championnats : pas de barème => 0
 // - espoirs / juniors : barème emprunté (bareme.alias_categories), sans prime (bareme.sans_prime)
 // - coupes : somme des points du barème de la course, sur les courses rattachées à la coupe
@@ -25,7 +25,7 @@ function lireEntreeBareme(entree) {
 
 /**
  * Points et prime d'une place pour une course et un type de résultat.
- * course : objet course (porte la catégorie). type : scratch | general | etape | points | montagne | jeune
+ * course : objet course (porte la catégorie). type : classique | general | etape | points | montagne | jeune
  */
 function pointsEtPrime(db, course, type, place) {
   const b = db.bareme || {};
@@ -35,9 +35,9 @@ function pointsEtPrime(db, course, type, place) {
   const estTour = type === 'general' || type === 'etape';
 
   let table;
-  if (type === 'scratch' || type === 'general') {
-    const cat = alias ? (estTour ? alias.tour : alias.scratch) : categorie;
-    table = b.individuel_scratch?.[cat];
+  if (type === 'classique' || type === 'general') {
+    const cat = alias ? (estTour ? alias.tour : alias.classique) : categorie;
+    table = b.individuel_classique?.[cat];
   } else if (type === 'etape') {
     const cat = alias ? alias.tour : categorie;
     table = b.etape?.[cat];
@@ -54,7 +54,7 @@ function pointsPourResultat(db, course, type, place) {
   return pointsEtPrime(db, course, type, place).pts;
 }
 
-const TYPES_VICTOIRE = ['scratch', 'general', 'etape'];
+const TYPES_VICTOIRE = ['classique', 'general', 'etape'];
 
 /**
  * Une ligne par coureur classé de chaque résultat, avec points, prime et victoire.
@@ -174,13 +174,13 @@ function avecRang(liste) {
 
 /**
  * Classement d'une coupe pour une saison : points du barème de chaque course
- * rattachée à la coupe (course.coupes contient coupeId), résultats scratch/général.
+ * rattachée à la coupe (course.coupes contient coupeId), résultats classique/général.
  * Les primes ne comptent pas dans les coupes.
  */
 function calculerClassementCoupe(db, coupeId, saisonId) {
   const resultatsCoupe = db.resultats.filter(res => {
     if (res.saison !== saisonId) return false;
-    if (res.type !== 'scratch' && res.type !== 'general') return false;
+    if (res.type !== 'classique' && res.type !== 'general') return false;
     const course = db.coursesById[res.courseId];
     return course && Array.isArray(course.coupes) && course.coupes.includes(coupeId);
   });

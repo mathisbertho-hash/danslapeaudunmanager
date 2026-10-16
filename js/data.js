@@ -51,6 +51,9 @@ async function loadAllData() {
   );
   const db = Object.fromEntries(entries);
 
+  // Anciennes données : le type « scratch » s'appelle désormais « classique »
+  db.resultats.forEach(r => { if (r.type === 'scratch') r.type = 'classique'; });
+
   db.coureursById = Object.fromEntries(db.coureurs.map(c => [c.id, c]));
   db.equipesById = Object.fromEntries(db.equipes.map(e => [e.id, e]));
   db.coursesById = Object.fromEntries(db.courses.map(c => [c.id, c]));
