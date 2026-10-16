@@ -99,7 +99,8 @@
     "profil": "accidente",
     "dateDebut": "17/01",
     "dateFin": "17/01",
-    "coupes": []
+    "coupes": [],
+    "lienPcmmod": "https://pcmmod.com/race/stage.php?id=229"
   },
   {
     "id": "tropicale-amissa-bongo-saison-1",
@@ -123,7 +124,8 @@
     "profil": "plat",
     "dateDebut": "20/01",
     "dateFin": "20/01",
-    "coupes": []
+    "coupes": [],
+    "lienPcmmod": "https://pcmmod.com/race/stage.php?id=168"
   },
   {
     "id": "tour-des-tonga-saison-1",
@@ -135,7 +137,8 @@
     "profil": "mixte",
     "dateDebut": "23/01",
     "dateFin": "27/01",
-    "coupes": []
+    "coupes": [],
+    "lienPcmmod": "https://pcmmod.com/race/race.php?id_race_year=1078"
   },
   {
     "id": "africa-classic-saison-1",
@@ -149,7 +152,8 @@
     "dateFin": "27/01",
     "coupes": [
       "coupe-du-monde"
-    ]
+    ],
+    "lienPcmmod": "https://pcmmod.com/race/stage.php?id=3482"
   },
   {
     "id": "southwest-pacific-tour-saison-1",
@@ -161,7 +165,8 @@
     "profil": "mixte",
     "dateDebut": "01/02",
     "dateFin": "11/02",
-    "coupes": []
+    "coupes": [],
+    "lienPcmmod": "https://pcmmod.com/race/race.php?id_race_year=2344"
   },
   {
     "id": "gp-la-marseillaise-saison-1",
@@ -260,6 +265,30 @@
     ]
   },
   {
+    "id": "tour-de-vendee-saison-1",
+    "nom": "Tour de Vendée",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "20/02",
+    "dateFin": "20/02",
+    "coupes": []
+  },
+  {
+    "id": "paris-camembert-saison-1",
+    "nom": "Paris-Camembert",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "23/02",
+    "dateFin": "23/02",
+    "coupes": []
+  },
+  {
     "id": "faun-ardeche-classic-saison-1",
     "nom": "Faun-Ardèche Classic",
     "categorie": "national-classic",
@@ -288,6 +317,18 @@
     ]
   },
   {
+    "id": "milan-turin-espoirs-saison-1",
+    "nom": "Milan-Turin Espoirs",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "26/02",
+    "dateFin": "26/02",
+    "coupes": []
+  },
+  {
     "id": "milan-turin-saison-1",
     "nom": "Milan-Turin",
     "categorie": "world-classic",
@@ -314,6 +355,18 @@
     "coupes": [
       "coupe-du-monde"
     ]
+  },
+  {
+    "id": "tirreno-u21-saison-1",
+    "nom": "Tirreno U21",
+    "categorie": "dev-tour",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": 3,
+    "profil": "mixte",
+    "dateDebut": "01/03",
+    "dateFin": "03/03",
+    "coupes": []
   },
   {
     "id": "jean-paraiso-interior-saison-1",
@@ -396,6 +449,18 @@
     ]
   },
   {
+    "id": "milan-san-remo-espoirs-saison-1",
+    "nom": "Milan - San Remo Espoirs",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "15/03",
+    "dateFin": "15/03",
+    "coupes": []
+  },
+  {
     "id": "gp-e3-saison-1",
     "nom": "GP E3",
     "categorie": "world-classic",
@@ -418,6 +483,18 @@
     "nbEtapes": 6,
     "profil": "mixte",
     "dateDebut": "17/03",
+    "dateFin": "22/03",
+    "coupes": []
+  },
+  {
+    "id": "bidasoako-itzulia-saison-1",
+    "nom": "Bidasoako Itzulia",
+    "categorie": "dev-tour",
+    "saison": "saison-1",
+    "pays": "Spain",
+    "nbEtapes": 3,
+    "profil": "mixte",
+    "dateDebut": "20/03",
     "dateFin": "22/03",
     "coupes": []
   },
@@ -464,6 +541,30 @@
     ]
   },
   {
+    "id": "tour-des-flandres-juniors-saison-1",
+    "nom": "Tour des Flandres Juniors",
+    "categorie": "juniors",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "02/04",
+    "dateFin": "02/04",
+    "coupes": []
+  },
+  {
+    "id": "tour-des-flandres-u21-saison-1",
+    "nom": "Tour des Flandres U21",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "03/04",
+    "dateFin": "03/04",
+    "coupes": []
+  },
+  {
     "id": "tour-du-luxembourg-saison-1",
     "nom": "Tour du Luxembourg",
     "categorie": "national-tour",
@@ -473,6 +574,30 @@
     "profil": "mixte",
     "dateDebut": "05/04",
     "dateFin": "09/04",
+    "coupes": []
+  },
+  {
+    "id": "paris-roubaix-juniors-saison-1",
+    "nom": "Paris-Roubaix Juniors",
+    "categorie": "juniors",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "07/04",
+    "dateFin": "07/04",
+    "coupes": []
+  },
+  {
+    "id": "paris-roubaix-espoirs-saison-1",
+    "nom": "Paris-Roubaix Espoirs",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "semi-pave",
+    "dateDebut": "08/04",
+    "dateFin": "08/04",
     "coupes": []
   },
   {
@@ -532,6 +657,42 @@
     ]
   },
   {
+    "id": "lotto-famenne-classic-saison-1",
+    "nom": "Lotto Famenne Classic",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "19/04",
+    "dateFin": "19/04",
+    "coupes": []
+  },
+  {
+    "id": "liege-bastogne-liege-espoirs-saison-1",
+    "nom": "Liège-Bastogne-Liège Espoirs",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "20/04",
+    "dateFin": "20/04",
+    "coupes": []
+  },
+  {
+    "id": "liege-bastogne-liege-juniors-saison-1",
+    "nom": "Liège-Bastogne-Liège Juniors",
+    "categorie": "juniors",
+    "saison": "saison-1",
+    "pays": "Belgium",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "20/04",
+    "dateFin": "20/04",
+    "coupes": []
+  },
+  {
     "id": "liege-bastogne-liege-saison-1",
     "nom": "Liège-Bastogne-Liège",
     "categorie": "legend-tour",
@@ -544,6 +705,18 @@
     "coupes": [
       "coupe-du-monde"
     ]
+  },
+  {
+    "id": "baby-giro-saison-1",
+    "nom": "Baby Giro",
+    "categorie": "dev-tour",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": 8,
+    "profil": "mixte",
+    "dateDebut": "23/04",
+    "dateFin": "30/04",
+    "coupes": []
   },
   {
     "id": "tour-de-francfort-saison-1",
@@ -617,6 +790,19 @@
     "profil": "mixte",
     "dateDebut": "05/05",
     "dateFin": "10/05",
+    "coupes": [],
+    "lienPcmmod": "https://pcmmod.com/race/race.php?id_race_year=1394"
+  },
+  {
+    "id": "tour-de-l-utah-saison-1",
+    "nom": "Tour de l'Utah",
+    "categorie": "dev-tour",
+    "saison": "saison-1",
+    "pays": "United-States",
+    "nbEtapes": 4,
+    "profil": "mixte",
+    "dateDebut": "07/05",
+    "dateFin": "10/05",
     "coupes": []
   },
   {
@@ -634,6 +820,30 @@
     ]
   },
   {
+    "id": "maryland-gp-saison-1",
+    "nom": "Maryland GP",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "United-States",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "12/05",
+    "dateFin": "12/05",
+    "coupes": []
+  },
+  {
+    "id": "maryland-u18-saison-1",
+    "nom": "Maryland U18",
+    "categorie": "juniors",
+    "saison": "saison-1",
+    "pays": "United-States",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "13/05",
+    "dateFin": "13/05",
+    "coupes": []
+  },
+  {
     "id": "ordiziako-klasika-saison-1",
     "nom": "Ordiziako Klasika",
     "categorie": "national-classic",
@@ -646,6 +856,18 @@
     "coupes": [
       "coupe-espagne"
     ]
+  },
+  {
+    "id": "tour-du-colorado-saison-1",
+    "nom": "Tour du Colorado",
+    "categorie": "juniors",
+    "saison": "saison-1",
+    "pays": "United-States",
+    "nbEtapes": 3,
+    "profil": "mixte",
+    "dateDebut": "16/05",
+    "dateFin": "18/05",
+    "coupes": []
   },
   {
     "id": "tour-de-hongrie-saison-1",
@@ -688,11 +910,11 @@
     ]
   },
   {
-    "id": "gp-du-luxembourg-saison-1",
-    "nom": "GP du Luxembourg",
+    "id": "tour-de-russie-saison-1",
+    "nom": "Tour de Russie",
     "categorie": "national-tour",
     "saison": "saison-1",
-    "pays": "Luxembourg",
+    "pays": "Russia",
     "nbEtapes": 5,
     "profil": "mixte",
     "dateDebut": "02/06",
@@ -736,8 +958,20 @@
     "coupes": []
   },
   {
-    "id": "championnat-national-contre-la-montre-saison-1",
-    "nom": "Championnat national contre-la-montre",
+    "id": "classic-grand-besancon-doubs-saison-1",
+    "nom": "Classic Grand Besançon Doubs",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "montagne",
+    "dateDebut": "16/06",
+    "dateFin": "16/06",
+    "coupes": []
+  },
+  {
+    "id": "cn-itt-saison-1",
+    "nom": "CN ITT",
     "categorie": "championnat-national",
     "saison": "saison-1",
     "pays": null,
@@ -748,13 +982,13 @@
     "coupes": []
   },
   {
-    "id": "championnat-national-en-ligne-saison-1",
-    "nom": "Championnat national en ligne",
+    "id": "cn-ligne-saison-1",
+    "nom": "CN Ligne",
     "categorie": "championnat-national",
     "saison": "saison-1",
     "pays": null,
     "nbEtapes": null,
-    "profil": "accidente",
+    "profil": null,
     "dateDebut": "22/06",
     "dateFin": "22/06",
     "coupes": []
@@ -781,6 +1015,18 @@
     "profil": "mixte",
     "dateDebut": "07/07",
     "dateFin": "10/07",
+    "coupes": []
+  },
+  {
+    "id": "tour-de-france-juniors-saison-1",
+    "nom": "Tour de France Juniors",
+    "categorie": "juniors",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": 5,
+    "profil": "mixte",
+    "dateDebut": "11/07",
+    "dateFin": "15/07",
     "coupes": []
   },
   {
@@ -890,9 +1136,21 @@
     ]
   },
   {
+    "id": "tour-de-l-avenir-saison-1",
+    "nom": "Tour de l'Avenir",
+    "categorie": "dev-tour",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": 7,
+    "profil": "mixte",
+    "dateDebut": "18/08",
+    "dateFin": "24/08",
+    "coupes": []
+  },
+  {
     "id": "classic-du-mercantour-saison-1",
     "nom": "Classic du Mercantour",
-    "categorie": "national-classic",
+    "categorie": "world-classic",
     "saison": "saison-1",
     "pays": "France",
     "nbEtapes": null,
@@ -1010,6 +1268,30 @@
     ]
   },
   {
+    "id": "il-lombardia-u21-saison-1",
+    "nom": "Il Lombardia U21",
+    "categorie": "dev-classic",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "16/09",
+    "dateFin": "16/09",
+    "coupes": []
+  },
+  {
+    "id": "il-lombardia-u18-saison-1",
+    "nom": "Il Lombardia U18",
+    "categorie": "juniors",
+    "saison": "saison-1",
+    "pays": "Italy",
+    "nbEtapes": null,
+    "profil": "accidente",
+    "dateDebut": "16/09",
+    "dateFin": "16/09",
+    "coupes": []
+  },
+  {
     "id": "tour-de-lombardie-saison-1",
     "nom": "Tour de Lombardie",
     "categorie": "legend-tour",
@@ -1052,6 +1334,18 @@
     ]
   },
   {
+    "id": "paris-tours-saison-1",
+    "nom": "Paris-Tours",
+    "categorie": "juniors",
+    "saison": "saison-1",
+    "pays": "France",
+    "nbEtapes": null,
+    "profil": "plat",
+    "dateDebut": "22/09",
+    "dateFin": "22/09",
+    "coupes": []
+  },
+  {
     "id": "classique-itt-saint-marin-saison-1",
     "nom": "Classique ITT Saint Marin",
     "categorie": "world-classic",
@@ -1076,8 +1370,8 @@
     "coupes": []
   },
   {
-    "id": "championnats-du-monde-contre-la-montre-saison-1",
-    "nom": "Championnats du Monde contre-la-montre",
+    "id": "championnats-du-monde-clm-saison-1",
+    "nom": "Championnats du Monde CLM",
     "categorie": "championnat-monde",
     "saison": "saison-1",
     "pays": null,
@@ -1089,7 +1383,7 @@
   },
   {
     "id": "championnats-du-monde-en-ligne-saison-1",
-    "nom": "Championnats du Monde en ligne",
+    "nom": "Championnats du Monde en Ligne",
     "categorie": "championnat-monde",
     "saison": "saison-1",
     "pays": null,

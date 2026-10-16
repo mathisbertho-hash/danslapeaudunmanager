@@ -1,19 +1,711 @@
 {
-  "_comment": "Barème à remplir : points[categorie][place] = points. Place '1'..'N', laisser vide tant que non fourni par l'organisateur.",
+  "_comment": "Barème : individuel_scratch[catégorie][place] = {pts, prime}. Sert aux courses en un jour ET au général des courses par étapes ; etape[catégorie] sert aux étapes. prime en euros, optionnelle. alias_categories : catégories sans barème propre qui empruntent celui d'une autre (scratch = course en un jour, tour = course par étapes). sans_prime : catégories dont les primes ne sont pas versées.",
   "individuel_scratch": {
-    "grand-tour": {},
-    "legend-tour": {},
-    "world-tour": {},
-    "world-classic": {},
-    "national-tour": {},
-    "national-classic": {},
+    "grand-tour": {
+      "1": {
+        "pts": 300,
+        "prime": 200000
+      },
+      "2": {
+        "pts": 260,
+        "prime": 175000
+      },
+      "3": {
+        "pts": 220,
+        "prime": 150000
+      },
+      "4": {
+        "pts": 190,
+        "prime": 130000
+      },
+      "5": {
+        "pts": 160,
+        "prime": 110000
+      },
+      "6": {
+        "pts": 140,
+        "prime": 95000
+      },
+      "7": {
+        "pts": 120,
+        "prime": 80000
+      },
+      "8": {
+        "pts": 110,
+        "prime": 70000
+      },
+      "9": {
+        "pts": 100,
+        "prime": 60000
+      },
+      "10": {
+        "pts": 90,
+        "prime": 50000
+      },
+      "11": {
+        "pts": 80,
+        "prime": 45000
+      },
+      "12": {
+        "pts": 72,
+        "prime": 40000
+      },
+      "13": {
+        "pts": 64,
+        "prime": 35000
+      },
+      "14": {
+        "pts": 56,
+        "prime": 30000
+      },
+      "15": {
+        "pts": 48,
+        "prime": 25000
+      },
+      "16": {
+        "pts": 40,
+        "prime": 22000
+      },
+      "17": {
+        "pts": 36,
+        "prime": 20000
+      },
+      "18": {
+        "pts": 32,
+        "prime": 18000
+      },
+      "19": {
+        "pts": 28,
+        "prime": 16000
+      },
+      "20": {
+        "pts": 24,
+        "prime": 14000
+      },
+      "21": {
+        "pts": 22,
+        "prime": 12000
+      },
+      "22": {
+        "pts": 20,
+        "prime": 10000
+      },
+      "23": {
+        "pts": 18,
+        "prime": 8000
+      },
+      "24": {
+        "pts": 16,
+        "prime": 6000
+      },
+      "25": {
+        "pts": 14,
+        "prime": 6000
+      },
+      "26": {
+        "pts": 12,
+        "prime": 4000
+      },
+      "27": {
+        "pts": 10,
+        "prime": 4000
+      },
+      "28": {
+        "pts": 10,
+        "prime": 2000
+      },
+      "29": {
+        "pts": 10,
+        "prime": 2000
+      },
+      "30": {
+        "pts": 10,
+        "prime": 1000
+      },
+      "31": {
+        "pts": 8
+      },
+      "32": {
+        "pts": 8
+      },
+      "33": {
+        "pts": 8
+      },
+      "34": {
+        "pts": 8
+      },
+      "35": {
+        "pts": 6
+      },
+      "36": {
+        "pts": 6
+      },
+      "37": {
+        "pts": 6
+      },
+      "38": {
+        "pts": 4
+      },
+      "39": {
+        "pts": 4
+      },
+      "40": {
+        "pts": 2
+      }
+    },
+    "legend-tour": {
+      "1": {
+        "pts": 250,
+        "prime": 100000
+      },
+      "2": {
+        "pts": 210,
+        "prime": 80000
+      },
+      "3": {
+        "pts": 170,
+        "prime": 60000
+      },
+      "4": {
+        "pts": 140,
+        "prime": 50000
+      },
+      "5": {
+        "pts": 110,
+        "prime": 40000
+      },
+      "6": {
+        "pts": 90,
+        "prime": 35000
+      },
+      "7": {
+        "pts": 70,
+        "prime": 30000
+      },
+      "8": {
+        "pts": 60,
+        "prime": 25000
+      },
+      "9": {
+        "pts": 50,
+        "prime": 20000
+      },
+      "10": {
+        "pts": 40,
+        "prime": 15000
+      },
+      "11": {
+        "pts": 35,
+        "prime": 12000
+      },
+      "12": {
+        "pts": 30,
+        "prime": 10000
+      },
+      "13": {
+        "pts": 26,
+        "prime": 8000
+      },
+      "14": {
+        "pts": 22,
+        "prime": 6000
+      },
+      "15": {
+        "pts": 18,
+        "prime": 4000
+      },
+      "16": {
+        "pts": 18,
+        "prime": 3000
+      },
+      "17": {
+        "pts": 18,
+        "prime": 2000
+      },
+      "18": {
+        "pts": 15,
+        "prime": 2000
+      },
+      "19": {
+        "pts": 15,
+        "prime": 1000
+      },
+      "20": {
+        "pts": 15,
+        "prime": 1000
+      },
+      "21": {
+        "pts": 12
+      },
+      "22": {
+        "pts": 12
+      },
+      "23": {
+        "pts": 10
+      },
+      "24": {
+        "pts": 10
+      },
+      "25": {
+        "pts": 8
+      },
+      "26": {
+        "pts": 8
+      },
+      "27": {
+        "pts": 6
+      },
+      "28": {
+        "pts": 6
+      },
+      "29": {
+        "pts": 4
+      },
+      "30": {
+        "pts": 2
+      }
+    },
+    "world-tour": {
+      "1": {
+        "pts": 125,
+        "prime": 90000
+      },
+      "2": {
+        "pts": 110,
+        "prime": 75000
+      },
+      "3": {
+        "pts": 95,
+        "prime": 60000
+      },
+      "4": {
+        "pts": 85,
+        "prime": 50000
+      },
+      "5": {
+        "pts": 75,
+        "prime": 40000
+      },
+      "6": {
+        "pts": 65,
+        "prime": 30000
+      },
+      "7": {
+        "pts": 57,
+        "prime": 25000
+      },
+      "8": {
+        "pts": 49,
+        "prime": 20000
+      },
+      "9": {
+        "pts": 43,
+        "prime": 17000
+      },
+      "10": {
+        "pts": 37,
+        "prime": 14000
+      },
+      "11": {
+        "pts": 30,
+        "prime": 12000
+      },
+      "12": {
+        "pts": 26,
+        "prime": 10000
+      },
+      "13": {
+        "pts": 22,
+        "prime": 8000
+      },
+      "14": {
+        "pts": 18,
+        "prime": 6000
+      },
+      "15": {
+        "pts": 15,
+        "prime": 5000
+      },
+      "16": {
+        "pts": 15,
+        "prime": 4000
+      },
+      "17": {
+        "pts": 12,
+        "prime": 3000
+      },
+      "18": {
+        "pts": 12,
+        "prime": 2000
+      },
+      "19": {
+        "pts": 12,
+        "prime": 1000
+      },
+      "20": {
+        "pts": 10,
+        "prime": 1000
+      },
+      "21": {
+        "pts": 10
+      },
+      "22": {
+        "pts": 10
+      },
+      "23": {
+        "pts": 8
+      },
+      "24": {
+        "pts": 8
+      },
+      "25": {
+        "pts": 8
+      },
+      "26": {
+        "pts": 6
+      },
+      "27": {
+        "pts": 6
+      },
+      "28": {
+        "pts": 4
+      },
+      "29": {
+        "pts": 4
+      },
+      "30": {
+        "pts": 2
+      }
+    },
+    "world-classic": {
+      "1": {
+        "pts": 110,
+        "prime": 70000
+      },
+      "2": {
+        "pts": 95,
+        "prime": 55000
+      },
+      "3": {
+        "pts": 80,
+        "prime": 40000
+      },
+      "4": {
+        "pts": 70,
+        "prime": 30000
+      },
+      "5": {
+        "pts": 60,
+        "prime": 25000
+      },
+      "6": {
+        "pts": 52,
+        "prime": 20000
+      },
+      "7": {
+        "pts": 44,
+        "prime": 15000
+      },
+      "8": {
+        "pts": 36,
+        "prime": 12000
+      },
+      "9": {
+        "pts": 30,
+        "prime": 10000
+      },
+      "10": {
+        "pts": 24,
+        "prime": 8000
+      },
+      "11": {
+        "pts": 20,
+        "prime": 6000
+      },
+      "12": {
+        "pts": 17,
+        "prime": 4000
+      },
+      "13": {
+        "pts": 14,
+        "prime": 3000
+      },
+      "14": {
+        "pts": 12,
+        "prime": 2000
+      },
+      "15": {
+        "pts": 12,
+        "prime": 1000
+      },
+      "16": {
+        "pts": 10
+      },
+      "17": {
+        "pts": 10
+      },
+      "18": {
+        "pts": 10
+      },
+      "19": {
+        "pts": 8
+      },
+      "20": {
+        "pts": 8
+      },
+      "21": {
+        "pts": 6
+      },
+      "22": {
+        "pts": 6
+      },
+      "23": {
+        "pts": 4
+      },
+      "24": {
+        "pts": 4
+      },
+      "25": {
+        "pts": 2
+      }
+    },
+    "national-tour": {
+      "1": {
+        "pts": 60,
+        "prime": 50000
+      },
+      "2": {
+        "pts": 52,
+        "prime": 40000
+      },
+      "3": {
+        "pts": 44,
+        "prime": 30000
+      },
+      "4": {
+        "pts": 38,
+        "prime": 25000
+      },
+      "5": {
+        "pts": 32,
+        "prime": 20000
+      },
+      "6": {
+        "pts": 27,
+        "prime": 17000
+      },
+      "7": {
+        "pts": 23,
+        "prime": 15000
+      },
+      "8": {
+        "pts": 19,
+        "prime": 13000
+      },
+      "9": {
+        "pts": 15,
+        "prime": 11000
+      },
+      "10": {
+        "pts": 12,
+        "prime": 10000
+      },
+      "11": {
+        "pts": 10,
+        "prime": 8000
+      },
+      "12": {
+        "pts": 8,
+        "prime": 6000
+      },
+      "13": {
+        "pts": 8,
+        "prime": 4000
+      },
+      "14": {
+        "pts": 6,
+        "prime": 2000
+      },
+      "15": {
+        "pts": 6,
+        "prime": 1000
+      },
+      "16": {
+        "pts": 4
+      },
+      "17": {
+        "pts": 4
+      },
+      "18": {
+        "pts": 2
+      },
+      "19": {
+        "pts": 2
+      },
+      "20": {
+        "pts": 2
+      }
+    },
+    "national-classic": {
+      "1": {
+        "pts": 50,
+        "prime": 40000
+      },
+      "2": {
+        "pts": 42,
+        "prime": 30000
+      },
+      "3": {
+        "pts": 34,
+        "prime": 20000
+      },
+      "4": {
+        "pts": 28,
+        "prime": 15000
+      },
+      "5": {
+        "pts": 22,
+        "prime": 12000
+      },
+      "6": {
+        "pts": 18,
+        "prime": 10000
+      },
+      "7": {
+        "pts": 14,
+        "prime": 8000
+      },
+      "8": {
+        "pts": 12,
+        "prime": 6000
+      },
+      "9": {
+        "pts": 10,
+        "prime": 4000
+      },
+      "10": {
+        "pts": 8,
+        "prime": 2000
+      },
+      "11": {
+        "pts": 6
+      },
+      "12": {
+        "pts": 6
+      },
+      "13": {
+        "pts": 6
+      },
+      "14": {
+        "pts": 4
+      },
+      "15": {
+        "pts": 4
+      },
+      "16": {
+        "pts": 4
+      },
+      "17": {
+        "pts": 2
+      },
+      "18": {
+        "pts": 2
+      },
+      "19": {
+        "pts": 2
+      },
+      "20": {
+        "pts": 2
+      }
+    },
     "championnat-national": {},
-    "championnat-monde": {}
+    "championnat-monde": {},
+    "dev-classic": {},
+    "dev-tour": {},
+    "juniors": {}
   },
   "etape": {
-    "grand-tour": {},
-    "world-tour": {},
-    "national-tour": {}
+    "grand-tour": {
+      "1": {
+        "pts": 60,
+        "prime": 50000
+      },
+      "2": {
+        "pts": 50,
+        "prime": 35000
+      },
+      "3": {
+        "pts": 40,
+        "prime": 20000
+      },
+      "4": {
+        "pts": 30,
+        "prime": 10000
+      },
+      "5": {
+        "pts": 25,
+        "prime": 5000
+      },
+      "6": {
+        "pts": 20
+      },
+      "7": {
+        "pts": 15
+      },
+      "8": {
+        "pts": 10
+      },
+      "9": {
+        "pts": 5
+      },
+      "10": {
+        "pts": 2
+      }
+    },
+    "world-tour": {
+      "1": {
+        "pts": 25,
+        "prime": 20000
+      },
+      "2": {
+        "pts": 15,
+        "prime": 12000
+      },
+      "3": {
+        "pts": 10,
+        "prime": 7000
+      },
+      "4": {
+        "pts": 7,
+        "prime": 4000
+      },
+      "5": {
+        "pts": 4,
+        "prime": 1000
+      },
+      "6": {
+        "pts": 2
+      }
+    },
+    "national-tour": {
+      "1": {
+        "pts": 10,
+        "prime": 8000
+      },
+      "2": {
+        "pts": 7,
+        "prime": 5000
+      },
+      "3": {
+        "pts": 5,
+        "prime": 2000
+      },
+      "4": {
+        "pts": 3
+      }
+    },
+    "dev-tour": {},
+    "juniors": {}
   },
   "classement_annexe": {
     "points": {},
@@ -24,12 +716,23 @@
     "actif": false,
     "points_par_jour": {}
   },
-  "coupe": {
-    "_comment": "Barème séparé pour les classements de coupe (Coupe du Monde, coupes nationales). points[coupeId][place] = points, appliqué au résultat scratch/général de chaque course rattachée à la coupe.",
-    "coupe-du-monde": {},
-    "coupe-italie": {},
-    "coupe-espagne": {},
-    "coupe-france": {},
-    "coupe-belgique": {}
-  }
+  "alias_categories": {
+    "dev-classic": {
+      "scratch": "national-classic",
+      "tour": "national-tour"
+    },
+    "dev-tour": {
+      "scratch": "national-classic",
+      "tour": "national-tour"
+    },
+    "juniors": {
+      "scratch": "national-classic",
+      "tour": "national-tour"
+    }
+  },
+  "sans_prime": [
+    "dev-classic",
+    "dev-tour",
+    "juniors"
+  ]
 }
