@@ -5,7 +5,8 @@
     "manager_forum": "Sumatrana",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=45898",
     "nationalite": "Suède",
-    "nationalite_code": "SE"
+    "nationalite_code": "SE",
+    "type": "pro"
   },
   {
     "id": "gazprom-rusvelo",
@@ -13,7 +14,8 @@
     "manager_forum": "El_Pistolero_64",
     "lien_maillot": "viewtopic.php?p=2589746#p2589746",
     "nationalite": "Russie",
-    "nationalite_code": "RU"
+    "nationalite_code": "RU",
+    "type": "pro"
   },
   {
     "id": "nemiroff",
@@ -21,7 +23,8 @@
     "manager_forum": "Furious_lion",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=53938",
     "nationalite": "Ukraine",
-    "nationalite_code": "UA"
+    "nationalite_code": "UA",
+    "type": "pro"
   },
   {
     "id": "konami-yokohama",
@@ -29,7 +32,8 @@
     "manager_forum": "Seth",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=172196",
     "nationalite": "Japon",
-    "nationalite_code": "JP"
+    "nationalite_code": "JP",
+    "type": "pro"
   },
   {
     "id": "euskaltel-euskadi",
@@ -37,7 +41,8 @@
     "manager_forum": "Eliteam",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=69230",
     "nationalite": "Espagne",
-    "nationalite_code": "ES"
+    "nationalite_code": "ES",
+    "type": "pro"
   },
   {
     "id": "airbus-team",
@@ -45,7 +50,8 @@
     "manager_forum": "Rougetnoir31iteam",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=112558",
     "nationalite": "France",
-    "nationalite_code": "FR"
+    "nationalite_code": "FR",
+    "type": "pro"
   },
   {
     "id": "bianchi",
@@ -53,7 +59,8 @@
     "manager_forum": "Yates in Finestre",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=167673",
     "nationalite": "Italie",
-    "nationalite_code": "IT"
+    "nationalite_code": "IT",
+    "type": "pro"
   },
   {
     "id": "quick-step-pulsar",
@@ -61,7 +68,8 @@
     "manager_forum": "JV1510",
     "lien_maillot": "https://pcmmod.com/jersey/jersey?id=10866",
     "nationalite": "Belgique",
-    "nationalite_code": "BE"
+    "nationalite_code": "BE",
+    "type": "pro"
   },
   {
     "id": "american-airlines",
@@ -69,7 +77,8 @@
     "manager_forum": "Xandro972",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=62859",
     "nationalite": "États-Unis",
-    "nationalite_code": "US"
+    "nationalite_code": "US",
+    "type": "pro"
   },
   {
     "id": "l39ion-of-los-angeles",
@@ -77,7 +86,8 @@
     "manager_forum": "Maxteam",
     "lien_maillot": "https://pcmmod.com/jersey/team.php?id_team_year=914",
     "nationalite": "États-Unis",
-    "nationalite_code": "US"
+    "nationalite_code": "US",
+    "type": "pro"
   },
   {
     "id": "heilala-tupu-anga-coffee",
@@ -85,7 +95,8 @@
     "manager_forum": "Varkana",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=90124",
     "nationalite": "Tonga",
-    "nationalite_code": "TO"
+    "nationalite_code": "TO",
+    "type": "pro"
   },
   {
     "id": "samruk-kaznya-air-astana",
@@ -93,7 +104,8 @@
     "manager_forum": "Lelex1008",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=12050",
     "nationalite": "Kazakhstan",
-    "nationalite_code": "KZ"
+    "nationalite_code": "KZ",
+    "type": "pro"
   },
   {
     "id": "team-kometa-msc",
@@ -101,7 +113,8 @@
     "manager_forum": "Sébastien",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=129775",
     "nationalite": "Hongrie",
-    "nationalite_code": "HU"
+    "nationalite_code": "HU",
+    "type": "pro"
   },
   {
     "id": "eryri",
@@ -109,7 +122,8 @@
     "manager_forum": "Lyote",
     "lien_maillot": null,
     "nationalite": "Pays de Galles",
-    "nationalite_code": "GB-WLS"
+    "nationalite_code": "GB-WLS",
+    "type": "pro"
   },
   {
     "id": "rapha-ninteam",
@@ -117,7 +131,8 @@
     "manager_forum": "ninteo",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=91994",
     "nationalite": "Royaume-Uni",
-    "nationalite_code": "GB"
+    "nationalite_code": "GB",
+    "type": "pro"
   },
   {
     "id": "boyaca",
@@ -125,7 +140,8 @@
     "manager_forum": "Damdou",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=166111",
     "nationalite": "Colombie",
-    "nationalite_code": "CO"
+    "nationalite_code": "CO",
+    "type": "pro"
   },
   {
     "id": "galp-energia",
@@ -133,15 +149,17 @@
     "manager_forum": "Stidpmi",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=17948",
     "nationalite": "Portugal",
-    "nationalite_code": "PT"
+    "nationalite_code": "PT",
+    "type": "pro"
   },
   {
     "id": "vinted",
     "nom": "Vinted",
-    "manager_forum": null,
+    "manager_forum": "cadel evans",
     "lien_maillot": null,
     "nationalite": "Lituanie",
-    "nationalite_code": "LT"
+    "nationalite_code": "LT",
+    "type": "pro"
   },
   {
     "id": "paris-sg-airways",
@@ -149,7 +167,8 @@
     "manager_forum": "P_Basque",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=75928",
     "nationalite": "France",
-    "nationalite_code": "FR"
+    "nationalite_code": "FR",
+    "type": "pro"
   },
   {
     "id": "paraguay-cycles-club",
@@ -157,7 +176,8 @@
     "manager_forum": "El Pino",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=18901",
     "nationalite": "Paraguay",
-    "nationalite_code": "PY"
+    "nationalite_code": "PY",
+    "type": "pro"
   },
   {
     "id": "genii-c-zonzini-srsm",
@@ -165,7 +185,8 @@
     "manager_forum": "Odonata",
     "lien_maillot": "https://pcmmod.com/jersey/team.php?id_team_year=6766",
     "nationalite": "Luxembourg",
-    "nationalite_code": "LU"
+    "nationalite_code": "LU",
+    "type": "pro"
   },
   {
     "id": "bogenvil-tim",
@@ -173,7 +194,8 @@
     "manager_forum": "Adra",
     "lien_maillot": null,
     "nationalite": "Bougainville",
-    "nationalite_code": null
+    "nationalite_code": null,
+    "type": "pro"
   },
   {
     "id": "attijariwafa-bank",
@@ -181,13 +203,205 @@
     "manager_forum": "ivelios",
     "lien_maillot": "https://pcmmod.com/jersey/jersey.php?id=12019",
     "nationalite": "Côte d'Ivoire",
-    "nationalite_code": "CI"
+    "nationalite_code": "CI",
+    "type": "pro"
   },
   {
     "id": "holy-cycling-team",
     "nom": "Holy Cycling Team",
     "manager_forum": "Impackt",
     "lien_maillot": "https://www.pcmmod.com/jersey/jersey.php?id=165154",
+    "nationalite": "Allemagne",
+    "nationalite_code": "DE",
+    "type": "pro"
+  },
+  {
+    "id": "ukraine-cycling-academy-by-nemiroff",
+    "nom": "Ukraine Cycling Academy by Nemiroff",
+    "manager_forum": "Furious_Lion",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "nemiroff",
+    "nationalite": "Ukraine",
+    "nationalite_code": "UA"
+  },
+  {
+    "id": "fondation-mikel-landa",
+    "nom": "Fondation Mikel Landa",
+    "manager_forum": "Eliteam",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "euskaltel-euskadi",
+    "nationalite": "Espagne",
+    "nationalite_code": "ES"
+  },
+  {
+    "id": "quick-step-pulsar-development",
+    "nom": "Quick-Step Pulsar Development",
+    "manager_forum": "JV1510",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "quick-step-pulsar",
+    "nationalite": "Belgique",
+    "nationalite_code": "BE"
+  },
+  {
+    "id": "maap-australian-dev",
+    "nom": "Maap - Australian Dev",
+    "manager_forum": "Varkana",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "heilala-tupu-anga-coffee",
+    "nationalite": "Tonga",
+    "nationalite_code": "TO"
+  },
+  {
+    "id": "t1-development",
+    "nom": "T1 Development",
+    "manager_forum": "Seth",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "konami-yokohama",
+    "nationalite": "Japon",
+    "nationalite_code": "JP"
+  },
+  {
+    "id": "team-bianchi-devo",
+    "nom": "Team Bianchi Devo",
+    "manager_forum": "Yates in Finestre",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "bianchi",
+    "nationalite": "Italie",
+    "nationalite_code": "IT"
+  },
+  {
+    "id": "ccc",
+    "nom": "CCC",
+    "manager_forum": "cadel evans",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "vinted",
+    "nationalite": "Lituanie",
+    "nationalite_code": "LT"
+  },
+  {
+    "id": "rapha-youthteam",
+    "nom": "Rapha Youthteam",
+    "manager_forum": "ninteo",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "rapha-ninteam",
+    "nationalite": "Royaume-Uni",
+    "nationalite_code": "GB"
+  },
+  {
+    "id": "kometa-fiatal-team",
+    "nom": "Kometa Fiatal Team",
+    "manager_forum": "Sébastien",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "team-kometa-msc",
+    "nationalite": "Hongrie",
+    "nationalite_code": "HU"
+  },
+  {
+    "id": "airbus-team-junior",
+    "nom": "Airbus Team Junior",
+    "manager_forum": "Rougeetnoir31",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "airbus-team",
+    "nationalite": "France",
+    "nationalite_code": "FR"
+  },
+  {
+    "id": "team-tre-berg-u21",
+    "nom": "Team Tre Berg U21",
+    "manager_forum": "Sumatrana",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "team-tre-berg-postnord",
+    "nationalite": "Suède",
+    "nationalite_code": "SE"
+  },
+  {
+    "id": "galp-sl-benfica",
+    "nom": "GALP - SL Benfica",
+    "manager_forum": "Stidpmi",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "galp-energia",
+    "nationalite": "Portugal",
+    "nationalite_code": "PT"
+  },
+  {
+    "id": "rapha-wales",
+    "nom": "Rapha Wales",
+    "manager_forum": "Lyote",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "eryri",
+    "nationalite": "Pays de Galles",
+    "nationalite_code": "GB-WLS"
+  },
+  {
+    "id": "l39ion-of-los-angeles-dt",
+    "nom": "L39ION of LOS ANGELES DT",
+    "manager_forum": "Maxteam",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "l39ion-of-los-angeles",
+    "nationalite": "États-Unis",
+    "nationalite_code": "US"
+  },
+  {
+    "id": "samruk-kaznya-development-team",
+    "nom": "Samruk Kaznya Development Team",
+    "manager_forum": "Lelex1008",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "samruk-kaznya-air-astana",
+    "nationalite": "Kazakhstan",
+    "nationalite_code": "KZ"
+  },
+  {
+    "id": "amazon",
+    "nom": "Amazon",
+    "manager_forum": "Xandro972",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "american-airlines",
+    "nationalite": "États-Unis",
+    "nationalite_code": "US"
+  },
+  {
+    "id": "attijariwafa-bank-u23-team",
+    "nom": "Attijariwafa Bank U23 Team",
+    "manager_forum": "Ivelios",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "attijariwafa-bank",
+    "nationalite": "Côte d'Ivoire",
+    "nationalite_code": "CI"
+  },
+  {
+    "id": "gazprom-development",
+    "nom": "Gazprom Development",
+    "manager_forum": "El_Pistolero_64",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "gazprom-rusvelo",
+    "nationalite": "Russie",
+    "nationalite_code": "RU"
+  },
+  {
+    "id": "holy-academie-cycling",
+    "nom": "Holy Académie Cycling",
+    "manager_forum": "Impackt",
+    "lien_maillot": null,
+    "type": "developpement",
+    "parent": "holy-cycling-team",
     "nationalite": "Allemagne",
     "nationalite_code": "DE"
   }

@@ -1,6 +1,6 @@
 {
-  "_comment": "Barème : individuel_scratch[catégorie][place] = {pts, prime}. Sert aux courses en un jour ET au général des courses par étapes ; etape[catégorie] sert aux étapes. prime en euros, optionnelle. alias_categories : catégories sans barème propre qui empruntent celui d'une autre (scratch = course en un jour, tour = course par étapes). sans_prime : catégories dont les primes ne sont pas versées.",
-  "individuel_scratch": {
+  "_comment": "Barème : individuel_classique[catégorie][place] = {pts, prime}. Sert aux courses en un jour ET au général des courses par étapes ; etape[catégorie] sert aux étapes. prime en euros, optionnelle. alias_categories : catégories sans barème propre qui empruntent celui d'une autre (classique = course d'un jour ; tour = course par étapes). sans_prime : catégories dont les primes ne sont pas versées.",
+  "individuel_classique": {
     "grand-tour": {
       "1": {
         "pts": 300,
@@ -718,15 +718,15 @@
   },
   "alias_categories": {
     "dev-classic": {
-      "scratch": "national-classic",
+      "classique": "national-classic",
       "tour": "national-tour"
     },
     "dev-tour": {
-      "scratch": "national-classic",
+      "classique": "national-classic",
       "tour": "national-tour"
     },
     "juniors": {
-      "scratch": "national-classic",
+      "classique": "national-classic",
       "tour": "national-tour"
     }
   },

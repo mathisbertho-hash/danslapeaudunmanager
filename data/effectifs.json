@@ -1,1156 +1,11 @@
 [
   {
-    "coureur_id": "beeharry-rajesh",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cabrera-emiliano",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cardoso-duarte",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cervantes-emiliano",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "chilombo-fredy",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "delaunay-antoine",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "detering-til",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "diouf-mamadou",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ferrandin-nicolas",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fuentealba-ibacache-nicolas",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lorente-gonzalo",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "portuondo-yasmani",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rantso-mpho",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sabatier-bastien",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "salvatori-alberto",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "solomon-natnael",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "volpi-davide",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bautista-junior",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bello-yeferson",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "beridze-zurab",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "betancourt-aldo",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "boucaud-kevon",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cedeno-carrasquilla-kadir",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "charles-devon",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "karimov-tural",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "qodirov-dilshod",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rakhimov-aziz",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "regueiro-herrera-raul",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ricketts-andre",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sadyrov-azat",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sterling-javon",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vardanyan-vahagn",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "adjei-nana",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "agyemang-prince",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ait-ouarab-rachid",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-habsi-salim",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ashworth-grant",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "begic-tarik",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "boulahia-yacine",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bustos-barragan-gerardo",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "contreras-eduard",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "habimana-fabrice",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hadjadj-abdelkader",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kadric-vedran",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "keita-salif",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kennedy-shaun",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mahlaha-tsepo",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "maric-haris",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mekonnen-muktar",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mutai-nicholas",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "narine-anand",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ndayisenga-valens",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ngauamo-semisi",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ngoma-arsene",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nhem-chanthou",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nyanga-ludovic",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "obiang-lloyd",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "okello-fred",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "pomare-hemi",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "popovic-petar",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "redhead-cassim",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rosario-yamil",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "schouten-koen",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "shaked-tal",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sinclair-marcus",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "steenkamp-anton",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "steinberger-florian",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sulejmanovic-amar",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-rensburg-dewald",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-rensburg-stefan",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "weerasinghe-thilina",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "yang-xiaolei",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-rubaie-bashar",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "baptiste-shane",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "insaurralde-zabala-agustin",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kovacevic-danilo",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "padilla-zuniga-wilmer",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "adjagba-rodrigue",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ahouanmenou-desire",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-rushaidi-said",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "aponte-ronald",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bascome-nahki",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bittencourt-lucas",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "blas-carlo",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "chaudhary-naveen",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gopaul-nitish",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "manga-vincent",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "marsan-antoine",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nijhof-jorn",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nyholm-sren",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "olmedo-bordagaray-bautista",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "piternella-jurgen",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rusconi-sandro",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sican-marvin",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "xhanari-gentian",
-    "equipe": "holy-cycling-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "barrientos-sican-dorian",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bogado-hernesto",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "contreras-jefferson",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cunningham-rohan",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nolte-marvin",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "petrovic-bogdan",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vasiljevic-milos",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "aparicio-pau",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bogdan-kristof",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bonetti-michele",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bouzidi-reda",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "carrasquilla-barcenas-yoel",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "carvalho-helder",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cepeda-dariel",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cordero-christian",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "csonka-zsombor",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fahy-darragh",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fernando-dinesh",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "grunwald-fabian",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "haberkorn-sebastian",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "harun-amirul",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hasting-jared",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hegedus-tamas",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "higuita-harold",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hollister-trevor",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kerrigan-glenn",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lachaud-maxime",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mediavilla-dani",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "milic-vukasin",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "peralta-ramon",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "radovanovic-lazar",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rahman-danial",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "reuter-luc",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sawadogo-boukary",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "stankovic-stefan",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sylvester-lindon",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "taib-naqib",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tikoisuva-meli",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tulegenov-timur",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-wijk-menno",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "veres-zoltan",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "weatherly-cooper",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "wendland-soren",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "wiegand-rouven",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "winterbourne-alfie",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zhumagulov-daniyar",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "barcza-balazs",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bolatagici-sikeli",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bregar-gasper",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gauthier-florian",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "herrera-mediavilla-marcos",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "herron-curtis",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ismayilov-kamran",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "karimov-erkin",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lin-zilong",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "olabarria-adrian",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "piret-loic",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "wiseler-dan",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "xolmatov-ulugbek",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zauner-elias",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zbanca-sergiu",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "abu-warda-sameh",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-buraik-faisal",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "alcantara-ulises",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-harbi-saleh",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-qahtani-abdullah",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-sherooqi-hamad",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-subaie-majed",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "al-zaabi-saeed",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "amaya-denilson",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "aponte-velazquez-osvaldo",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bailey-damion",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bekturov-nurlan",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bonnaire-sylvain",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "callisaya-copa-ronald",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cardoso-miguel",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "chambers-nickoy",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "chen-yifan",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "da-costa-anselmo",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "discua-oscar",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "dlamini-katlego",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "erdogmus-mert",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ferguson-devante",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fifita-sitiveni",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "font-bernat",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gianella-gianmarco",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gutu-anatolie",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hadjipavlou-petros",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kapanadze-saba",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kindle-jonas",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
     "coureur_id": "kranz-jonas",
     "equipe": "team-tre-berg-postnord",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "larranaga-melgarejo-maximiliano",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "liu-haoran",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "maddocks-aled",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "marca-chura-gualberto",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "molino-akeem",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nagele-fabian",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "naivalu-netani",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ostermann-tobias",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ovelar-nery",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "pantoja-yeison",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "peralta-nahuel",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "quispe-elmer",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "savarino-jefferson",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "steenkamp-jaco",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "taitano-frankie",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "taufa-manu",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "taufa-paula",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tikoisuva-apisai",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tuipulotu-manu",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "turaganivalu-josaia",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "turaganivalu-emosi",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-rossem-roel",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "villanueva-junrey",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "wang-zhenlong",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "waqanidrola-netani",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "xu-kaiwen",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zambrano-quinteros-vinicio",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zhao-jianhui",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "aslam-fahad",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "baeten-joren",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bakhuis-wessel",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bamba-wilfried",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "barrios-vinas-bruno",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "botnaru-ion",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bruynooghe-warre",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bytyci-ilir",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cadle-rendell",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "canizares-reinier",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cerruti-giacomo",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "claessens-arne",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "coffey-brandon",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "coppens-niels",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "de-ridder-bram",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "delana-peni",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "dethier-maxence",
+    "coureur_id": "tomasevic-karlo",
     "equipe": "quick-step-pulsar",
     "saison": "saison-1"
   },
@@ -1160,298 +15,23 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "farkas-csaba",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gadji-ismael",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gruber-bernhard",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "guarnieri-andrea",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hechavarria-osvaldo",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hegazy-karim",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "herath-nuwan",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hinterleitner-dominik",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hodzic-almir",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "juric-luka",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kalymbet-azamat",
+    "coureur_id": "ferguson-devante",
     "equipe": "samruk-kaznya-air-astana",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "koffi-franck",
-    "equipe": "attijariwafa-bank",
+    "coureur_id": "wiltshire-andron",
+    "equipe": "galp-energia",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "kolhoff-ties",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "krasniqi-granit",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lambotte-alexis",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lemoine-valentin",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "magi-kaspar",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mayrhofer-stefan",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mijuskovic-stefan",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mikulas-samuel",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "milovanovic-nemanja",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "molnar-daniel",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "naessens-seppe",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ngatai-cody",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "noel-anderson",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nogueira-fonseca-diogo",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "onyshchenko-taras",
+    "coureur_id": "constantinou-christos",
     "equipe": "nemiroff",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "rexhepi-besart",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rios-velazquez-ramon",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rusu-ilie",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "salihovic-faris",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sartori-vittorio",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "shala-valon",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sheikh-kamran",
+    "coureur_id": "ordonez-turcios-osman",
     "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "simonyan-narek",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sturrup-jaron",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ter-haar-sven",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "thillen-tun",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tkachenko-oleksandr",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tomasevic-karlo",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tosi-simone",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "trevisan-marco",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-loo-milan",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vandenberghe-senne",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vanhecke-kobe",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "verhaeghe-jarne",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vermeulen-ruben",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "verstraeten-thibo",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vianello-emanuele",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "villar-mediavilla-eneko",
-    "equipe": "paris-sg-airways",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "yapi-amara",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "yesenov-ruslan",
-    "equipe": "samruk-kaznya-air-astana",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zoro-gervinho",
-    "equipe": "attijariwafa-bank",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zuniga-kevin",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "abbasov-farid",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "agnew-ross",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "alexander-aaron",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "andall-bralon",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bustamante-ivan",
-    "equipe": "euskaltel-euskadi",
     "saison": "saison-1"
   },
   {
@@ -1460,208 +40,38 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "choi-ki-tae",
-    "equipe": "konami-yokohama",
+    "coureur_id": "thillen-tun",
+    "equipe": "rapha-ninteam",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "cintron-kelvin",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cisneros-ivan",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "craig-jamie",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "doherty-aaron",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "dunwoody-adam",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "elzinga-ties",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "farinez-jhonder",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hakobyan-davit",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "huang-wei-lun",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "huang-wenbo",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kang-dong-hyun",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "krastins-edgars",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "la-touche-kirani",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lee-ji-hoon",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lefranc-erwan",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lim-yong-jin",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lomidze-irakli",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "loor-tenesaca-byron",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mawhinney-ryan",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mcquillan-kyle",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mllehave-oliver",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "moxey-kendrick",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nergui-altangerel",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "novosel-josip",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "palenzuela-yunior",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "radic-toma",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "semeleer-jarchinio",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sloan-reece",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "urena-marvin",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vaitkus-vytautas",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "whitaker-wyatt",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "wijaya-wahyu",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "xaysana-kaysone",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "yoon-eun-woo",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zeman-marek",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "abenov-almas",
+    "coureur_id": "nurpeisov-dias",
     "equipe": "samruk-kaznya-air-astana",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "anthony-roshendly",
-    "equipe": "american-airlines",
+    "coureur_id": "grunwald-fabian",
+    "equipe": "team-kometa-msc",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "antonia-rangelo",
-    "equipe": "l39ion-of-los-angeles",
+    "coureur_id": "havili-malakai",
+    "equipe": "rapha-ninteam",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "arellano-rodrigo",
-    "equipe": "l39ion-of-los-angeles",
+    "coureur_id": "chaudhary-naveen",
+    "equipe": "holy-cycling-team",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "barragan-bruno",
-    "equipe": "l39ion-of-los-angeles",
+    "coureur_id": "cordero-christian",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "boulahia-yacine",
+    "equipe": "attijariwafa-bank",
     "saison": "saison-1"
   },
   {
@@ -1670,7 +80,522 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "butkus-tomas",
+    "coureur_id": "facey-tarik",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sylvester-lindon",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mllehave-oliver",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gianella-gianmarco",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "noel-anderson",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "doherty-aaron",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "jankauskas-paulius",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kurihara-takumi",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "huang-wei-lun",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "turaganivalu-josaia",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sanguinetti-nicolas",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bittencourt-lucas",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lin-zilong",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "amaral-barreto-domingos",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lambotte-alexis",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "habimana-fabrice",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "solomon-natnael",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "olabarria-adrian",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bonetti-michele",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chukwu-oluwaseun",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rondon-anthony",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "naessens-seppe",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "herath-nuwan",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "padilla-zuniga-wilmer",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "carvalho-helder",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "beridze-zurab",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bogado-hernesto",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "merrick-dylan",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "barcza-balazs",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "colon-rosado-jhoan",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "arnarson-styrmir",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wang-zhenlong",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "coppens-niels",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "salgado-larranaga-aitor",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fakatava-toutai",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "redondo-oscar",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tran-tuan",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zoro-gervinho",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "radovanovic-lazar",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "farinez-jhonder",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "piternella-jurgen",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vasconcelos-goncalo",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zurbriggen-andrin",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cerruti-giacomo",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "schintgen-charel",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ashworth-freddie",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hodzic-almir",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chambers-nickoy",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "trevisan-marco",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "orarinsson-elvar",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "elzinga-ties",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aguon-marcus",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mcquillan-kyle",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mckay-rangi",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kerrigan-glenn",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "penry-ieuan",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marinelli-paolo",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ovelar-nery",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hegazy-karim",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "manga-vincent",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tulegenov-timur",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "danyliuk-andriy",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gutu-anatolie",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "okello-fred",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "doornbos-bram",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "font-bernat",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "valdespino-lazaro",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rahman-danial",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aruquipa-ramiro",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sampaio-tiago",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zeman-marek",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kwok-kin-wai",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fuentealba-ibacache-nicolas",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "feliz-tavarez-ambiorix",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rand-kevin",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mikulas-samuel",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tindall-tobias",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lim-yong-jin",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "villalba-blas",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "saar-rasmus",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cardinal-braden",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wanger-lukas",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ndayisenga-valens",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "peters-delron",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "karimov-erkin",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "morishita-kaito",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hollister-trevor",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kjellberg-gustav",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sigursson-kristjan",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "weatherly-cooper",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tuilevu-ratu",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rebelo-nuno",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "schouten-koen",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mijuskovic-stefan",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vaughan-cai",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "popovic-petar",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bregar-gasper",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sadyrov-azat",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zenner-yves",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "catano-cristian",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "salminen-santeri",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zhao-jianhui",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rossini-nicola",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yusupov-shohrux",
     "equipe": "gazprom-rusvelo",
     "saison": "saison-1"
   },
@@ -1680,93 +605,118 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "colon-rosado-jhoan",
-    "equipe": "american-airlines",
+    "coureur_id": "ibacache-riquelme-bastian",
+    "equipe": "boyaca",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "deveaux-antoine",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "facey-tarik",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "feliz-tavarez-ambiorix",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fenwick-cole",
-    "equipe": "l39ion-of-los-angeles",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fodor-levente",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hape-blair",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hnatyuk-bohdan",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kelemen-attila",
-    "equipe": "team-kometa-msc",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "koroivueta-waisale",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lazzarini-gianluca",
+    "coureur_id": "grimaldi-tommaso",
     "equipe": "bianchi",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "lombardi-daniele",
+    "coureur_id": "stamatiou-thanasis",
     "equipe": "genii-c-zonzini-srsm",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "minors-milan",
-    "equipe": "american-airlines",
+    "coureur_id": "hedlund-albin",
+    "equipe": "team-tre-berg-postnord",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "munkhbayar-bilguun",
+    "coureur_id": "al-subaie-majed",
     "equipe": "samruk-kaznya-air-astana",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "musaev-bakyt",
+    "coureur_id": "eliasen-rogvi",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "keita-salif",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "buzdugan-radu",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "amaya-denilson",
     "equipe": "samruk-kaznya-air-astana",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "najera-nestor",
-    "equipe": "american-airlines",
+    "coureur_id": "villar-mediavilla-eneko",
+    "equipe": "paris-sg-airways",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "naudi-jordi",
+    "coureur_id": "tupou-viliami",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-wijk-rik",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pomare-hemi",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "maddocks-aled",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ohanyan-hovhannes",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aguado-javier",
     "equipe": "genii-c-zonzini-srsm",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "nurpeisov-dias",
+    "coureur_id": "sepp-rait",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "al-qahtani-abdullah",
     "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mirzayev-javohir",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kondo-daichi",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-rensburg-dewald",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gopaul-nitish",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "anthony-roshendly",
+    "equipe": "american-airlines",
     "saison": "saison-1"
   },
   {
@@ -1775,48 +725,93 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "peters-delron",
-    "equipe": "l39ion-of-los-angeles",
+    "coureur_id": "ostermann-tobias",
+    "equipe": "team-tre-berg-postnord",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "petrauskas-mantas",
+    "coureur_id": "cardoso-miguel",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "coma-eric",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "delcourt-romain",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pritchard-iestyn",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nergui-altangerel",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ruzgys-nerijus",
     "equipe": "vinted",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "pinder-deangelo",
+    "coureur_id": "xolmatov-ulugbek",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pelaez-jorge",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "begic-tarik",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kelemen-attila",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "milovanovic-nemanja",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "voisin-loic",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "whitaker-wyatt",
     "equipe": "l39ion-of-los-angeles",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "pinheiro-rodrigo",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "prandini-federico",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "pylypenko-mykyta",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rawiri-toby",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "raza-naveed",
+    "coureur_id": "bonnaire-sylvain",
     "equipe": "airbus-team",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "sagyndykov-sanzhar",
-    "equipe": "samruk-kaznya-air-astana",
+    "coureur_id": "adjei-nana",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mutai-nicholas",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "norkus-gediminas",
+    "equipe": "vinted",
     "saison": "saison-1"
   },
   {
@@ -1825,23 +820,38 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "sarkozi-mate",
+    "coureur_id": "musaev-bakyt",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yepez-quinteros-diego",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "csonka-zsombor",
     "equipe": "team-kometa-msc",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "schintgen-charel",
-    "equipe": "quick-step-pulsar",
+    "coureur_id": "gumundsson-bjarki",
+    "equipe": "team-tre-berg-postnord",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "sedlacek-radek",
-    "equipe": "team-kometa-msc",
+    "coureur_id": "koroivueta-waisale",
+    "equipe": "heilala-tupu-anga-coffee",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "segura-alonso",
-    "equipe": "american-airlines",
+    "coureur_id": "ferreira-caio",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chen-yifan",
+    "equipe": "konami-yokohama",
     "saison": "saison-1"
   },
   {
@@ -1850,53 +860,228 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "tainatongo-jason",
-    "equipe": "bogenvil-tim",
+    "coureur_id": "weerasinghe-thilina",
+    "equipe": "attijariwafa-bank",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "valdespino-lazaro",
-    "equipe": "l39ion-of-los-angeles",
+    "coureur_id": "rehberg-niklas",
+    "equipe": "rapha-ninteam",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "villanueva-wuilker",
-    "equipe": "galp-energia",
+    "coureur_id": "villanueva-maradiaga-deybi",
+    "equipe": "american-airlines",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "vuorinen-aleksi",
-    "equipe": "vinted",
+    "coureur_id": "sheikh-kamran",
+    "equipe": "rapha-ninteam",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "abashidze-nika",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "aguon-marcus",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "akerlund-oskar",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "arribas-unai",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ashworth-freddie",
+    "coureur_id": "tudorache-catalin",
     "equipe": "nemiroff",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "baleiwai-apisai",
+    "coureur_id": "erdogmus-mert",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ngoma-arsene",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "simkus-justas",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "melnyk-roman",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "farkas-csaba",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "singh-kishan",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "abu-warda-sameh",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "al-habsi-salim",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yusof-khairul",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "choi-ki-tae",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ferrandin-nicolas",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "insaurralde-zabala-agustin",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "deveaux-antoine",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "veldkamp-joost",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "andall-bralon",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lombardi-daniele",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vaea-filipe",
     "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "duhamel-aurelien",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fodor-levente",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ondo-guelor",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vermeulen-ruben",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hinterleitner-dominik",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vardanyan-vahagn",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ferhaoui-zinedine",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cabrera-emiliano",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "narine-anand",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bekturov-nurlan",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pinheiro-rodrigo",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yapi-amara",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "delana-peni",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kirkland-declan",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "dethier-maxence",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "queiroz-danilo",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zapata-villalba-einer",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "adams-odessa",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "milic-vukasin",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pawlak-rafa",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chaouchi-nabil",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pylypenko-mykyta",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "radic-toma",
+    "equipe": "team-kometa-msc",
     "saison": "saison-1"
   },
   {
@@ -1905,8 +1090,1873 @@
     "saison": "saison-1"
   },
   {
+    "coureur_id": "rakhimov-aziz",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "semeleer-jarchinio",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "modeste-shane",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bautista-junior",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yesenov-ruslan",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hegedus-tamas",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "harun-amirul",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vaitkus-vytautas",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bakhuis-wessel",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wiseler-dan",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bamba-wilfried",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nielsen-sjurur",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "villanueva-junrey",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kravchuk-danylo",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "duarte-caceres-derlis",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "southerland-blake",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mcalister-jarrah",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "quispe-elmer",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "terenzi-gian-marco",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ferraro-pietro",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "larranaga-melgarejo-maximiliano",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "peeters-stijn",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lefranc-erwan",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zamorano-alvaro",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kapanadze-saba",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "savchuk-vitaliy",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "simonyan-narek",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "de-ridder-bram",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yupanqui-chuquilin-yuri",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-wijk-menno",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nolte-marvin",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ngauamo-semisi",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pelletier-gaetan",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "stanciu-sorin",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bateau-jamille",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tikoisuva-meli",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pantoja-yeison",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cabrera-estuardo",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mekonnen-muktar",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "coudert-baptiste",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fifita-sitiveni",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bolatagici-sikeli",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "teixeira-pinheiro-bruno",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "peralta-ramon",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "grozav-vitalie",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "latham-tyler",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sturrup-jaron",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marinescu-darius",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bustamante-ivan",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "coffey-brandon",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "da-costa-anselmo",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "urena-marvin",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fujikawa-haruto",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nagele-fabian",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aparicio-pau",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "munkhbayar-bilguun",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sinclair-marcus",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vitols-nauris",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kazlauskas-arnas",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mahlaha-tsepo",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ait-ouarab-rachid",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "stankovic-stefan",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "palenzuela-yunior",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "antunes-ricardo",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "guarnieri-andrea",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cerqueda-arnau",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "verhoeven-roel",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rusu-ilie",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cadle-rendell",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ricketts-andre",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "krasniqi-granit",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zauner-elias",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vuorinen-aleksi",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zarins-rihards",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gorski-tomasz",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hasting-jared",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "abbasov-farid",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kailahi-paula",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
     "coureur_id": "barysenka-yauhen",
     "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "novosel-josip",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nyholm-sren",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lindqvist-anton",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "urrutia-onelio",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bytyci-ilir",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "waqanidrola-netani",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "petrauskas-mantas",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rees-owain",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kalymbet-azamat",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mediavilla-dani",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "antonia-rangelo",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marxer-silvan",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "blas-carlo",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "maldonado-emmanuel",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "havard-carwyn",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nijhof-jorn",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "la-touche-kirani",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ismayilov-kamran",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sjoberg-viktor",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tamm-tonis",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hasegawa-ren",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tkachenko-oleksandr",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zhumagulov-daniyar",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "baleiwai-apisai",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "qodirov-dilshod",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wendland-soren",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "butkus-tomas",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "xuereb-karl",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lachaud-maxime",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chevalier-quentin",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "diouf-mamadou",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pouha-sione",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "escudero-borja",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kovacs-gergo",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "huang-wenbo",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "escamilla-arellano-efrain",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bouzidi-reda",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aponte-velazquez-osvaldo",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "higuita-harold",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nesterov-timur",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pennington-toby",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pinder-deangelo",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "savarino-jefferson",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rios-velazquez-ramon",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-rensburg-stefan",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lee-ji-hoon",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zuniga-kevin",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wijaya-wahyu",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marsden-callum",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "abashidze-nika",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "dunwoody-adam",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rosario-yamil",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "karimov-tural",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "detering-til",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aslam-fahad",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "beddoe-huw",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "uwizeyimana-jean-bosco",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "boucaud-kevon",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ter-haar-sven",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "reuter-luc",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vianello-emanuele",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "moxey-kendrick",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "jafarov-elnur",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "priedes-kristaps",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "shevchuk-yaroslav",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "abenov-almas",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "peralta-nahuel",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hollingworth-fletcher",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wiegand-rouven",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "larranaga-sanz-sergio",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ngatai-cody",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cisneros-ivan",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "winterbourne-alfie",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "steenkamp-anton",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "olafsson-gunnar",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "villanueva-wuilker",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vrabie-gheorghe",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lorente-gonzalo",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fenwick-cole",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bannister-hayden",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "prandini-federico",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "volpi-davide",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kaminski-colton",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "petrovic-bogdan",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-rossem-bas",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zevallos-renzo",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bello-yeferson",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "adjagba-rodrigue",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wu-po-wei",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "barrios-vinas-bruno",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lanza-jorman",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "akerlund-oskar",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fahy-darragh",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sawadogo-boukary",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "agnew-ross",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "juric-luka",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rezende-ignacio",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nhem-chanthou",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "arribas-unai",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "karpovich-raman",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kolhoff-ties",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ioannou-stavros",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "redhead-cassim",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "taib-naqib",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kvammen-sondre",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "molnar-daniel",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marchand-yoann",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fernando-dinesh",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "taufa-manu",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sabatier-bastien",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hakobyan-davit",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "maric-haris",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gasperoni-elia",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "claessens-arne",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "verhaeghe-jarne",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kitamura-ryota",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tsai-kuan-lin",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yang-xiaolei",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sakurai-shunsuke",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "charles-devon",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chiang-chia-hao",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "olmedo-bordagaray-bautista",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kadric-vedran",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zbanca-sergiu",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "einarsson-hafsteinn",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bascome-nahki",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "turaganivalu-emosi",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "meredith-gwion",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yoon-eun-woo",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "taitano-frankie",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zhelev-petar",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mayrhofer-stefan",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hasler-dominik",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hsu-chun-yu",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lourenco-vasco",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "alexander-aaron",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tikoisuva-apisai",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "contreras-eduard",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gadji-ismael",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bondarenko-serhiy",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sedlacek-radek",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nogueira-fonseca-diogo",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hechavarria-osvaldo",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pieri-giorgos",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "southwell-riley",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "naivalu-netani",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "naudi-jordi",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nina-apaza-freddy",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cintron-kelvin",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "onyshchenko-taras",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lavery-conor",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "salvatori-alberto",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "delaunay-antoine",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rusconi-sandro",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bermejo-herrera-ruben",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sulejmanovic-amar",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fasoli-riccardo",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lemoine-valentin",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "danielius-rokas",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sartori-vittorio",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zaldivar-valdespino-yosvani",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marca-chura-gualberto",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gethin-bleddyn",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "stennett-oshane",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "frans-fabian",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "magi-kaspar",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "quintanilla-iker",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "liu-haoran",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "al-rubaie-bashar",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hadjadj-abdelkader",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cepeda-dariel",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-rossem-roel",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "duenas-ryan",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "heng-ratana",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "steinberger-florian",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ahouanmenou-desire",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "al-zaabi-saeed",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lazzarini-gianluca",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "arellano-rodrigo",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-ginkel-bram",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mazariegos-josue",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hopkin-rhys",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "xaysana-kaysone",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mackinnon-tanner",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vandenberghe-senne",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lomidze-irakli",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nyanga-ludovic",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rutherford-connor",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fakatava-sitiveni",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bruynooghe-warre",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cunningham-rohan",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-loo-milan",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "origer-georges",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-ginkel-jorn",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kovalenko-ostap",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kiptoo-evans",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sanz-pelaez-hector",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "baeten-joren",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marchenko-vadym",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cabungula-herenilson",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aponte-ronald",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marsan-antoine",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chaabane-nidhal",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "poma-limbert",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "molino-akeem",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ovalle-camilo",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "herron-curtis",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "salihovic-faris",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bogdan-kristof",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mawhinney-ryan",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cifuentes-ovalle-cristobal",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "de-wilde-koen",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "al-harbi-saleh",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-wijk-thijs",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hnatyuk-bohdan",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cisse-abdoulaye",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "segura-alonso",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bubb-delron",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bordagaray-bianchi-franco",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "dlamini-katlego",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "veres-zoltan",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ayala-cristhian",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "badji-papa",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sloan-reece",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vanhecke-kobe",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "petrescu-vlad",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nomm-siim",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "betancourt-aldo",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "xhanari-gentian",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rexhepi-besart",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "khoeli-mosito",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "brindle-angus",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hadjipavlou-petros",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "miyazaki-hayato",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vasiljevic-milos",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "discua-oscar",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "barragan-bruno",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "botnaru-ion",
+    "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "agyemang-prince",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cervantes-emiliano",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ozolins-toms",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lezcano-olmedo-facundo",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gruber-bernhard",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "shaked-tal",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "najera-nestor",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "steenkamp-jaco",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "piret-loic",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cassar-kurt",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "contreras-jefferson",
+    "equipe": "euskaltel-euskadi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "shala-valon",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "christodoulou-nikolas",
+    "equipe": "nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bjarnason-baldur",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "koskela-onni",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ferrell-devin",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "haberkorn-sebastian",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "koffi-franck",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "baptiste-shane",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lin-cheng-hsun",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "canizares-reinier",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "guidi-denis",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ekstrom-tobias",
+    "equipe": "quick-step-pulsar",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kennedy-shaun",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "onodera-riku",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "liao-ting-yu",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kindle-jonas",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tuipulotu-manu",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "al-rushaidi-said",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "carrasquilla-barcenas-yoel",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "figueiredo-rodrigo",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kang-dong-hyun",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bationo-wendkuni",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gauthier-florian",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "krastins-edgars",
+    "equipe": "vinted",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rantso-mpho",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cardoso-duarte",
+    "equipe": "airbus-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "minors-milan",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cadwallader-emrys",
+    "equipe": "eryri",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kovacevic-danilo",
+    "equipe": "team-kometa-msc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "taufa-paula",
+    "equipe": "heilala-tupu-anga-coffee",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sagyndykov-sanzhar",
+    "equipe": "samruk-kaznya-air-astana",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kuo-chih-hao",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "portuondo-yasmani",
+    "equipe": "american-airlines",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "alcantara-ulises",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bailey-damion",
+    "equipe": "l39ion-of-los-angeles",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tosi-simone",
+    "equipe": "bianchi",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tanabe-naoki",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ashworth-grant",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "regueiro-herrera-raul",
+    "equipe": "paris-sg-airways",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "callisaya-copa-ronald",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kremer-pit",
+    "equipe": "genii-c-zonzini-srsm",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "riquelme-ovalle-vicente",
+    "equipe": "boyaca",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "obiang-lloyd",
+    "equipe": "attijariwafa-bank",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nystrom-ludvig",
+    "equipe": "team-tre-berg-postnord",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "barrientos-sican-dorian",
+    "equipe": "galp-energia",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "munteanu-nicolae",
+    "equipe": "nemiroff",
     "saison": "saison-1"
   },
   {
@@ -1920,423 +2970,8 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "bubb-delron",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "buzdugan-radu",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cabrera-estuardo",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cardinal-braden",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cerqueda-arnau",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "chaouchi-nabil",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "chiang-chia-hao",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "christodoulou-nikolas",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "constantinou-christos",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "danquah-kofi",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "de-wilde-koen",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "doornbos-bram",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "duenas-ryan",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ekstrom-tobias",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "eliasen-rogvi",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ferraro-pietro",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ferreira-caio",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ferrell-devin",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fujikawa-haruto",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gasperoni-elia",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gorski-tomasz",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "grimaldi-tommaso",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "grozav-vitalie",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hasegawa-ren",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hsu-chun-yu",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "jafarov-elnur",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "jankauskas-paulius",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kailahi-paula",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kaminski-colton",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "karpovich-raman",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kitamura-ryota",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kondo-daichi",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "koskela-onni",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kremer-pit",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kuo-chih-hao",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kurihara-takumi",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lanza-jorman",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "latham-tyler",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lavery-conor",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "liao-ting-yu",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lin-cheng-hsun",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lourenco-vasco",
-    "equipe": "bianchi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mackinnon-tanner",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "marchand-yoann",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "marinescu-darius",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "marsden-callum",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mazariegos-josue",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "mcalister-jarrah",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "miyazaki-hayato",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "modeste-shane",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "montalvo-betancourt-cuauhtemoc",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "morishita-kaito",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "munteanu-nicolae",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nesterov-timur",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nielsen-sjurur",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nina-apaza-freddy",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
     "coureur_id": "nishimura-kazuki",
     "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nomm-siim",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "norkus-gediminas",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ntsane-lehlohonolo",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "nystrom-ludvig",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ohanyan-hovhannes",
-    "equipe": "gazprom-rusvelo",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "onodera-riku",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ozolins-toms",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "pawlak-rafa",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "peeters-stijn",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "pelaez-jorge",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "pelletier-gaetan",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "petrescu-vlad",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "pieri-giorgos",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "poma-limbert",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "priedes-kristaps",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rakocevic-luka",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ramli-muhammad",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rand-kevin",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "redondo-oscar",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rondon-anthony",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rutherford-connor",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ruzgys-nerijus",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rydell-emrik",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "saar-rasmus",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sakurai-shunsuke",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "salminen-santeri",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sepp-rait",
-    "equipe": "gazprom-rusvelo",
     "saison": "saison-1"
   },
   {
@@ -2345,278 +2980,53 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "simkus-justas",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "southerland-blake",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "southwell-riley",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "stanciu-sorin",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tamm-tonis",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tanabe-naoki",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "orarinsson-elvar",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tindall-tobias",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tsai-kuan-lin",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tumusiime-joshua",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "uhlmann-fabian",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-ginkel-bram",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-rossem-bas",
-    "equipe": "airbus-team",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-wijk-rik",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "van-wijk-thijs",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "veldkamp-joost",
-    "equipe": "quick-step-pulsar",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "villanueva-maradiaga-deybi",
-    "equipe": "american-airlines",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vitols-nauris",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vrabie-gheorghe",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "wanyonyi-josphat",
-    "equipe": "bogenvil-tim",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "wu-po-wei",
-    "equipe": "konami-yokohama",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zamorano-alvaro",
-    "equipe": "galp-energia",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zarins-rihards",
-    "equipe": "vinted",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zevallos-renzo",
-    "equipe": "boyaca",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "aguado-javier",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "arnarson-styrmir",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bannister-hayden",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bateau-jamille",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bermejo-herrera-ruben",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bjarnason-baldur",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "brindle-angus",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cassar-kurt",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "danielius-rokas",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "einarsson-hafsteinn",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "escudero-borja",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fakatava-toutai",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fakatava-sitiveni",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fasoli-riccardo",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "fiorini-cristiano",
-    "equipe": "paraguay-cycles-club",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "frans-fabian",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gumundsson-bjarki",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "guidi-denis",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hasler-dominik",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "havili-malakai",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hollingworth-fletcher",
-    "equipe": "heilala-tupu-anga-coffee",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "ioannou-stavros",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
     "coureur_id": "jagdeo-deonarine",
     "equipe": "genii-c-zonzini-srsm",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "kazlauskas-arnas",
-    "equipe": "vinted",
+    "coureur_id": "tzoc-yeison",
+    "equipe": "boyaca",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "kirkland-declan",
-    "equipe": "heilala-tupu-anga-coffee",
+    "coureur_id": "cedeno-carrasquilla-kadir",
+    "equipe": "boyaca",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "kvammen-sondre",
-    "equipe": "team-tre-berg-postnord",
+    "coureur_id": "chilombo-fredy",
+    "equipe": "attijariwafa-bank",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "marinelli-paolo",
-    "equipe": "genii-c-zonzini-srsm",
+    "coureur_id": "sarkozi-mate",
+    "equipe": "team-kometa-msc",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "mckay-rangi",
-    "equipe": "heilala-tupu-anga-coffee",
+    "coureur_id": "verstraeten-thibo",
+    "equipe": "airbus-team",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "mirzayev-javohir",
-    "equipe": "gazprom-rusvelo",
+    "coureur_id": "dimitrov-stoyan",
+    "equipe": "eryri",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "ngauamo-toutai",
-    "equipe": "heilala-tupu-anga-coffee",
+    "coureur_id": "craig-jamie",
+    "equipe": "eryri",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "olafsson-gunnar",
-    "equipe": "team-tre-berg-postnord",
+    "coureur_id": "rakocevic-luka",
+    "equipe": "rapha-ninteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ccahuana-jhoel",
+    "equipe": "boyaca",
     "saison": "saison-1"
   },
   {
@@ -2625,33 +3035,28 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "origer-georges",
-    "equipe": "genii-c-zonzini-srsm",
+    "coureur_id": "rydell-emrik",
+    "equipe": "team-tre-berg-postnord",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "pennington-toby",
-    "equipe": "rapha-ninteam",
+    "coureur_id": "al-buraik-faisal",
+    "equipe": "samruk-kaznya-air-astana",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "pouha-sione",
-    "equipe": "heilala-tupu-anga-coffee",
+    "coureur_id": "al-sherooqi-hamad",
+    "equipe": "samruk-kaznya-air-astana",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "pouha-filipe",
-    "equipe": "heilala-tupu-anga-coffee",
+    "coureur_id": "sterling-javon",
+    "equipe": "boyaca",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "quintanilla-iker",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rossini-nicola",
-    "equipe": "genii-c-zonzini-srsm",
+    "coureur_id": "zambrano-quinteros-vinicio",
+    "equipe": "boyaca",
     "saison": "saison-1"
   },
   {
@@ -2660,228 +3065,1253 @@
     "saison": "saison-1"
   },
   {
-    "coureur_id": "sigursson-kristjan",
-    "equipe": "team-tre-berg-postnord",
+    "coureur_id": "herrera-mediavilla-marcos",
+    "equipe": "galp-energia",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "stamatiou-thanasis",
+    "coureur_id": "bustos-barragan-gerardo",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sican-marvin",
+    "equipe": "holy-cycling-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "uhlmann-fabian",
     "equipe": "genii-c-zonzini-srsm",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "stennett-oshane",
-    "equipe": "rapha-ninteam",
+    "coureur_id": "montalvo-betancourt-cuauhtemoc",
+    "equipe": "american-airlines",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "tudorache-catalin",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "tuilevu-ratu",
+    "coureur_id": "pouha-filipe",
     "equipe": "heilala-tupu-anga-coffee",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "tupou-viliami",
+    "coureur_id": "xu-kaiwen",
+    "equipe": "konami-yokohama",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ngauamo-toutai",
     "equipe": "heilala-tupu-anga-coffee",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "vaea-filipe",
-    "equipe": "heilala-tupu-anga-coffee",
+    "coureur_id": "raza-naveed",
+    "equipe": "airbus-team",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "van-ginkel-jorn",
-    "equipe": "rapha-ninteam",
+    "coureur_id": "gereta-lukian",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "vasconcelos-goncalo",
-    "equipe": "genii-c-zonzini-srsm",
+    "coureur_id": "lukash-petro",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "voisin-loic",
-    "equipe": "rapha-ninteam",
+    "coureur_id": "derkach-stepan",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "wanger-lukas",
-    "equipe": "genii-c-zonzini-srsm",
+    "coureur_id": "dzindra-vitalii",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "xuereb-karl",
-    "equipe": "genii-c-zonzini-srsm",
+    "coureur_id": "petrenko-danylo",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "yupanqui-chuquilin-yuri",
-    "equipe": "genii-c-zonzini-srsm",
+    "coureur_id": "derevianko-semen",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
     "saison": "saison-1"
   },
   {
-    "coureur_id": "yusupov-shohrux",
+    "coureur_id": "preda-silvian",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "biro-istvan",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "munteanu-madalin",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "manole-eduard",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "araya-sengal",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "batz-edvin",
+    "equipe": "ukraine-cycling-academy-by-nemiroff",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "otmani-rachid",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rahmouni-djamel",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "garcia-kenny",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "marquet-jean-marc",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lecocq-thibault",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "losa-alberdi-gonzalo",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "seoane-outeiro-anton",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "parra-vera-severo",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rius-inigo",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "piquer-rufino",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "daems-joren",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "welf-dean",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pereira-christophe",
+    "equipe": "fondation-mikel-landa",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "de-mulder-steve",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "de-ryck-jasper",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "blommaert-jurgen",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vermeulen-nick",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "dessy-emmanuel",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "docquier-renato",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-noort-fedde",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mulder-tijs",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nedermeijer-jonathan",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "van-saksen-luke",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "runesson-sam",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "jonasson-elias",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "svensson-johannes",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chuluunbat-bayarsaikhan",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ousmane-guy",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "guity-remigio",
+    "equipe": "quick-step-pulsar-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fairweather-dylan",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bird-greg",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "abboud-elie",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "guerra-bobby",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fuller-michael",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tapsell-eru",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "smith-matthew",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "millar-manaia",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "turner-james",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "brown-kauri",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "brouwers-leon",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "de-greef-jelle",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sagese-ugolino",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "spence-dwayne",
+    "equipe": "maap-australian-dev",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kobayashi-shota",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sakamoto-ryota",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kondo-riku",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hayashi-masato",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kato-yusuke",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "harada-ryo",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "okazaki-isamu",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hoshino-ren",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kimura-kazuki",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tanabe-yuki",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "takahashi-taiki",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kondo-jun",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ishibashi-sota",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nenov-stefan",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hynek-jeremi",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wolzak-brent",
+    "equipe": "t1-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "grassi-gian",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "monicelli-alessio",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "verdi-antonio",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mereu-battista",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fonseca-henrique",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "machado-alexandre",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tavares-antonio",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rusconi-lorenzo",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "grand-jean-pierre",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bonvini-luca",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hansen-trondur",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "azubuike-ikenna",
+    "equipe": "team-bianchi-devo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "szyndler-aleksander",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gordon-fryderyk",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kloska-nataniel",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "organisciak-jakub",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kozubal-maksymilian",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "adomaitis-matas",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vasiliauskas-remigijus",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ambrasas-vaidotas",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kazlauskas-aronas",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mockus-donatas",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pollet-andy",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "simonsen-preben",
+    "equipe": "ccc",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "quinn-richard",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "foster-samuel",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "forbes-marcus",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ward-bradley",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "grewal-anil",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kapoor-harish",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "acharya-harpreet",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ouellet-bernard",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "perreault-marc",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gingras-jeremie",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "botella-graciano",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "stein-bruno",
+    "equipe": "rapha-youthteam",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ekman-nils",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "horvat-dejan",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "adolfsson-kristoffer",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gustafsson-juhani",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "westberg-ossian",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "persen-soren",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "holst-kim",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "leifsen-helge",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "christensen-lars",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hauge-daniel",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "anderson-marvin",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "araujo-santiago",
+    "equipe": "team-tre-berg-u21",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cunha-diego",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tavares-jair",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "macedo-alvaro",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gomez-gustavo",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "segura-arnal-pau",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lobato-fermin",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "valverde-toro-raul",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aguilera-luis",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "monroy-cortes-modesto",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lukosius-rokas",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "smid-horymir",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mikk-artur",
+    "equipe": "galp-sl-benfica",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "willis-berwyn",
+    "equipe": "rapha-wales",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "osborne-llyr",
+    "equipe": "rapha-wales",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "baxter-cadfan",
+    "equipe": "rapha-wales",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "doherty-tomos",
+    "equipe": "rapha-wales",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tashev-plamen",
+    "equipe": "rapha-wales",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zlatev-stoyan",
+    "equipe": "rapha-wales",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "finetti-amico",
+    "equipe": "rapha-wales",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wasswa-kasim",
+    "equipe": "rapha-wales",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lange-jonathan",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "caldwell-tyrone",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "holmes-wendell",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ware-luis",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rinaldi-jonathan",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "lee-ryan",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cheatham-mekhi",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gonzales-ricardo",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "jorquera-fermin",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "galvez-cesar",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "mamani-heriberto",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bustos-yanez-osvaldo",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "coca-steven",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hamadi-larbi",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "porter-martin",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "garner-james",
+    "equipe": "l39ion-of-los-angeles-dt",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "nurgaliyev-zhandos",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "seitkali-darkhan",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "alimbetov-yerzhan",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sagyndykov-rustam",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kuanyshev-almas",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "omarov-meirbek",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "imanaliev-mirlan",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sadyrov-emil",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "painemal-quilapan",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "campos-jake",
+    "equipe": "samruk-kaznya-development-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "meyer-robert",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "francis-brad",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "brooks-rodney",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gagne-edouard",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bisson-maxime",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "may-bryce",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ponce-franco-eric",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sandoval-manuel",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kuriakakis-christos",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "jones-eifion",
+    "equipe": "amazon",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "balla-gyorgy",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "budai-istvan",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "bognar-krisztian",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kiss-barna",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "szabo-milan",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "balint-attila",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "vass-ferenc",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kozma-adam",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cardozo-bernal-david",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kuiperi-danilo",
+    "equipe": "kometa-fiatal-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "goffin-romain",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "blot-xavier",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aubry-jonathan",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zielinski-jean-michel",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "carrion-villalba-alfredo",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "beristain-arrieta-jon",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "aranburu-xabier",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ruppert-ehrhard",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gute-gottlob",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "schacht-bert",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zorbach-nils",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "imam-fady",
+    "equipe": "airbus-team-junior",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "al-yahmadi-yousef",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rutayisire-tharcisse",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "zannou-yannick",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "amorim-mateus",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pasha-danish",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "orban-zalan",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kurihara-daichi",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "motaung-mpho",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kouakou-ismael",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "quesada-israel",
+    "equipe": "holy-academie-cycling",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sysoev-vasily",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rogov-evgeny",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "novikov-daniil",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "terentev-maksim",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "malyshev-gleb",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "panteleyev-artyom",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kobakhidze-luka",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "kapanadze-vano",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "gelashvili-merab",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fuzaylov-abduaziz",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "akobirov-damir",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "yamaguchi-satoshi",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "brito-pons-lupe",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "cussi-rodenas-lorenzo",
+    "equipe": "gazprom-development",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "simonsen-terji",
+    "equipe": "attijariwafa-bank-u23-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ondo-malick",
+    "equipe": "attijariwafa-bank-u23-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tesfazion-henok",
+    "equipe": "attijariwafa-bank-u23-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "sarpong-prince",
+    "equipe": "attijariwafa-bank-u23-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "chelimo-amos",
+    "equipe": "attijariwafa-bank-u23-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "whitehead-kyle",
+    "equipe": "attijariwafa-bank-u23-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "pandey-ashok",
+    "equipe": "attijariwafa-bank-u23-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rind-raheel",
+    "equipe": "attijariwafa-bank-u23-team",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "beeharry-rajesh",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "loor-tenesaca-byron",
     "equipe": "gazprom-rusvelo",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "hape-blair",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "rawiri-toby",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tainatongo-jason",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "danquah-kofi",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ntsane-lehlohonolo",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "ramli-muhammad",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "tumusiime-joshua",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "wanyonyi-josphat",
+    "equipe": "bogenvil-tim",
+    "saison": "saison-1"
+  },
+  {
+    "coureur_id": "fiorini-cristiano",
+    "equipe": "paraguay-cycles-club",
     "saison": "saison-1"
   },
   {
     "coureur_id": "zanetti-mirko",
     "equipe": "paraguay-cycles-club",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zenner-yves",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zhelev-petar",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "zurbriggen-andrin",
-    "equipe": "rapha-ninteam",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "beddoe-huw",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "bondarenko-serhiy",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "cadwallader-emrys",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "danyliuk-andriy",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "gethin-bleddyn",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "havard-carwyn",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hedlund-albin",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "hopkin-rhys",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kjellberg-gustav",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kovalenko-ostap",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "kravchuk-danylo",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "lindqvist-anton",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "marchenko-vadym",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "melnyk-roman",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "meredith-gwion",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "merrick-dylan",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "penry-ieuan",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "pritchard-iestyn",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "rees-owain",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "savchuk-vitaliy",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "shevchuk-yaroslav",
-    "equipe": "nemiroff",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "sjoberg-viktor",
-    "equipe": "team-tre-berg-postnord",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "vaughan-cai",
-    "equipe": "eryri",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "terenzi-gian-marco",
-    "equipe": "genii-c-zonzini-srsm",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "chevalier-quentin",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "delcourt-romain",
-    "equipe": "euskaltel-euskadi",
-    "saison": "saison-1"
-  },
-  {
-    "coureur_id": "duhamel-aurelien",
-    "equipe": "euskaltel-euskadi",
     "saison": "saison-1"
   },
   {
