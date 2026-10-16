@@ -73,6 +73,8 @@ Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureur
 - **Taille et âge** affichés sur la fiche et la liste des coureurs.
 - **« Scratch » devient « classique »** dans les données : type de résultat `classique` dans `data/resultats.json`, clé `individuel_classique` et alias `classique` dans `data/bareme.json`. Le site convertit aussi à la volée d'éventuels anciens résultats encore en `scratch`.
 
+- **Bogenvil Tim et Paraguay Cycles Club retirées** (équipes absentes de la saison), ainsi que les 15 coureurs de la saison 1 absents du fichier d'effectifs : leurs fiches restent (pour la pré-saison), sans équipe.
+
 ## Fichiers modifiés depuis ta dernière mise à jour du repo
 
 À remplacer dans ton dépôt GitHub (les autres fichiers n'ont pas changé) :
