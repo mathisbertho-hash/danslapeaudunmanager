@@ -173,10 +173,17 @@ function avecRang(liste) {
 }
 
 /**
- * Classement d'une coupe pour une saison : points du barème de chaque course
+ * Classement d'une coupe pour une saison : points du barème de la coupe (bareme.coupe)
+ * s'il est renseigné, sinon points du barème de chaque course
  * rattachée à la coupe (course.coupes contient coupeId), résultats classique/général.
  * Les primes ne comptent pas dans les coupes.
  */
+/** Barème propre d'une coupe (bareme.coupe[coupeId]) s'il est renseigné, sinon null. */
+function baremeCoupe(db, coupeId) {
+  const t = db.bareme?.coupe?.[coupeId];
+  return t && Object.keys(t).some(k => !k.startsWith('_')) ? t : null;
+}
+
 function calculerClassementCoupe(db, coupeId, saisonId) {
   const resultatsCoupe = db.resultats.filter(res => {
     if (res.saison !== saisonId) return false;
@@ -185,7 +192,13 @@ function calculerClassementCoupe(db, coupeId, saisonId) {
     return course && Array.isArray(course.coupes) && course.coupes.includes(coupeId);
   });
   const lignes = calculerLignes(db, resultatsCoupe, saisonId);
+  const table = baremeCoupe(db, coupeId);
+  if (table) {
+    // Barème de coupe : mêmes points pour toutes les courses de la coupe
+    lignes.forEach(l => { l.pts = lireEntreeBareme(table[String(l.place)]).pts; l.prime = 0; });
+  }
   return {
+    baremePropre: !!table,
     individuel: classerPar(agreger(db, lignes, 'coureur'), 'pts'),
     equipes: classerPar(agreger(db, lignes, 'equipe'), 'pts'),
     nbCourses: resultatsCoupe.length,
