@@ -26,8 +26,8 @@
   const saisonOuverte = db.saisons.find(s => s.statut === 'ouverte') || saisonsNonPreSaison[0];
 
   el.innerHTML = `
-    <h1>${coupe.portee === 'national' ? db.flagForCountry(coupe.pays) + ' ' : '🌍 '}${coupe.nom}</h1>
-    <p class="lede">Additionne les points obtenus (selon le barème de chaque course) sur les courses de la saison rattachées à « ${coupe.nom} ». Les primes ne comptent pas.</p>
+    <h1>${coupe.portee === 'national' ? db.flagForCode(coupe.pays_code, coupe.pays) + ' ' : '🌍 '}${coupe.nom}</h1>
+    <p class="lede">Additionne les points des courses de la saison rattachées à « ${coupe.nom} », ${baremeCoupe(db, coupe.id) ? 'avec le barème propre à la coupe (identique pour toutes ses courses)' : 'avec, en attendant le barème de la coupe, les points du barème de chaque course'}. Les primes ne comptent pas.</p>
 
     <div class="filters">
       <select id="fSaison">${saisonsNonPreSaison.map(s => `<option value="${s.id}">${s.label}</option>`).join('')}</select>

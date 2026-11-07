@@ -58,8 +58,26 @@
 
     <div class="step panel">
       <h2>2. Importer un résultat (copier-coller)</h2>
-      <label>Saison</label>
-      <select id="impSaison"></select>
+      <div class="row">
+        <div><label>Saison</label><select id="impSaison"></select></div>
+        <div style="flex:2;"><label>Course</label><select id="impCourse"></select></div>
+      </div>
+      <div class="row" id="impTourWrap" style="display:none;">
+        <div>
+          <label>Classement</label>
+          <select id="impType">
+            <option value="etape">Étape</option>
+            <option value="general">Général final</option>
+            <optgroup label="Classements annexes (finaux)">
+              <option value="points">Classement par points</option>
+              <option value="montagne">Classement de la montagne</option>
+              <option value="jeune">Classement des jeunes</option>
+            </optgroup>
+          </select>
+        </div>
+        <div id="impEtapeWrap"><label>Étape</label><select id="impEtape"></select></div>
+      </div>
+      <p id="impInfo" style="margin-top:0.6rem;"></p>
       <label>Texte copié depuis le forum</label>
       <textarea id="impTexte" rows="10" placeholder="Colle ici le classement complet…"></textarea>
       <p style="margin-top:0.7rem;"><button class="btn" id="btnParse">Analyser</button></p>
@@ -165,6 +183,12 @@ async function unlock() {
   impSaison.innerHTML = DB.saisons.map(s => `<option value="${s.id}">${s.label}${s.statut === 'cloturee' ? ' (clôturée)' : ''}</option>`).join('');
   const ouverte = DB.saisons.find(s => s.statut === 'ouverte');
   if (ouverte) impSaison.value = ouverte.id;
+  impSaison.addEventListener('change', () => { remplirCourses(); majCible(); });
+  document.getElementById('impCourse').addEventListener('change', () => { courseChoisieAlaMain = true; majCible(); });
+  document.getElementById('impType').addEventListener('change', majCible);
+  document.getElementById('impEtape').addEventListener('change', majCible);
+  remplirCourses();
+  majCible();
 
   // Barème
   document.getElementById('baremeJson').value = JSON.stringify(DB.bareme, null, 2);
@@ -194,13 +218,122 @@ document.getElementById('btnTestConf').addEventListener('click', async () => {
 });
 
 // --- Import texte ---
+// La liste des courses est fixée par le calendrier (data/courses.json) : on choisit
+// la course, puis, pour une course par étapes, le type de classement et l'étape.
 let dernierApercu = null;
+let courseChoisieAlaMain = false;
+
+const TYPE_LABEL = { classique: 'Classique', general: 'Général final', etape: 'Étape', points: 'Classement par points', montagne: 'Classement de la montagne', jeune: 'Classement des jeunes' };
+const dateKey = c => { if (!c.dateDebut) return '9999'; const [j, m] = c.dateDebut.split('/'); return m + j; };
+const estTour = c => (c.nbEtapes || 0) > 1;
+const resultatsDe = (courseId, saisonId) => DB.resultats.filter(r => r.courseId === courseId && r.saison === saisonId);
+
+function remplirCourses() {
+  const saisonId = document.getElementById('impSaison').value;
+  const sel = document.getElementById('impCourse');
+  const avant = sel.value;
+  const courses = DB.courses.filter(c => c.saison === saisonId).sort((a, b) => dateKey(a).localeCompare(dateKey(b)) || a.nom.localeCompare(b.nom));
+  sel.innerHTML = courses.map(c => {
+    const nb = resultatsDe(c.id, saisonId).length;
+    const date = c.dateDebut ? (c.dateDebut === c.dateFin ? c.dateDebut : `${c.dateDebut}–${c.dateFin}`) + ' · ' : '';
+    const cat = DB.categoriesById[c.categorie]?.nom || c.categorie;
+    return `<option value="${c.id}">${date}${c.nom} (${cat}${estTour(c) ? `, ${c.nbEtapes} étapes` : ''})${nb ? ' ✓' : ''}</option>`;
+  }).join('') || '<option value="">Aucune course pour cette saison</option>';
+  if (courses.some(c => c.id === avant)) sel.value = avant;
+  else {
+    // par défaut : la première course sans résultat
+    const premiere = courses.find(c => resultatsDe(c.id, saisonId).length === 0);
+    if (premiere) sel.value = premiere.id;
+  }
+}
+
+/** Cible actuellement choisie : { course, saisonId, type, etapeNumero } */
+function cible() {
+  const saisonId = document.getElementById('impSaison').value;
+  const course = DB.coursesById[document.getElementById('impCourse').value];
+  if (!course) return null;
+  if (!estTour(course)) return { course, saisonId, type: 'classique', etapeNumero: null };
+  const type = document.getElementById('impType').value;
+  const etapeNumero = type === 'etape' ? parseInt(document.getElementById('impEtape').value, 10) : null;
+  return { course, saisonId, type, etapeNumero };
+}
+
+function libelleCible(c) {
+  if (!c) return '';
+  const quoi = c.type === 'etape' ? `étape ${c.etapeNumero}` : TYPE_LABEL[c.type];
+  return `${c.course.nom} — ${quoi}`;
+}
+
+function resultatExistant(c) {
+  return DB.resultats.find(r => r.courseId === c.course.id && r.saison === c.saisonId && r.type === c.type
+    && (c.type !== 'etape' || r.etapeNumero === c.etapeNumero));
+}
+
+function majCible() {
+  const saisonId = document.getElementById('impSaison').value;
+  const course = DB.coursesById[document.getElementById('impCourse').value];
+  const tourWrap = document.getElementById('impTourWrap');
+  const info = document.getElementById('impInfo');
+  if (!course) { tourWrap.style.display = 'none'; info.innerHTML = ''; return; }
+
+  const existants = resultatsDe(course.id, saisonId);
+  if (estTour(course)) {
+    tourWrap.style.display = '';
+    const type = document.getElementById('impType').value;
+    document.getElementById('impEtapeWrap').style.display = type === 'etape' ? '' : 'none';
+    const selEtape = document.getElementById('impEtape');
+    const avant = parseInt(selEtape.value, 10);
+    const saisies = new Set(existants.filter(r => r.type === 'etape').map(r => r.etapeNumero));
+    selEtape.innerHTML = Array.from({ length: course.nbEtapes }, (_, i) => i + 1)
+      .map(n => `<option value="${n}">Étape ${n}${saisies.has(n) ? ' (déjà saisie)' : ''}</option>`).join('');
+    if (avant && avant <= course.nbEtapes) selEtape.value = avant;
+    else {
+      const libre = Array.from({ length: course.nbEtapes }, (_, i) => i + 1).find(n => !saisies.has(n));
+      if (libre) selEtape.value = libre;
+    }
+  } else {
+    tourWrap.style.display = 'none';
+  }
+
+  const c = cible();
+  const deja = existants.map(r => r.type === 'etape' ? `étape ${r.etapeNumero}` : TYPE_LABEL[r.type]).join(', ');
+  const doublon = c && resultatExistant(c);
+  info.innerHTML = `<span class="badge">${estTour(course) ? 'Course par étapes' : 'Course d’un jour : classement classique'}</span> `
+    + (deja ? `<span class="badge">Déjà saisi : ${deja}</span> ` : '')
+    + (doublon ? `<span class="badge warn">« ${libelleCible(c)} » existe déjà : l’enregistrer le remplacera</span>` : '');
+  const recap = document.getElementById('apCible');
+  if (recap) recap.textContent = libelleCible(c);
+}
+
+const normNom = s => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+
+/** Si le texte collé contient un nom de course reconnu, on présélectionne la course (sauf choix manuel). */
+function detecterCourse(nomDetecte) {
+  if (!nomDetecte || courseChoisieAlaMain) return;
+  const saisonId = document.getElementById('impSaison').value;
+  const n = normNom(nomDetecte);
+  const courses = DB.courses.filter(c => c.saison === saisonId);
+  // 1) nom identique ; 2) nom de course contenu dans le texte (le plus long gagne :
+  // « Paris-Roubaix Juniors » avant « Paris-Roubaix ») ; 3) texte contenu dans un nom (le plus court)
+  const exact = courses.filter(c => normNom(c.nom) === n);
+  const dansTexte = courses.filter(c => normNom(c.nom) && n.includes(normNom(c.nom))).sort((a, b) => b.nom.length - a.nom.length);
+  const dansNom = courses.filter(c => n && normNom(c.nom).includes(n)).sort((a, b) => a.nom.length - b.nom.length);
+  const candidates = [...exact, ...dansTexte, ...dansNom];
+  if (candidates[0]) {
+    document.getElementById('impCourse').value = candidates[0].id;
+    const m = n.match(/etape (\d+)|stage (\d+)/);
+    if (m && estTour(candidates[0])) document.getElementById('impType').value = 'etape';
+    majCible();
+    if (m && estTour(candidates[0])) { document.getElementById('impEtape').value = m[1] || m[2]; majCible(); }
+  }
+}
 
 document.getElementById('btnParse').addEventListener('click', () => {
   const texte = document.getElementById('impTexte').value;
   if (!texte.trim()) return;
   const resultat = parseTexteResultats(texte, DB.coureurs);
   dernierApercu = resultat;
+  detecterCourse(resultat.nomCourse);
   renderApercu(resultat);
 });
 
@@ -208,65 +341,11 @@ function renderApercu(resultat) {
   const el = document.getElementById('impApercu');
   const nbAmbigus = resultat.lignes.filter(l => l.ambigu).length;
 
-  const coursesOptions = DB.courses
-    .map(c => `<option value="${c.id}">${c.nom}</option>`)
-    .join('');
-
   el.innerHTML = `
-    <p><strong>Course détectée :</strong> ${resultat.nomCourse || '<em>non détectée — précise ci-dessous</em>'}</p>
-    <div class="row">
-      <div>
-        <label>Rattacher à une course existante</label>
-        <select id="apCourseExistante"><option value="">— nouvelle course —</option>${coursesOptions}</select>
-      </div>
-      <div>
-        <label>Nom de la nouvelle course (si besoin)</label>
-        <input type="text" id="apNouveauNom" value="${resultat.nomCourse || ''}">
-      </div>
-      <div>
-        <label>Catégorie</label>
-        <select id="apCategorie">${DB.categories.map(c => `<option value="${c.id}">${c.nom}</option>`).join('')}</select>
-      </div>
-      <div>
-        <label>Profil (nouvelle course seulement)</label>
-        <select id="apProfil">
-          <option value="">— non précisé —</option>
-          <option value="plat">Plat</option>
-          <option value="accidente">Accidenté</option>
-          <option value="montagne">Montagne</option>
-          <option value="clm">Contre-la-montre</option>
-          <option value="pave">Pavés</option>
-          <option value="semi-pave">Semi-pavé</option>
-          <option value="mixte">Mixte (course par étapes variée)</option>
-        </select>
-      </div>
-      <div>
-        <label>Coupe(s) (nouvelle course seulement)</label>
-        <div id="apCoupes" style="display:flex; flex-wrap:wrap; gap:0.6rem; padding:0.4rem 0;">
-          ${DB.coupes.map(cp => `
-            <label style="display:flex; align-items:center; gap:0.3rem; text-transform:none; font-family:'Inter',sans-serif; font-size:0.85rem; color:var(--ink); margin:0;">
-              <input type="checkbox" value="${cp.id}" style="width:auto;"> ${cp.nom}
-            </label>`).join('')}
-        </div>
-      </div>
-      <div>
-        <label>Type de classement</label>
-        <select id="apType">
-          <option value="classique">Classique (course d’un jour)</option>
-          <option value="general">Général final (course par étapes)</option>
-          <option value="etape">Étape</option>
-          <option value="points">Classement annexe — points (final)</option>
-          <option value="montagne">Classement annexe — montagne (final)</option>
-          <option value="jeune">Classement annexe — jeune (final)</option>
-        </select>
-      </div>
-      <div id="apEtapeNumWrap" style="display:none;">
-        <label>Numéro de l'étape</label>
-        <input type="number" id="apEtapeNum" min="1" step="1" placeholder="ex : 4">
-      </div>
-    </div>
+    <p><strong>Sera enregistré comme :</strong> <span id="apCible">${libelleCible(cible())}</span>
+      <span class="muted" style="font-size:0.85rem;">(modifiable avec les menus au-dessus)</span></p>
 
-    ${nbAmbigus > 0 ? `<p class="badge warn" style="margin-top:0.6rem;">${nbAmbigus} ligne(s) avec un nom non reconnu — à associer manuellement ci-dessous avant d'enregistrer.</p>` : `<p class="badge ok" style="margin-top:0.6rem;">Tous les noms ont été reconnus.</p>`}
+    ${nbAmbigus > 0 ? `<p class="badge warn" style="margin-top:0.6rem;">${nbAmbigus} ligne(s) avec un nom non reconnu — à associer manuellement ci-dessous avant d'enregistrer.</p>` : `<p class="badge ok" style="margin-top:0.6rem;">Tous les noms ont été reconnus (${resultat.lignes.length} lignes).</p>`}
 
     <div class="table-wrap" style="margin-top:0.6rem;">
       <table class="results">
@@ -285,7 +364,7 @@ function renderApercu(resultat) {
                       <input type="text" class="newname" data-idx="${i}" list="poolList" placeholder="ou nom du nouveau coureur (pas encore sous contrat)" value="${(l.nomBrut || '').split(' ').length <= 4 ? l.nomBrut : ''}">
                       <button type="button" class="btn secondary btn-create-rider" data-idx="${i}">+ Créer</button>
                     </div>
-                  ` : `<span class="badge ok">${l.nomBrut}</span>`}</td>
+                  ` : `<span class="badge ok">${DB.coureursById[l.coureurId]?.nom || l.nomBrut}</span>`}</td>
               <td>${l.temps || (l.statut === 'abandon' ? 'DNF' : '—')}</td>
               <td>${l.statut === 'abandon' ? '<span class="badge warn">abandon</span>' : 'classé'}</td>
             </tr>`).join('')}
@@ -295,39 +374,6 @@ function renderApercu(resultat) {
 
     <p style="margin-top:0.8rem;"><button class="btn" id="btnValiderImport">Valider et enregistrer</button></p>
   `;
-
-  const apType = document.getElementById('apType');
-  const apEtapeNumWrap = document.getElementById('apEtapeNumWrap');
-  const apCourseExistante = document.getElementById('apCourseExistante');
-
-  function toggleEtapeField() {
-    apEtapeNumWrap.style.display = apType.value === 'etape' ? 'block' : 'none';
-    if (apType.value === 'etape') signalerEtapesExistantes();
-  }
-  function signalerEtapesExistantes() {
-    const courseId = apCourseExistante.value;
-    const saisonId = document.getElementById('impSaison').value;
-    if (!courseId) return;
-    const etapesExistantes = DB.resultats
-      .filter(r => r.courseId === courseId && r.saison === saisonId && r.type === 'etape')
-      .map(r => r.etapeNumero)
-      .filter(n => n != null)
-      .sort((a, b) => a - b);
-    const wrap = document.getElementById('apEtapeNumWrap');
-    let info = wrap.querySelector('.etapes-info');
-    if (!info) {
-      info = document.createElement('p');
-      info.className = 'etapes-info badge';
-      info.style.marginTop = '0.3rem';
-      wrap.appendChild(info);
-    }
-    info.textContent = etapesExistantes.length
-      ? `Étapes déjà enregistrées pour cette course : ${etapesExistantes.join(', ')}`
-      : 'Aucune étape enregistrée pour l’instant sur cette course.';
-  }
-  apType.addEventListener('change', toggleEtapeField);
-  apCourseExistante.addEventListener('change', signalerEtapesExistantes);
-  toggleEtapeField();
 
   document.querySelectorAll('.btn-create-rider').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -386,20 +432,13 @@ async function validerImport() {
     return;
   }
 
-  const saisonId = document.getElementById('impSaison').value;
-  const type = document.getElementById('apType').value;
-  const courseExistanteId = document.getElementById('apCourseExistante').value;
-  let courseId = courseExistanteId;
+  const c = cible();
+  if (!c) { log('Choisis la course avant d’enregistrer.', 'err'); return; }
+  if (c.type === 'etape' && !c.etapeNumero) { log('Choisis l’étape avant d’enregistrer.', 'err'); return; }
 
-  let etapeNumero = null;
-  if (type === 'etape') {
-    const val = document.getElementById('apEtapeNum').value;
-    if (!val) { log('Indique le numéro de l’étape avant d’enregistrer.', 'err'); return; }
-    etapeNumero = parseInt(val, 10);
-    const doublon = DB.resultats.some(r => r.courseId === courseExistanteId && r.saison === saisonId && r.type === 'etape' && r.etapeNumero === etapeNumero);
-    if (doublon && !confirm(`Une étape ${etapeNumero} existe déjà pour cette course. L'ajouter quand même (doublon) ?`)) {
-      return;
-    }
+  const existant = resultatExistant(c);
+  if (existant && !confirm(`« ${libelleCible(c)} » a déjà un résultat enregistré (${existant.classement.length} lignes).\n\nLe remplacer par celui-ci ?`)) {
+    return;
   }
 
   try {
@@ -409,27 +448,12 @@ async function validerImport() {
       pendingNewRiders = [];
     }
 
-    if (!courseId) {
-      const nom = document.getElementById('apNouveauNom').value.trim();
-      if (!nom) { log('Nom de course manquant.', 'err'); return; }
-      const categorie = document.getElementById('apCategorie').value;
-      const profil = document.getElementById('apProfil').value || null;
-      const coupesChoisies = Array.from(document.querySelectorAll('#apCoupes input[type="checkbox"]:checked')).map(cb => cb.value);
-      const id = slugify(nom) + '-' + saisonId;
-      const nouvelleCourse = { id, nom, categorie, saison: saisonId, pays: null, nbEtapes: null, profil, coupes: coupesChoisies };
-      DB.courses.push(nouvelleCourse);
-      DB.coursesById[id] = nouvelleCourse;
-      courseId = id;
-      await ghWriteJsonFile('data/courses.json', DB.courses, `Ajout course : ${nom}`);
-      log(`Course « ${nom} » créée.`, 'ok');
-    }
-
     const nouveauResultat = {
-      id: uid('res'),
-      courseId,
-      type,
-      etapeNumero,
-      saison: saisonId,
+      id: existant ? existant.id : uid('res'),
+      courseId: c.course.id,
+      type: c.type,
+      etapeNumero: c.etapeNumero,
+      saison: c.saisonId,
       classement: dernierApercu.lignes.map(l => ({
         place: l.place,
         coureurId: l.coureurId,
@@ -437,13 +461,18 @@ async function validerImport() {
         temps: l.temps,
       })),
     };
-    DB.resultats.push(nouveauResultat);
-    await ghWriteJsonFile('data/resultats.json', DB.resultats, `Import résultat : ${DB.coursesById[courseId].nom}`);
-    log(`Résultat enregistré pour « ${DB.coursesById[courseId].nom} » (${nouveauResultat.classement.length} lignes).`, 'ok');
+    const resultats = existant ? DB.resultats.map(r => r === existant ? nouveauResultat : r) : [...DB.resultats, nouveauResultat];
+    await ghWriteJsonFile('data/resultats.json', resultats, `${existant ? 'Remplacement' : 'Import'} résultat : ${libelleCible(c)}`);
+    DB.resultats = resultats;
+    log(`Résultat ${existant ? 'remplacé' : 'enregistré'} : ${libelleCible(c)} (${nouveauResultat.classement.length} lignes).`, 'ok');
 
     document.getElementById('impTexte').value = '';
     document.getElementById('impApercu').innerHTML = '';
     dernierApercu = null;
+    courseChoisieAlaMain = false;
+    remplirCourses();
+    document.getElementById('impEtape').value = ''; // passe à la prochaine étape non saisie
+    majCible();
   } catch (e) {
     log(`Échec de l'enregistrement : ${e.message}`, 'err');
   }

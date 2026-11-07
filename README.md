@@ -75,6 +75,13 @@ Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureur
 
 - **Bogenvil Tim et Paraguay Cycles Club retirées** (équipes absentes de la saison), ainsi que les 15 coureurs de la saison 1 absents du fichier d'effectifs : leurs fiches restent (pour la pré-saison), sans équipe.
 
+## Mise à jour du 7 novembre — PSG, coupes, import simplifié
+
+- **Effectif PSG** (`PSG.xlsx`) : 29 coureurs. 5 nouveaux coureurs créés (Al-Sayed, Barreto, Basha, Kuipers, Mulcahy), 8 coureurs sans équipe rattachés au PSG, âge / taille / spécialité mis à jour pour les 26 coureurs du fichier. Nouveau champ `specialite` dans `data/coureurs.json`, affiché sur la fiche coureur.
+- **Drapeaux des coupes** : chaque coupe nationale porte son code pays (`pays_code` dans `data/coupes.json`).
+- **Barème de coupe** : `bareme.coupe[idCoupe][place] = points`, le même pour toutes les courses de la coupe. Il ne sert qu'au classement de la coupe : les points et primes du classement général restent ceux du barème de la course. Tant qu'un barème de coupe est vide, la coupe reprend les points du barème de chaque course.
+- **Import des résultats (admin)** : on choisit la course dans la liste du calendrier (✓ = déjà des résultats), puis, pour une course par étapes, le classement (étape, général, annexes) et le numéro d'étape. La course est présélectionnée si son nom figure dans le texte collé. Un résultat déjà saisi pour la même cible est remplacé (après confirmation) au lieu d'être dupliqué. L'admin ne crée plus de course.
+
 ## Fichiers modifiés depuis ta dernière mise à jour du repo
 
 À remplacer dans ton dépôt GitHub (les autres fichiers n'ont pas changé) :

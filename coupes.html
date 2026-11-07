@@ -9,7 +9,7 @@
 <body data-page="coupes.html">
 <main>
   <h1>Coupes</h1>
-  <p class="lede">La Coupe du Monde et les coupes nationales additionnent les points d'un sous-ensemble de courses de la saison, avec leur propre barème.</p>
+  <p class="lede">La Coupe du Monde et les coupes nationales additionnent les points d'un sous-ensemble de courses de la saison, avec un barème propre à chaque coupe (en attendant, les points du barème de chaque course).</p>
 
   <div class="grid-links" id="liste">
     <p class="empty">Chargement…</p>
@@ -26,7 +26,7 @@
 
   el.innerHTML = db.coupes.map(c => {
     const nbCourses = db.courses.filter(course => course.saison === saison.id && Array.isArray(course.coupes) && course.coupes.includes(c.id)).length;
-    const drapeau = c.portee === 'national' ? db.flagForCountry(c.pays) : '🌍';
+    const drapeau = c.portee === 'national' ? db.flagForCode(c.pays_code, c.pays) : '🌍';
     return `<a href="coupe.html?id=${c.id}">
       <span class="tag">${drapeau} ${c.nom}</span>
       <span class="sub">${nbCourses} course${nbCourses > 1 ? 's' : ''} cette saison</span>

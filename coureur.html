@@ -88,6 +88,7 @@
       coureur.nationalite ? `${db.flagForCountry(coureur.nationalite)} ${esc(coureur.nationalite)}` : null,
       coureur.age ? `${coureur.age} ans` : null,
       coureur.taille ? `${coureur.taille} cm` : null,
+      coureur.specialite ? esc(coureur.specialite) : null,
       coureur.poids ? `${coureur.poids} kg` : null,
     ].filter(Boolean).join(' · ');
     return `<h1>${esc(coureur.nom)}</h1>
