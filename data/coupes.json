@@ -1,7 +1,7 @@
 [
-  { "id": "coupe-du-monde", "nom": "Coupe du Monde", "portee": "monde" },
-  { "id": "coupe-italie", "nom": "Coupe d'Italie", "portee": "national", "pays": "Italie" },
-  { "id": "coupe-espagne", "nom": "Coupe d'Espagne", "portee": "national", "pays": "Espagne" },
-  { "id": "coupe-france", "nom": "Coupe de France", "portee": "national", "pays": "France" },
-  { "id": "coupe-belgique", "nom": "Coupe de Belgique", "portee": "national", "pays": "Belgique" }
+  {"id": "coupe-du-monde", "nom": "Coupe du Monde", "portee": "monde"},
+  {"id": "coupe-italie", "nom": "Coupe d'Italie", "portee": "national", "pays": "Italie", "pays_code": "IT"},
+  {"id": "coupe-espagne", "nom": "Coupe d'Espagne", "portee": "national", "pays": "Espagne", "pays_code": "ES"},
+  {"id": "coupe-france", "nom": "Coupe de France", "portee": "national", "pays": "France", "pays_code": "FR"},
+  {"id": "coupe-belgique", "nom": "Coupe de Belgique", "portee": "national", "pays": "Belgique", "pays_code": "BE"}
 ]

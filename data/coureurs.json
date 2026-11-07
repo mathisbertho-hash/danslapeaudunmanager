@@ -50,7 +50,8 @@
     "nationalite_code": "FRA",
     "nationalite": "France",
     "age": 29,
-    "taille": 193
+    "taille": 193,
+    "specialite": "Puncheur-Flahute"
   },
   {
     "id": "detering-til",
@@ -59,7 +60,8 @@
     "nationalite_code": "ALL",
     "nationalite": "Germany",
     "age": 34,
-    "taille": 162
+    "taille": 162,
+    "specialite": "4x4"
   },
   {
     "id": "diouf-mamadou",
@@ -77,7 +79,8 @@
     "nationalite_code": "FRA",
     "nationalite": "France",
     "age": 27,
-    "taille": 178
+    "taille": 178,
+    "specialite": "Rouleur-Flahute"
   },
   {
     "id": "fuentealba-ibacache-nicolas",
@@ -122,7 +125,8 @@
     "nationalite_code": "FRA",
     "nationalite": "France",
     "age": 30,
-    "taille": 175
+    "taille": 175,
+    "specialite": "Rouleur"
   },
   {
     "id": "salvatori-alberto",
@@ -131,7 +135,8 @@
     "nationalite_code": "ITA",
     "nationalite": "Italy",
     "age": 25,
-    "taille": 181
+    "taille": 181,
+    "specialite": "Baroudeur"
   },
   {
     "id": "solomon-natnael",
@@ -248,7 +253,8 @@
     "nationalite_code": "ESP",
     "nationalite": "Spain",
     "age": 27,
-    "taille": 164
+    "taille": 164,
+    "specialite": "Rouleur-Sprinteur"
   },
   {
     "id": "ricketts-andre",
@@ -527,7 +533,8 @@
     "nationalite_code": "NZL",
     "nationalite": "New-Zealand",
     "age": 25,
-    "taille": 198
+    "taille": 198,
+    "specialite": "Flahute"
   },
   {
     "id": "popovic-petar",
@@ -941,7 +948,8 @@
     "nationalite_code": "ITA",
     "nationalite": "Italy",
     "age": 30,
-    "taille": 167
+    "taille": 167,
+    "specialite": "Grimpeur"
   },
   {
     "id": "bouzidi-reda",
@@ -1031,7 +1039,8 @@
     "nationalite_code": "ALL",
     "nationalite": "Germany",
     "age": 21,
-    "taille": 168
+    "taille": 168,
+    "specialite": "Puncheur"
   },
   {
     "id": "harun-amirul",
@@ -2084,7 +2093,8 @@
     "nationalite_code": "ALL",
     "nationalite": "Germany",
     "age": 21,
-    "taille": 189
+    "taille": 189,
+    "specialite": "Grimpeur"
   },
   {
     "id": "farkas-csaba",
@@ -2534,7 +2544,8 @@
     "nationalite_code": "ESP",
     "nationalite": "Spain",
     "age": 24,
-    "taille": 168
+    "taille": 168,
+    "specialite": "Baroudeur"
   },
   {
     "id": "yapi-amara",
@@ -5461,7 +5472,9 @@
     "pcm_id": 462,
     "nationalite_code": "NED",
     "nationalite": "Netherlands",
-    "age": null
+    "age": 28,
+    "taille": 185,
+    "specialite": "Rouleur"
   },
   {
     "id": "bertolotti-joaquin",
@@ -5910,7 +5923,9 @@
     "pcm_id": 553,
     "nationalite_code": "SLO",
     "nationalite": "Slovenia",
-    "age": null
+    "age": 25,
+    "taille": 162,
+    "specialite": "Puncheur-Flahute"
   },
   {
     "id": "al-shamlan-kamil",
@@ -5975,7 +5990,9 @@
     "pcm_id": 572,
     "nationalite_code": "FRA",
     "nationalite": "France",
-    "age": null
+    "age": 23,
+    "taille": 158,
+    "specialite": "Puncheur-Flahute"
   },
   {
     "id": "aksoy-serkan",
@@ -6162,7 +6179,9 @@
     "pcm_id": 375,
     "nationalite_code": "SLO",
     "nationalite": "Slovenia",
-    "age": null
+    "age": 27,
+    "taille": 196,
+    "specialite": "Puncheur-Flahute"
   },
   {
     "id": "queiroz-danilo",
@@ -6708,7 +6727,9 @@
     "pcm_id": 464,
     "nationalite_code": "FRA",
     "nationalite": "France",
-    "age": null
+    "age": 31,
+    "taille": 167,
+    "specialite": "Puncheur"
   },
   {
     "id": "palinkas-akos",
@@ -6830,7 +6851,8 @@
     "nationalite_code": "ESP",
     "nationalite": "Spain",
     "age": 26,
-    "taille": 166
+    "taille": 166,
+    "specialite": "Sprinteur"
   },
   {
     "id": "wenaweser-andreas",
@@ -6887,7 +6909,8 @@
     "nationalite_code": "ESP",
     "nationalite": "Spain",
     "age": 29,
-    "taille": 158
+    "taille": 158,
+    "specialite": "Sprinteur-Flahute"
   },
   {
     "id": "mizrahi-guy",
@@ -6911,7 +6934,9 @@
     "pcm_id": 481,
     "nationalite_code": "SLO",
     "nationalite": "Slovenia",
-    "age": null
+    "age": 25,
+    "taille": 181,
+    "specialite": "Sprinteur-Puncheur"
   },
   {
     "id": "nikolla-klejdi",
@@ -9344,7 +9369,9 @@
     "pcm_id": 537,
     "nationalite_code": "SLO",
     "nationalite": "Slovenia",
-    "age": null
+    "age": 25,
+    "taille": 184,
+    "specialite": "Sprinteur-Flahute"
   },
   {
     "id": "zupancic-matic",
@@ -9352,6 +9379,58 @@
     "pcm_id": 89,
     "nationalite_code": "SLO",
     "nationalite": "Slovenia",
-    "age": null
+    "age": 20,
+    "taille": 187,
+    "specialite": "Flahute"
+  },
+  {
+    "id": "al-sayed-rashid",
+    "nom": "AL-SAYED Rashid",
+    "pcm_id": 881,
+    "nationalite_code": "QAT",
+    "nationalite": "Qatar",
+    "age": 25,
+    "taille": 180,
+    "specialite": "Grimpeur-Rouleur"
+  },
+  {
+    "id": "barreto-diogo",
+    "nom": "BARRETO Diogo",
+    "pcm_id": 873,
+    "nationalite_code": "POR",
+    "nationalite": "Portugal",
+    "age": 23,
+    "taille": 190,
+    "specialite": "Grimpeur-Rouleur"
+  },
+  {
+    "id": "basha-ergys",
+    "nom": "BASHA Ergys",
+    "pcm_id": 394,
+    "nationalite_code": "ALB",
+    "nationalite": "Albania",
+    "age": 21,
+    "taille": 192,
+    "specialite": "Grimpeur-Rouleur"
+  },
+  {
+    "id": "kuipers-pim",
+    "nom": "KUIPERS Pim",
+    "pcm_id": 18,
+    "nationalite_code": "NED",
+    "nationalite": "Netherlands",
+    "age": 26,
+    "taille": 196,
+    "specialite": "Grimpeur"
+  },
+  {
+    "id": "mulcahy-eoin",
+    "nom": "MULCAHY Eoin",
+    "pcm_id": 345,
+    "nationalite_code": "IRL",
+    "nationalite": "Ireland",
+    "age": 28,
+    "taille": 171,
+    "specialite": "Grimpeur-Rouleur"
   }
 ]

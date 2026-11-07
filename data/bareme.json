@@ -734,5 +734,13 @@
     "dev-classic",
     "dev-tour",
     "juniors"
-  ]
+  ],
+  "coupe": {
+    "_comment": "Barème propre au classement de chaque coupe : coupe[idCoupe][place] = points. Toutes les courses de la coupe utilisent ce barème pour la coupe ; les points et primes du classement général restent ceux du barème de la course. Tant qu'un barème de coupe est vide, la coupe reprend les points du barème de chaque course.",
+    "coupe-du-monde": {},
+    "coupe-italie": {},
+    "coupe-espagne": {},
+    "coupe-france": {},
+    "coupe-belgique": {}
+  }
 }
