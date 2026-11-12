@@ -15043,5 +15043,338 @@
         "temps": "+ 32'57"
       }
     ]
+  },
+  {
+    "id": "res-mwdzid0a-fapa8",
+    "courseId": "tropicale-amissa-bongo-saison-1",
+    "type": "points",
+    "etapeNumero": null,
+    "saison": "saison-1",
+    "classement": [
+      {
+        "place": 1,
+        "coureurId": "rahman-danial",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 2,
+        "coureurId": "kitamura-ryota",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 3,
+        "coureurId": "novosel-josip",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 4,
+        "coureurId": "salminen-santeri",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 5,
+        "coureurId": "lemoine-valentin",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 6,
+        "coureurId": "wiegand-rouven",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 7,
+        "coureurId": "hinterleitner-dominik",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 8,
+        "coureurId": "taitano-frankie",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 9,
+        "coureurId": "bustos-barragan-gerardo",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 10,
+        "coureurId": "aponte-ronald",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 11,
+        "coureurId": "moxey-kendrick",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 12,
+        "coureurId": "noel-anderson",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 13,
+        "coureurId": "steenkamp-jaco",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 14,
+        "coureurId": "beddoe-huw",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 15,
+        "coureurId": "ndayisenga-valens",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 16,
+        "coureurId": "simkus-justas",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 17,
+        "coureurId": "van-rossem-roel",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 18,
+        "coureurId": "agyemang-prince",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 19,
+        "coureurId": "duarte-caceres-derlis",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 20,
+        "coureurId": "nystrom-ludvig",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 21,
+        "coureurId": "bolatagici-sikeli",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 22,
+        "coureurId": "ostermann-tobias",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 23,
+        "coureurId": "voisin-loic",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 24,
+        "coureurId": "molnar-daniel",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 25,
+        "coureurId": "danielius-rokas",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 26,
+        "coureurId": "bonvini-luca",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 27,
+        "coureurId": "van-wijk-stijn",
+        "statut": "classe",
+        "temps": "St."
+      },
+      {
+        "place": 28,
+        "coureurId": "zambrano-quinteros-vinicio",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 29,
+        "coureurId": "grozav-vitalie",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 30,
+        "coureurId": "barcza-balazs",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 31,
+        "coureurId": "bautista-junior",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 32,
+        "coureurId": "van-noort-fedde",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 33,
+        "coureurId": "lorente-gonzalo",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 34,
+        "coureurId": "marchenko-vadym",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 35,
+        "coureurId": "yusupov-shohrux",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 36,
+        "coureurId": "bascome-nahki",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 37,
+        "coureurId": "marsden-callum",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 38,
+        "coureurId": "ondo-guelor",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 39,
+        "coureurId": "lee-ji-hoon",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 40,
+        "coureurId": "gasperoni-elia",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 41,
+        "coureurId": "hakobyan-davit",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 42,
+        "coureurId": "fernando-dinesh",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 43,
+        "coureurId": "nijhof-jorn",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 44,
+        "coureurId": "constantinou-christos",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 45,
+        "coureurId": "sawadogo-boukary",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 46,
+        "coureurId": "dlamini-katlego",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 47,
+        "coureurId": "zamorano-alvaro",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 48,
+        "coureurId": "villar-mediavilla-eneko",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 49,
+        "coureurId": "ibacache-riquelme-bastian",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 50,
+        "coureurId": "farinez-jhonder",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 51,
+        "coureurId": "ngauamo-toutai",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 52,
+        "coureurId": "waqanidrola-netani",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 53,
+        "coureurId": "hodzic-almir",
+        "statut": "classe",
+        "temps": null
+      },
+      {
+        "place": 54,
+        "coureurId": "xu-kaiwen",
+        "statut": "classe",
+        "temps": null
+      }
+    ]
   }
 ]
