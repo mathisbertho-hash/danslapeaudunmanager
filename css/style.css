@@ -319,3 +319,13 @@ table.results tr.sous td:first-child { padding-left: 1.6rem; }
 /* Filtres : champs côte à côte, qui passent à la ligne sur mobile */
 .filters select, .filters input[type="text"] { width: auto; flex: 1 1 170px; min-width: 0; }
 table.results td.muted, table.results tr.course-head td:first-child { white-space: nowrap; }
+
+/* Navigation entre les étapes d'un tour (page classement complet) */
+.nav-etapes { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin: -0.4rem 0 1rem; }
+.nav-etapes .btn { white-space: nowrap; padding: 0.45rem 0.8rem; font-size: 0.78rem; }
+.nav-etapes .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem; }
+.chip { font-family: 'Oswald', sans-serif; font-size: 0.75rem; min-width: 1.9rem; text-align: center; padding: 0.2rem 0.45rem;
+  border: 1px solid var(--line); border-radius: 6px; color: var(--muted); background: var(--bg-elevated); }
+.chip:hover { text-decoration: none; border-color: var(--accent-2); color: #fff; }
+.chip.active { color: var(--accent); border-color: var(--accent); }
+@media (max-width: 560px) { .nav-etapes { flex-wrap: wrap; } .nav-etapes .chips { order: 3; width: 100%; } }
