@@ -82,6 +82,13 @@ Le dossier `data/*.json` EST la sauvegarde complète du site : équipes, coureur
 - **Barème de coupe** : `bareme.coupe[idCoupe][place] = points`, le même pour toutes les courses de la coupe. Il ne sert qu'au classement de la coupe : les points et primes du classement général restent ceux du barème de la course. Tant qu'un barème de coupe est vide, la coupe reprend les points du barème de chaque course.
 - **Import des résultats (admin)** : on choisit la course dans la liste du calendrier (✓ = déjà des résultats), puis, pour une course par étapes, le classement (étape, général, annexes) et le numéro d'étape. La course est présélectionnée si son nom figure dans le texte collé. Un résultat déjà saisi pour la même cible est remplacé (après confirmation) au lieu d'être dupliqué. L'admin ne crée plus de course.
 
+## Mise à jour du 12 novembre — tours, JDC, import des coureurs de développement
+
+- **Fiche d'un tour** : nouveau tableau « Classements finaux » (général, points, montagne, jeunes) avec vainqueur et équipe ; les vainqueurs d'étape affichent aussi leur équipe.
+- **Classement complet d'un tour** : boutons « ← étape précédente / étape suivante → » en haut, et pastilles pour sauter directement à une étape, au général ou à un classement annexe.
+- **Fiche coureur** : compteur de jours de course (JDC) = étapes + classiques disputées (abandon compris), pour la saison, la carrière et dans l'historique par saison. Seuls les résultats importés sont comptés.
+- **Import** : le « x » que le créateur du jeu met devant le prénom des coureurs de développement (« xPrénom Nom », « x Prénom Nom ») est retiré automatiquement quand le nom n'est pas reconnu tel quel.
+
 ## Fichiers modifiés depuis ta dernière mise à jour du repo
 
 À remplacer dans ton dépôt GitHub (les autres fichiers n'ont pas changé) :

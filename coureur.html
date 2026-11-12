@@ -63,6 +63,8 @@
       podiums: pod.filter(r => r.place <= 3).length,
       top10: pod.filter(r => r.place <= 10).length,
       courses: new Set(rows.map(r => r.course.id)).size,
+      // Jours de course : une étape ou une classique disputée = 1 jour (abandon compris)
+      jdc: rows.filter(r => r.type === 'etape' || r.type === 'classique').length,
     };
   }
 
@@ -169,12 +171,13 @@
       const eq = equipeDe(s.id);
       return `<tr><td>${s.label}</td><td>${eq ? `<a href="equipe.html?id=${eq.id}">${esc(eq.nom)}</a>` : '—'}</td>
         <td>${circ === 'pro' ? 'Pro' : circ === 'espoirs' ? 'Espoirs' : 'Juniors'}</td>
+        <td class="num">${t.jdc}</td>
         <td class="num">${t.pts}</td><td class="num">${rangTxt(rangPts)}</td>
         <td class="num">${circ === 'pro' ? fmtPrime(t.prime) : '—'}</td><td class="num">${rangTxt(rangPrime)}</td>
         <td>${coupes.join('<br>') || '—'}</td></tr>`;
     }).join('');
     return `<div class="table-wrap"><table class="results">
-      <thead><tr><th>Saison</th><th>Équipe</th><th>Circuit</th><th class="num">Points</th><th class="num">Rang</th><th class="num">Primes</th><th class="num">Rang</th><th>Coupes</th></tr></thead>
+      <thead><tr><th>Saison</th><th>Équipe</th><th>Circuit</th><th class="num" title="Jours de course">JDC</th><th class="num">Points</th><th class="num">Rang</th><th class="num">Primes</th><th class="num">Rang</th><th>Coupes</th></tr></thead>
       <tbody>${lignes}</tbody></table></div>`;
   }
 
@@ -204,8 +207,8 @@
           <div class="stat"><span class="v">${t.victoires}</span><span class="l">Victoires</span></div>
           <div class="stat"><span class="v">${t.podiums}</span><span class="l">Podiums</span></div>
           <div class="stat"><span class="v">${t.top10}</span><span class="l">Top 10</span></div>
-          <div class="stat"><span class="v">${t.courses}</span><span class="l">Courses courues</span></div>
-          <div class="stat"><span class="v">${career.pts} pts</span><span class="l">Carrière · ${fmtPrime(career.prime)}</span></div>
+          <div class="stat"><span class="v">${t.jdc}</span><span class="l">Jours de course · ${t.courses} course${t.courses > 1 ? 's' : ''}</span></div>
+          <div class="stat"><span class="v">${career.pts} pts</span><span class="l">Carrière · ${fmtPrime(career.prime)} · ${career.jdc} JDC</span></div>
         </div>
         <div class="cols-2">
           <div>

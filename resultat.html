@@ -37,9 +37,29 @@
 
   const avecPrimes = course && !(db.bareme.sans_prime || []).includes(course.categorie);
 
+  // Navigation dans un tour : étapes dans l'ordre, puis général et classements annexes
+  const ORDRE = ['etape', 'general', 'points', 'montagne', 'jeune'];
+  const COURT = { general: 'Général', points: 'Points', montagne: 'Montagne', jeune: 'Jeunes' };
+  const sequence = db.resultats
+    .filter(r => r.courseId === resultat.courseId && r.saison === resultat.saison && ORDRE.includes(r.type))
+    .sort((a, b) => ORDRE.indexOf(a.type) - ORDRE.indexOf(b.type) || (a.etapeNumero || 0) - (b.etapeNumero || 0));
+  const libCourt = r => r.type === 'etape' ? `Étape ${r.etapeNumero ?? '?'}` : COURT[r.type];
+  const pos = sequence.indexOf(resultat);
+  const prec = pos > 0 ? sequence[pos - 1] : null;
+  const suiv = pos >= 0 && pos < sequence.length - 1 ? sequence[pos + 1] : null;
+  const navTour = pos < 0 || sequence.length < 2 ? '' : `
+    <div class="nav-etapes">
+      ${prec ? `<a class="btn secondary" href="resultat.html?id=${prec.id}">← ${libCourt(prec)}</a>` : '<span></span>'}
+      <div class="chips">${sequence.map(r => r === resultat
+        ? `<span class="chip active">${r.type === 'etape' ? r.etapeNumero : COURT[r.type]}</span>`
+        : `<a class="chip" href="resultat.html?id=${r.id}" title="${libCourt(r)}">${r.type === 'etape' ? r.etapeNumero : COURT[r.type]}</a>`).join('')}</div>
+      ${suiv ? `<a class="btn secondary" href="resultat.html?id=${suiv.id}">${libCourt(suiv)} →</a>` : '<span></span>'}
+    </div>`;
+
   el.innerHTML = `
     <h1>${course ? course.nom : '?'}</h1>
     <p class="lede"><a href="course.html?id=${resultat.courseId}">← retour à la fiche course</a> · ${typeLabels[resultat.type] || resultat.type} · ${saisonLabel}</p>
+    ${navTour}
 
     <div class="table-wrap">
       <table class="results">
