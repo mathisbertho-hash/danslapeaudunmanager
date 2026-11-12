@@ -49,7 +49,8 @@ function parseTexteResultats(texte, coureurs) {
     if (!rawLine) continue;
 
     // Ligne "place  Nom... Equipe... Temps"
-    const m = rawLine.match(/^(\d{1,3})\s+(.*)$/);
+    // « 12 xPrénom Nom » : le « x » peut aussi être collé au numéro (« 12xPrénom »)
+    const m = rawLine.match(/^(\d{1,3})(?:\s+|(?=x[A-ZÀ-ÖØ-Þ]))(.*)$/);
     if (!m) {
       // Première ligne non vide sans numéro = probablement le nom de la course
       if (!nomCourse && !/déjà signé|contrat/i.test(rawLine)) {
@@ -76,24 +77,33 @@ function parseTexteResultats(texte, coureurs) {
       reste = reste.replace(/\b(DNF|abandon|ab\.)\b/gi, '').trim();
     }
 
-    const words = reste.split(/\s+/).filter(Boolean);
+    let words = reste.split(/\s+/).filter(Boolean);
 
     // Cherche le plus long préfixe de mots qui correspond à un coureur connu
-    let coureurId = null;
-    let nomTrouve = null;
-    let longueurNom = 0;
-    for (let len = Math.min(5, words.length); len >= 2; len--) {
-      const candidate = words.slice(0, len).map(normWord).filter(Boolean);
-      if (candidate.length < 2) continue;
-      const key = [...candidate].sort().join('+');
-      const rider = riderIndex.get(key);
-      if (rider) {
-        coureurId = rider.id;
-        nomTrouve = rider.nom;
-        longueurNom = len;
-        break;
+    function chercher(ws) {
+      for (let len = Math.min(5, ws.length); len >= 2; len--) {
+        const candidate = ws.slice(0, len).map(normWord).filter(Boolean);
+        if (candidate.length < 2) continue;
+        const rider = riderIndex.get([...candidate].sort().join('+'));
+        if (rider) return { rider, len };
       }
+      return null;
     }
+    let trouve = chercher(words);
+
+    // Coureurs de développement : le créateur du jeu met un « x » devant le prénom
+    // (« xPrénom Nom » ou « x Prénom Nom »). Si le nom brut n'est pas reconnu, on retire ce x.
+    let prefixeX = false;
+    // (x minuscule suivi d'une majuscule, ou x seul : « Xavier » n'est pas concerné)
+    if (!trouve && words.length && /^x(?=[A-ZÀ-ÖØ-Þ]|$)/.test(words[0])) {
+      words = words[0].length === 1 ? words.slice(1) : [words[0].slice(1), ...words.slice(1)];
+      trouve = chercher(words);
+      prefixeX = true;
+    }
+
+    const coureurId = trouve ? trouve.rider.id : null;
+    const nomTrouve = trouve ? trouve.rider.nom : null;
+    const longueurNom = trouve ? trouve.len : 0;
 
     lignes.push({
       raw: rawLine,
@@ -104,6 +114,7 @@ function parseTexteResultats(texte, coureurs) {
       nomBrut: nomTrouve || words.slice(0, Math.min(3, words.length)).join(' '),
       equipeBrute: words.slice(longueurNom || 2).join(' ') || null,
       ambigu: !coureurId,
+      prefixeX,
     });
   }
 
